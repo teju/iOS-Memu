@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileImgView" customModule="Memu" customModuleProvider="target">
+            <connections>
+                <outlet property="customView" destination="p5T-Bb-PMe" id="yhC-rC-saE"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="p5T-Bb-PMe">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="133"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JRX-OO-X4i" customClass="CustomView" customModule="Memu" customModuleProvider="target">
+                    <rect key="frame" x="2" y="76" width="90" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to go to your Profile" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9D-bW-ToX">
+                            <rect key="frame" x="4" y="4" width="82" height="42"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.92941176469999998" green="0.6705882353" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="Q9D-bW-ToX" firstAttribute="top" secondItem="JRX-OO-X4i" secondAttribute="top" constant="4" id="3uL-ac-YEx"/>
+                        <constraint firstAttribute="height" constant="50" id="Tnr-fi-bEC"/>
+                        <constraint firstAttribute="trailing" secondItem="Q9D-bW-ToX" secondAttribute="trailing" constant="4" id="bue-KC-bPu"/>
+                        <constraint firstAttribute="width" constant="90" id="czP-U5-aF0"/>
+                        <constraint firstItem="Q9D-bW-ToX" firstAttribute="leading" secondItem="JRX-OO-X4i" secondAttribute="leading" constant="4" id="gEj-gq-mkb"/>
+                        <constraint firstAttribute="bottom" secondItem="Q9D-bW-ToX" secondAttribute="bottom" constant="4" id="qXv-0s-XCS"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRaduis">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="mainColor">
+                            <color key="value" red="1" green="0.85490196078431369" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4iB-sl-n2e">
+                    <rect key="frame" x="0.0" y="0.0" width="120" height="96"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="4iB-sl-n2e" secondAttribute="height" multiplier="5:4" id="5OG-xT-1Ky"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="profileimg"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="4iB-sl-n2e" firstAttribute="leading" secondItem="p5T-Bb-PMe" secondAttribute="leading" id="2Ga-ON-mfA"/>
+                <constraint firstAttribute="trailing" secondItem="4iB-sl-n2e" secondAttribute="trailing" id="OyN-yh-7Lg"/>
+                <constraint firstItem="4iB-sl-n2e" firstAttribute="top" secondItem="p5T-Bb-PMe" secondAttribute="top" id="aMm-HP-EFc"/>
+                <constraint firstItem="JRX-OO-X4i" firstAttribute="top" secondItem="4iB-sl-n2e" secondAttribute="bottom" constant="-20" id="nYT-P7-5VA"/>
+                <constraint firstItem="JRX-OO-X4i" firstAttribute="centerX" secondItem="4iB-sl-n2e" secondAttribute="centerX" constant="-13" id="uEc-kJ-UUp"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-94.20289855072464" y="106.80803571428571"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="profileimg" width="129" height="125"/>
+    </resources>
+</document>

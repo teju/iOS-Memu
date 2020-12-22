@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TaxiImgView" customModule="Memu" customModuleProvider="target">
+            <connections>
+                <outlet property="customView" destination="SBG-Ms-sK4" id="n6L-0d-zyv"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="SBG-Ms-sK4">
+            <rect key="frame" x="0.0" y="0.0" width="90" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ikc-vb-DsX" customClass="CustomView" customModule="Memu" customModuleProvider="target">
+                    <rect key="frame" x="-36" y="23.5" width="90" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to find Cab/Taxi" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gj2-0p-5b3">
+                            <rect key="frame" x="4" y="4" width="82" height="42"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.92941176469999998" green="0.6705882353" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="3i2-Ct-Mxi"/>
+                        <constraint firstItem="Gj2-0p-5b3" firstAttribute="leading" secondItem="Ikc-vb-DsX" secondAttribute="leading" constant="4" id="K27-xT-GpO"/>
+                        <constraint firstItem="Gj2-0p-5b3" firstAttribute="top" secondItem="Ikc-vb-DsX" secondAttribute="top" constant="4" id="Lhp-8q-rTG"/>
+                        <constraint firstAttribute="width" constant="90" id="Otj-mA-e56"/>
+                        <constraint firstAttribute="trailing" secondItem="Gj2-0p-5b3" secondAttribute="trailing" constant="4" id="hdk-Ep-IGQ"/>
+                        <constraint firstAttribute="bottom" secondItem="Gj2-0p-5b3" secondAttribute="bottom" constant="4" id="p1P-KI-xdQ"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRaduis">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="mainColor">
+                            <color key="value" red="0.60392156862745094" green="0.80392156862745101" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUG-y9-zh8">
+                    <rect key="frame" x="0.0" y="0.0" width="90" height="66.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="WUG-y9-zh8" secondAttribute="height" multiplier="50:37" id="lRf-Ut-iKj"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="taxi"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="WUG-y9-zh8" firstAttribute="bottom" secondItem="Ikc-vb-DsX" secondAttribute="bottom" constant="-7" id="Cki-PA-7jt"/>
+                <constraint firstAttribute="trailing" secondItem="WUG-y9-zh8" secondAttribute="trailing" id="Lsr-v4-Bnb"/>
+                <constraint firstItem="WUG-y9-zh8" firstAttribute="top" secondItem="SBG-Ms-sK4" secondAttribute="top" id="RAO-Ym-yxa"/>
+                <constraint firstItem="Ikc-vb-DsX" firstAttribute="leading" secondItem="SBG-Ms-sK4" secondAttribute="leading" constant="-36" id="Sfh-pr-IiY"/>
+                <constraint firstItem="WUG-y9-zh8" firstAttribute="leading" secondItem="SBG-Ms-sK4" secondAttribute="leading" id="Xv7-hu-anG"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-111.59420289855073" y="77.678571428571431"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="taxi" width="81" height="74"/>
+    </resources>
+</document>

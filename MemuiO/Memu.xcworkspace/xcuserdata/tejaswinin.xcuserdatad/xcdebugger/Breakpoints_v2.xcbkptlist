@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "3C12EA6C-973A-4D72-AA22-9AEFB6BBF7C9"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "80AB5CC1-E022-4A6E-ADC5-22E20909B8AD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Memu/History/HistoryTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "HistoryTableViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "80AB5CC1-E022-4A6E-ADC5-22E20909B8AD - aece2828f0f66d"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Memu.HistoryTableViewCell.matching_buddies.getter : Swift.Optional&lt;__C.UICollectionView&gt;"
+                  moduleName = "Memu"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tejaswinin/Documents/Freelancing_Basavaraj/MemuiOS/MemuiO/Memu/History/HistoryTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "80AB5CC1-E022-4A6E-ADC5-22E20909B8AD - c76186db204ae671"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Memu.HistoryTableViewCell.matching_buddies.setter : Swift.Optional&lt;__C.UICollectionView&gt;"
+                  moduleName = "Memu"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tejaswinin/Documents/Freelancing_Basavaraj/MemuiOS/MemuiO/Memu/History/HistoryTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "155">
+               </Location>
+               <Location
+                  uuid = "80AB5CC1-E022-4A6E-ADC5-22E20909B8AD - d9e7c274c9277a62"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Memu.HistoryTableViewCell.matching_buddies.modify : Swift.Optional&lt;__C.UICollectionView&gt;"
+                  moduleName = "Memu"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tejaswinin/Documents/Freelancing_Basavaraj/MemuiOS/MemuiO/Memu/History/HistoryTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  uuid = "80AB5CC1-E022-4A6E-ADC5-22E20909B8AD - c9f58385231c1061"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Memu.HistoryTableViewCell.matching_buddies.modify : Swift.Optional&lt;__C.UICollectionView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Memu"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tejaswinin/Documents/Freelancing_Basavaraj/MemuiOS/MemuiO/Memu/History/HistoryTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "80AB5CC1-E022-4A6E-ADC5-22E20909B8AD - 7fee75b498ac1de2"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Memu.HistoryTableViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; Memu.HistoryTableViewCell"
+                  moduleName = "Memu"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tejaswinin/Documents/Freelancing_Basavaraj/MemuiOS/MemuiO/Memu/History/HistoryTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "257">
+               </Location>
+               <Location
+                  uuid = "80AB5CC1-E022-4A6E-ADC5-22E20909B8AD - 89002ddc3f8f5ece"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Memu.HistoryTableViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Memu.HistoryTableViewCell&gt;"
+                  moduleName = "Memu"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tejaswinin/Documents/Freelancing_Basavaraj/MemuiOS/MemuiO/Memu/History/HistoryTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "198">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
