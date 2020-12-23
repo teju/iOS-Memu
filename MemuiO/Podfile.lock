@@ -113,7 +113,6 @@ PODS:
   - SwiftLocation (4.2.0)
   - SwiftyJSON (5.0.0)
   - Turf (0.3.0)
-  - WWCalendarTimeSelector (1.3.13)
 
 DEPENDENCIES:
   - DropDown
@@ -130,7 +129,6 @@ DEPENDENCIES:
   - SDWebImage (~> 4.3.3)
   - SwiftLocation
   - SwiftyJSON
-  - WWCalendarTimeSelector
 
 SPEC REPOS:
   trunk:
@@ -173,7 +171,6 @@ SPEC REPOS:
     - SwiftLocation
     - SwiftyJSON
     - Turf
-    - WWCalendarTimeSelector
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -215,8 +212,7 @@ SPEC CHECKSUMS:
   SwiftLocation: 609ac8859f2c5d48a6cadd2a58c63b1dae02dc25
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   Turf: c6bdf62d6a70c647874f295dd1cf4eefc0c3e9e6
-  WWCalendarTimeSelector: 334f8b4ff16367d75fb9f21073203641fbd3d749
 
-PODFILE CHECKSUM: d4138e340ceab5ff13cd911150eddf4fd042c692
+PODFILE CHECKSUM: 918e8cb1007ea4ec12a22e9543686fb432da9b9e
 
 COCOAPODS: 1.10.0
