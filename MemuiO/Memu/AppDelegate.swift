@@ -30,8 +30,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        UILabel.appearance(whenContainedInInstancesOf: [UIView.self]).textColor = .black //or what color you want
-
+        for fontFamilyName in UIFont.familyNames{
+            for fontName in UIFont.fontNames(forFamilyName: fontFamilyName){
+                print("Family: \(fontFamilyName)     Font: \(fontName)")
+            }
+        }
+        UIFont.overrideInitialize()
         print("Path====\(String(describing: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first)))")
         FirebaseApp.configure()
         GMSPlacesClient.provideAPIKey("AIzaSyCGr6pxw8X2PueadLwk3OHDghab56-oKNQ")

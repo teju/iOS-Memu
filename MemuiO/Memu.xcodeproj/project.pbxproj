@@ -90,6 +90,8 @@
 		791DC9B82593831E00EFF42B /* String+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791DC9B02593831C00EFF42B /* String+Timepiece.swift */; };
 		791DC9B92593831E00EFF42B /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791DC9B12593831D00EFF42B /* Duration.swift */; };
 		791DC9BA2593831E00EFF42B /* WWCalendarTimeSelector.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 791DC9B22593831E00EFF42B /* WWCalendarTimeSelector.storyboard */; };
+		792FFA4125D15B9000FEF55C /* font in Resources */ = {isa = PBXBuildFile; fileRef = 792FFA4025D15B9000FEF55C /* font */; };
+		792FFA4325D15D0F00FEF55C /* AppFontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792FFA4225D15D0F00FEF55C /* AppFontName.swift */; };
 		793BF53224B21DF400DDB0E9 /* CustomBottomBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793BF53124B21DF400DDB0E9 /* CustomBottomBannerView.swift */; };
 		793BF53424B2360600DDB0E9 /* PoolerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793BF53324B2360600DDB0E9 /* PoolerList.swift */; };
 		79405052249CA85900ECF703 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79405051249CA85900ECF703 /* BookingViewController.swift */; };
@@ -248,6 +250,8 @@
 		791DC9B02593831C00EFF42B /* String+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Timepiece.swift"; sourceTree = "<group>"; };
 		791DC9B12593831D00EFF42B /* Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
 		791DC9B22593831E00EFF42B /* WWCalendarTimeSelector.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WWCalendarTimeSelector.storyboard; sourceTree = "<group>"; };
+		792FFA4025D15B9000FEF55C /* font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = font; sourceTree = "<group>"; };
+		792FFA4225D15D0F00FEF55C /* AppFontName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFontName.swift; sourceTree = "<group>"; };
 		793BF53124B21DF400DDB0E9 /* CustomBottomBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBottomBannerView.swift; sourceTree = "<group>"; };
 		793BF53324B2360600DDB0E9 /* PoolerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolerList.swift; sourceTree = "<group>"; };
 		79405051249CA85900ECF703 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
@@ -350,6 +354,7 @@
 		188AE074241CE70C0079E2BB /* Memu */ = {
 			isa = PBXGroup;
 			children = (
+				792FFA4025D15B9000FEF55C /* font */,
 				79FD4FA824A25DB70015B28F /* GoogleService-Info.plist */,
 				188AE083241CE7120079E2BB /* Info.plist */,
 				6DA40EE8245B590C00A09AD0 /* Localizable.strings */,
@@ -552,6 +557,7 @@
 				6D94BF9A245ED8BE00833B34 /* AddAssetButtonView.swift */,
 				7949BCFE2496929E0062F053 /* roundImageView.swift */,
 				79540C3F24A0F79A0003330F /* BackgroundLocationManager.swift */,
+				792FFA4225D15D0F00FEF55C /* AppFontName.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -921,6 +927,7 @@
 				7995D6702497936E00F6E24A /* NavigationController.storyboard in Resources */,
 				6DED6C712458BFA1003F0AB1 /* TaxiImgView.xib in Resources */,
 				6D4C1698246A883C0049076B /* OpenSans-Regular.ttf in Resources */,
+				792FFA4125D15B9000FEF55C /* font in Resources */,
 				6D12BA342453B035000D52D1 /* S4View.xib in Resources */,
 				79540C3E24A0F2870003330F /* HistoryStoryboard.storyboard in Resources */,
 			);
@@ -1036,6 +1043,7 @@
 				6D12BA382453B062000D52D1 /* S5View.swift in Sources */,
 				794B79542513AEAD005047C9 /* UserMainData.swift in Sources */,
 				6DA40EF6245BF84A00A09AD0 /* Vehicle.swift in Sources */,
+				792FFA4325D15D0F00FEF55C /* AppFontName.swift in Sources */,
 				7995D6782497B30500F6E24A /* CustomViewController.swift in Sources */,
 				7962DBE124A09A3100C76511 /* VehicleListResponse.swift in Sources */,
 				7903F5F42512854C000E5F07 /* FriendsViewController.swift in Sources */,

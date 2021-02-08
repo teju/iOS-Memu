@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>font/poppins_regular.ttf</string>
+		<string>font/poppins_bold.ttf</string>
+		<string>font/Poppins-SemiBold.ttf</string>
+	</array>
 	<key>MGLMapboxMetricsEnabledSettingShownInApp</key>
 	<string>yes</string>
 	<key>CFBundleDevelopmentRegion</key>
