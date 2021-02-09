@@ -47,7 +47,7 @@ class AdvancedViewController: UIViewController, MGLMapViewDelegate, CLLocationMa
     //MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        let imageURL = URL(string: UserDefaults.profile_picture!)!
+        let imageURL = URL(string: UserDefaults.profile_picture ?? "")
         profile_img.sd_setImage(with: imageURL)
         collection_view.delegate =  self
         collection_view.dataSource = self

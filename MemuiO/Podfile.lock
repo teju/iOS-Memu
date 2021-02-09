@@ -110,6 +110,7 @@ PODS:
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
   - Solar (2.1.0)
+  - SwiftGifOrigin (1.7.0)
   - SwiftLocation (4.2.0)
   - SwiftyJSON (5.0.0)
   - Turf (0.3.0)
@@ -127,6 +128,7 @@ DEPENDENCIES:
   - RxDataSources
   - RxSwift
   - SDWebImage (~> 4.3.3)
+  - SwiftGifOrigin
   - SwiftLocation
   - SwiftyJSON
 
@@ -168,6 +170,7 @@ SPEC REPOS:
     - RxSwift
     - SDWebImage
     - Solar
+    - SwiftGifOrigin
     - SwiftLocation
     - SwiftyJSON
     - Turf
@@ -209,10 +212,11 @@ SPEC CHECKSUMS:
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   Solar: 2dc6e7cc39186cb0c8228fa08df76fb50c7d8f24
+  SwiftGifOrigin: fbd6cf37afcfcf97a5c3db996ddc0492e5c5c145
   SwiftLocation: 609ac8859f2c5d48a6cadd2a58c63b1dae02dc25
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   Turf: c6bdf62d6a70c647874f295dd1cf4eefc0c3e9e6
 
-PODFILE CHECKSUM: 918e8cb1007ea4ec12a22e9543686fb432da9b9e
+PODFILE CHECKSUM: db6a197260c14fd68557c16c9f9fd8d0fe71570a
 
 COCOAPODS: 1.10.0

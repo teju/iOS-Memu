@@ -25,8 +25,8 @@ class HomeViewController: UIViewController {
 
     }
     @IBAction func profile(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainVC = storyboard.instantiateViewController(withIdentifier: "ProfileImageViewController") as! ProfileImageViewController
+        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+        let mainVC = storyboard.instantiateViewController(withIdentifier: "ProfileDashboardViewController") as! ProfileDashboardViewController
          self.navigationController?.pushViewController(mainVC, animated: true)
     }
     @IBAction func pooling_car(_ sender: Any) {

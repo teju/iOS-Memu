@@ -50,7 +50,7 @@ class BookingViewController: UIViewController ,UICollectionViewDataSource,WWCale
     override func viewDidLoad() {
         super.viewDidLoad()
         mapview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        let imageURL = URL(string: UserDefaults.profile_picture!)!
+        let imageURL = URL(string: UserDefaults.profile_picture ?? "")
         profile_img.sd_setImage(with: imageURL)
         collection_view.dataSource = self
         collection_view.delegate = self

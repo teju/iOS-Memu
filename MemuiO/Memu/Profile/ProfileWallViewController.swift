@@ -47,7 +47,11 @@ UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate ,MGLMapViewDe
 
         getUserData()
         getFriendList()
-        initMApView()
+        DispatchQueue.main.async {
+            self.initMApView()
+            
+        }
+       
         getUserWall()
     }
     func addAssetButtonTapped(_ view: AddAssetButtonView) {
@@ -65,7 +69,7 @@ UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate ,MGLMapViewDe
     
     private func uploadImage(_ image: UIImage) {
         Switcher.updateRootVC()
-        RestDataSource.uploadImage(url: "https://memu.world/api/web/profile/update-profile-image", image: image).showLoading(on: self.view)
+        RestDataSource.uploadImage(url: "\(RestDataSource.appBaseUrl)profile/update-profile-image", image: image, param: "image").showLoading(on: self.view)
         .subscribe(onNext: { [weak self] value in
             
         }).disposed(by: rx.bag)
@@ -137,7 +141,7 @@ UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate ,MGLMapViewDe
        self.posts_relative.layoutIfNeeded()
        self.posts_relative.setNeedsFocusUpdate()
         self.scrollview.contentSize = CGSize(width:
-            UIScreen.main.bounds.width, height: UIScreen.main.bounds.height+380*CGFloat(user_Wall.count))
+            UIScreen.main.bounds.width, height: UIScreen.main.bounds.height+420*CGFloat(user_Wall.count))
        posts_relative.estimatedRowHeight = 380
     }
     func getUserData() {
@@ -207,12 +211,13 @@ UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate ,MGLMapViewDe
                         guard let data = data, error == nil else { return }
 
                         DispatchQueue.main.async() {
-                            let image : UIImage = UIImage(data: data)!
-                            point.image = image
-                            point.image = self.resizeImage(image: point.image!, targetSize: CGSize(width: 100.0, height: 100.0))
-                            map_view.addAnnotation(point)
-                            map_view.setCenter(CLLocationCoordinate2DMake(lattitude, longitude), zoomLevel: 12, animated: false)
-                            print("profile_picture data \(data) error \(error)")
+                            if let image : UIImage = UIImage(data: data) {
+                                point.image = image
+                                point.image = self.resizeImage(image: point.image!, targetSize: CGSize(width: 100.0, height: 100.0))
+                                map_view.addAnnotation(point)
+                                map_view.setCenter(CLLocationCoordinate2DMake(lattitude, longitude), zoomLevel: 12, animated: false)
+                                print("profile_picture data \(data) error \(error)")
+                            }
                         }
                     }
 

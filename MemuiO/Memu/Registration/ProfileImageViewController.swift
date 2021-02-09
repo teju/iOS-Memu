@@ -10,6 +10,7 @@ import UIKit
 
 class ProfileImageViewController: UIViewController, AddAssetButtonViewDelegate {
     
+    @IBOutlet weak var image_view: UIImageView!
     @IBOutlet weak var btnUpload: AddAssetButtonView!
     
     private var isUpload = false
@@ -35,21 +36,18 @@ class ProfileImageViewController: UIViewController, AddAssetButtonViewDelegate {
     }
     
     private func uploadImage(_ image: UIImage) {
-        Switcher.updateRootVC()
-        RestDataSource.uploadImage(url: "https://memu.world/api/web/profile/update-profile-image", image: image).showLoading(on: self.view)
+    
+        RestDataSource.uploadImage(url: "\(RestDataSource.appBaseUrl)profile/update-profile-image", image: image, param: "profile").showLoading(on: self.view)
         .subscribe(onNext: { [weak self] value in
-            
+            UserDefaults.profile_picture = value.photo.profile_path
+            let url = URL(string: UserDefaults.profile_picture!)
+            self?.image_view.sd_setImage(with: url)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
+               let mainVC = storyboard.instantiateViewController(withIdentifier: "UploadSuccessViewController") as! UploadSuccessViewController
+               self?.navigationController?.pushViewController(mainVC, animated: true)
+            }
+           
         }).disposed(by: rx.bag)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

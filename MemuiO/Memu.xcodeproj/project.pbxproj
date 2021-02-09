@@ -132,6 +132,11 @@
 		7995D67C2497C74300F6E24A /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7995D67B2497C74300F6E24A /* Photo.swift */; };
 		7995D67F2497D56800F6E24A /* MapFeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7995D67E2497D56800F6E24A /* MapFeedResponse.swift */; };
 		7995D6812497D65F00F6E24A /* MapFeedsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7995D6802497D65F00F6E24A /* MapFeedsResponse.swift */; };
+		79ACBBC925D277AA003C9406 /* UploadSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ACBBC825D277AA003C9406 /* UploadSuccessViewController.swift */; };
+		79ACBBCB25D27885003C9406 /* onboarding_account.gif in Resources */ = {isa = PBXBuildFile; fileRef = 79ACBBCA25D27885003C9406 /* onboarding_account.gif */; };
+		79ACBBCF25D28501003C9406 /* ProfileDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ACBBCE25D28501003C9406 /* ProfileDashboardViewController.swift */; };
+		79ACBBD125D2E9AB003C9406 /* ReferralAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ACBBD025D2E9AB003C9406 /* ReferralAddViewController.swift */; };
+		79ACBBD525D3012F003C9406 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ACBBD425D3012F003C9406 /* CityTableViewCell.swift */; };
 		79AF49C6249A5B9300711030 /* AlertMapFeedsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF49C5249A5B9300711030 /* AlertMapFeedsResponse.swift */; };
 		79AF49C8249A5C6B00711030 /* AlertMapFeeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF49C7249A5C6B00711030 /* AlertMapFeeds.swift */; };
 		79AF49CA249A86E900711030 /* DistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF49C9249A86E900711030 /* DistCollectionViewCell.swift */; };
@@ -292,6 +297,11 @@
 		7995D67B2497C74300F6E24A /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		7995D67E2497D56800F6E24A /* MapFeedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeedResponse.swift; sourceTree = "<group>"; };
 		7995D6802497D65F00F6E24A /* MapFeedsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeedsResponse.swift; sourceTree = "<group>"; };
+		79ACBBC825D277AA003C9406 /* UploadSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadSuccessViewController.swift; sourceTree = "<group>"; };
+		79ACBBCA25D27885003C9406 /* onboarding_account.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = onboarding_account.gif; sourceTree = "<group>"; };
+		79ACBBCE25D28501003C9406 /* ProfileDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDashboardViewController.swift; sourceTree = "<group>"; };
+		79ACBBD025D2E9AB003C9406 /* ReferralAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferralAddViewController.swift; sourceTree = "<group>"; };
+		79ACBBD425D3012F003C9406 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		79AF49C5249A5B9300711030 /* AlertMapFeedsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMapFeedsResponse.swift; sourceTree = "<group>"; };
 		79AF49C7249A5C6B00711030 /* AlertMapFeeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMapFeeds.swift; sourceTree = "<group>"; };
 		79AF49C9249A86E900711030 /* DistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -354,6 +364,7 @@
 		188AE074241CE70C0079E2BB /* Memu */ = {
 			isa = PBXGroup;
 			children = (
+				79ACBBCA25D27885003C9406 /* onboarding_account.gif */,
 				792FFA4025D15B9000FEF55C /* font */,
 				79FD4FA824A25DB70015B28F /* GoogleService-Info.plist */,
 				188AE083241CE7120079E2BB /* Info.plist */,
@@ -568,6 +579,7 @@
 				6DED6C5E24589563003F0AB1 /* View */,
 				188AE079241CE70C0079E2BB /* RegistrationViewController.swift */,
 				6D94BF98245EC4F400833B34 /* ProfileImageViewController.swift */,
+				79ACBBC825D277AA003C9406 /* UploadSuccessViewController.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -743,6 +755,9 @@
 				7915E38825127A1A001163CF /* SearchViewController.swift */,
 				7903F5F32512854C000E5F07 /* FriendsViewController.swift */,
 				7903F5F725128C79000E5F07 /* FriendsTableViewCell.swift */,
+				79ACBBCE25D28501003C9406 /* ProfileDashboardViewController.swift */,
+				79ACBBD025D2E9AB003C9406 /* ReferralAddViewController.swift */,
+				79ACBBD425D3012F003C9406 /* CityTableViewCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -900,6 +915,7 @@
 				6D4C1691246A883C0049076B /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				6D4C1695246A883C0049076B /* OpenSans-ExtraBold.ttf in Resources */,
 				6DA40ED3245B4F8900A09AD0 /* APPSTORE_Configuration.plist in Resources */,
+				79ACBBCB25D27885003C9406 /* onboarding_account.gif in Resources */,
 				188AE082241CE7120079E2BB /* LaunchScreen.storyboard in Resources */,
 				791DC9BA2593831E00EFF42B /* WWCalendarTimeSelector.storyboard in Resources */,
 				188AE07F241CE7120079E2BB /* Assets.xcassets in Resources */,
@@ -1024,6 +1040,7 @@
 				6DA40EF8245C1AE500A09AD0 /* Location.swift in Sources */,
 				7962DBDE24A0894400C76511 /* VehiclePopupViewController.swift in Sources */,
 				7995D67A2497C0F800F6E24A /* NavigationViewDataSource.swift in Sources */,
+				79ACBBC925D277AA003C9406 /* UploadSuccessViewController.swift in Sources */,
 				79540C4B24A1331A0003330F /* ScheduledList.swift in Sources */,
 				79540C3324A0F0C00003330F /* MatchingBuddiesResponse.swift in Sources */,
 				791DC9B72593831E00EFF42B /* Int+Timepiece.swift in Sources */,
@@ -1033,7 +1050,9 @@
 				79FD4FAB24A26B890015B28F /* CustomPointAnnotation.swift in Sources */,
 				7962DBE324A0BB8D00C76511 /* VehicleList.swift in Sources */,
 				7962DBEA24A0D13100C76511 /* FindOfferRideREsponse.swift in Sources */,
+				79ACBBD125D2E9AB003C9406 /* ReferralAddViewController.swift in Sources */,
 				6DA40EE3245B549700A09AD0 /* Switcher.swift in Sources */,
+				79ACBBCF25D28501003C9406 /* ProfileDashboardViewController.swift in Sources */,
 				6D12BA322453B027000D52D1 /* S4View.swift in Sources */,
 				7995D67F2497D56800F6E24A /* MapFeedResponse.swift in Sources */,
 				6D94BF9B245ED8BE00833B34 /* AddAssetButtonView.swift in Sources */,
@@ -1064,6 +1083,7 @@
 				6DA40ECC245B4F0B00A09AD0 /* RestDataSource.swift in Sources */,
 				794B79622513E8D8005047C9 /* UserInf.swift in Sources */,
 				6DED6C5A24587359003F0AB1 /* UIExtensions.swift in Sources */,
+				79ACBBD525D3012F003C9406 /* CityTableViewCell.swift in Sources */,
 				6DA40EE1245B535400A09AD0 /* UserDefaults+Extension.swift in Sources */,
 				6DA40ED9245B513A00A09AD0 /* Configuration.swift in Sources */,
 				79540C3824A0F1360003330F /* GooglePlacesAutocomplete.swift in Sources */,

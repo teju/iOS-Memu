@@ -17,7 +17,8 @@ class File {
     var size = 0
     var fileId: String = ""
     var uploadedBy: String = ""
-    
+    var photo = Photo()
+
     init(json: JSON) {
         property = json["property"].stringValue
         name = json["name"].stringValue
@@ -26,6 +27,7 @@ class File {
         size = json["size"].intValue
         fileId = json["_id"].stringValue
         uploadedBy = json["uploadedBy"].stringValue
+        photo = Photo(json: json["profile_path"])
     }
     
     func toParams() -> [String: Any] {
