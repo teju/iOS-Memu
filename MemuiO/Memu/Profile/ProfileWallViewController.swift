@@ -41,22 +41,22 @@ UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate ,MGLMapViewDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         posts_relative.rowHeight = UITableView.automaticDimension
         mapview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-
-      
+        self.scrollview.contentSize = CGSize(width:
+        UIScreen.main.bounds.width, height: UIScreen.main.bounds.height+420)
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        getUserData()
+          getUserData()
           getFriendList()
           DispatchQueue.main.async {
               self.initMApView()
           }
-         
         getUserWall()
     }
+    
     func addAssetButtonTapped(_ view: AddAssetButtonView) {
         btnUpload.addAssetButtonTapped(btnUpload)
     }

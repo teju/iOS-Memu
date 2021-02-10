@@ -59,7 +59,7 @@ class RegistrationViewController: UIViewController {
         
         setButtonOTPTarget(contentView4.btnOTP)
         setButtonVerifyTarget(contentView4.btnVerify)
-        
+        self.view.backgroundColor = hexStringToUIColor(hex: "#eeeeee")
         
         // Observer for keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
@@ -68,14 +68,37 @@ class RegistrationViewController: UIViewController {
         user = UserInfo()
         
         createFloatingButton()
+        
         updateUI()
     }
     
+    func hexStringToUIColor (hex:String) -> UIColor {
+           var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+
+           if (cString.hasPrefix("#")) {
+               cString.remove(at: cString.startIndex)
+           }
+
+           if ((cString.count) != 6) {
+               return UIColor.gray
+           }
+
+           var rgbValue:UInt64 = 0
+           Scanner(string: cString).scanHexInt64(&rgbValue)
+
+           return UIColor(
+               red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+               green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+               blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+               alpha: CGFloat(1.0)
+           )
+       }
     private func setTestFieldDelegate() {
         contentView1.txtFirstName.delegate = self
         contentView1.txtLastName.delegate = self
         contentView1.txtReferCode.delegate = self
-        
+        contentView1.txtFirstName.setUnderLine()
+
         contentView3.txtVehicleBrand.delegate = self
         contentView3.txtVehicleName.delegate = self
         contentView3.txtRegistrationNo.delegate = self
@@ -390,6 +413,8 @@ class RegistrationViewController: UIViewController {
             }
             if value.result.status == "success" {
                 UserDefaults.name = value.name
+                UserDefaults.user_id = value.id
+                UserDefaults.accessToken = value.accessToken
                 UserDefaults.isAuthenticated = true
                 if let profile = self?.create(ProfileImageViewController.self, storyboardName: "Main") {
                     self?.navigationController?.pushViewController(profile, animated: true)
@@ -403,8 +428,8 @@ class RegistrationViewController: UIViewController {
     /// To-do: Not used Now. Floating button . Later might use.
     private var floatingButton: UIButton?
     private let floatingButtonImageName = "NAME OF YOUR IMAGE"
-    private static let buttonHeight: CGFloat = 60.0
-    private static let buttonWidth: CGFloat = 60.0
+    private static let buttonHeight: CGFloat = 45.0
+    private static let buttonWidth: CGFloat = 80.0
     private let roundValue = RegistrationViewController.buttonHeight/2
     private let trailingValue: CGFloat = 15.0
     private let leadingValue: CGFloat = 16.0
@@ -427,14 +452,16 @@ class RegistrationViewController: UIViewController {
     }
     
     private func createFloatingButton() {
+        let image = UIImage.gif(name: "next_button") as UIImage?
+
         floatingButton = UIButton(type: .custom)
         floatingButton?.translatesAutoresizingMaskIntoConstraints = false
-        floatingButton?.backgroundColor = UIColor.blue
         floatingButton?.addTarget(self, action: #selector(doThisWhenButtonIsTapped(_:)), for: .touchUpInside)
+        floatingButton?.setImage(image, for: .normal)
         constrainFloatingButtonToWindow()
-        makeFloatingButtonRound()
-        addShadowToFloatingButton()
-        addScaleAnimationToFloatingButton()
+        //makeFloatingButtonRound()
+        //addShadowToFloatingButton()
+        //addScaleAnimationToFloatingButton()
     }
     
     /// To-do: Add some logic for when the button is tapped.
@@ -582,3 +609,16 @@ extension RegistrationViewController: UIScrollViewDelegate, UITextFieldDelegate 
     }
 }
 
+extension UITextField {
+
+    func setUnderLine() {
+        let border = CALayer()
+        let width = CGFloat(0.5)
+        border.borderColor = UIColor.lightGray.cgColor
+        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width:  self.frame.size.width - 10, height: self.frame.size.height)
+        border.borderWidth = width
+        self.layer.addSublayer(border)
+        self.layer.masksToBounds = true
+    }
+
+}

@@ -93,6 +93,7 @@
 		792DE14525D40B37005648C6 /* WalletResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792DE14425D40B37005648C6 /* WalletResponse.swift */; };
 		792DE14825D40E4C005648C6 /* TopEarners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792DE14725D40E4C005648C6 /* TopEarners.swift */; };
 		792DE14A25D40EA4005648C6 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792DE14925D40EA4005648C6 /* City.swift */; };
+		792DE14C25D4445E005648C6 /* next_button.gif in Resources */ = {isa = PBXBuildFile; fileRef = 792DE14B25D4445D005648C6 /* next_button.gif */; };
 		792FFA4125D15B9000FEF55C /* font in Resources */ = {isa = PBXBuildFile; fileRef = 792FFA4025D15B9000FEF55C /* font */; };
 		792FFA4325D15D0F00FEF55C /* AppFontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792FFA4225D15D0F00FEF55C /* AppFontName.swift */; };
 		793BF53224B21DF400DDB0E9 /* CustomBottomBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793BF53124B21DF400DDB0E9 /* CustomBottomBannerView.swift */; };
@@ -261,6 +262,7 @@
 		792DE14425D40B37005648C6 /* WalletResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletResponse.swift; sourceTree = "<group>"; };
 		792DE14725D40E4C005648C6 /* TopEarners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopEarners.swift; sourceTree = "<group>"; };
 		792DE14925D40EA4005648C6 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		792DE14B25D4445D005648C6 /* next_button.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = next_button.gif; sourceTree = "<group>"; };
 		792FFA4025D15B9000FEF55C /* font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = font; sourceTree = "<group>"; };
 		792FFA4225D15D0F00FEF55C /* AppFontName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFontName.swift; sourceTree = "<group>"; };
 		793BF53124B21DF400DDB0E9 /* CustomBottomBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBottomBannerView.swift; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 		188AE074241CE70C0079E2BB /* Memu */ = {
 			isa = PBXGroup;
 			children = (
+				792DE14B25D4445D005648C6 /* next_button.gif */,
 				79ACBBCA25D27885003C9406 /* onboarding_account.gif */,
 				792FFA4025D15B9000FEF55C /* font */,
 				79FD4FA824A25DB70015B28F /* GoogleService-Info.plist */,
@@ -954,6 +957,7 @@
 				79405054249CA87700ECF703 /* BookingStoryboard.storyboard in Resources */,
 				6D4C1692246A883C0049076B /* OpenSans-LightItalic.ttf in Resources */,
 				6DED6C6524589619003F0AB1 /* PoolImgView.xib in Resources */,
+				792DE14C25D4445E005648C6 /* next_button.gif in Resources */,
 				6D12BA2F2453B006000D52D1 /* S3View.xib in Resources */,
 				6D4C1694246A883C0049076B /* OpenSans-SemiBold.ttf in Resources */,
 				6D4C169A246A883C0049076B /* OpenSans-SemiBoldItalic.ttf in Resources */,
