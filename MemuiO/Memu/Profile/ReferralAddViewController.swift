@@ -26,7 +26,6 @@ class ReferralAddViewController: UITableViewController {
     @IBOutlet weak var coins_earned: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
@@ -36,6 +35,7 @@ class ReferralAddViewController: UITableViewController {
         getTopEarnersData()
         lblalerts.text = "Create real-time road\nalerts for other “memu” Users & start earning reputation coins"
     }
+    
     func initUSerData(value : UserMainData)  {
           let url = URL(string: value.photo.profile_path)
           self.profile_pic.sd_setImage(with: url)

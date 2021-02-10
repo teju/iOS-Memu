@@ -26,7 +26,11 @@ UICollectionViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.scrollview.contentSize = CGSize(width:
-                   UIScreen.main.bounds.width, height: UIScreen.main.bounds.height*2 - 200)
+        UIScreen.main.bounds.width, height: UIScreen.main.bounds.height*2 - 200)
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         getUserData()
         getFriendList()
     }
@@ -58,7 +62,7 @@ UICollectionViewDelegate{
     @IBAction func invite(_ sender: Any) {
     }
     func getFriendList() {
-        RestDataSource.postFriendList(type: "FR", request: "to_me",search_word: "",searchByLoc: 0)
+        RestDataSource.postFriendList(type: "FR", request: "to_me",search_word: "",searchByLoc: 0, user_id: UserDefaults.user_id ?? "")
         .showLoading(on: self.view)
         .subscribe(onNext: { [weak self] value in
             self?.friend_lis = value.user_list

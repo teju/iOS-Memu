@@ -26,11 +26,15 @@ UICollectionViewDelegate ,UICollectionViewDelegateFlowLayout{
         super.viewDidLoad()
         let flow = collection_view.collectionViewLayout as! UICollectionViewFlowLayout
                
-               flow.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        flow.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
                
-               flow.minimumInteritemSpacing = 0
+        flow.minimumInteritemSpacing = 0
         textfield.addTarget(self, action: #selector(SearchViewController.textFieldDidChange(_:)), for: .editingChanged)
 
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         getUserData()
     }
     @objc func textFieldDidChange(_ textField: UITextField) {

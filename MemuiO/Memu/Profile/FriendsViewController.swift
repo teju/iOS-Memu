@@ -29,10 +29,13 @@ class FriendsViewController: UIViewController ,UITableViewDelegate,UITableViewDa
          accepted_friends.rowHeight = UITableView.automaticDimension
         pending_friend_list.estimatedRowHeight = 70
         pending_friend_list.rowHeight = UITableView.automaticDimension
+       
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         getUserData()
         getFriendList()
     }
-    
     @IBAction func back(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -44,7 +47,7 @@ class FriendsViewController: UIViewController ,UITableViewDelegate,UITableViewDa
         }).disposed(by: rx.bag)
     }
     func getFriendList() {
-        RestDataSource.postFriendList(type: "FR", request: "to_me",search_word: "",searchByLoc: 0)
+        RestDataSource.postFriendList(type: "FR", request: "to_me",search_word: "",searchByLoc: 0, user_id: UserDefaults.user_id ?? "")
         .showLoading(on: self.view)
         .subscribe(onNext: { [weak self] value in
             print("getFriendList value")

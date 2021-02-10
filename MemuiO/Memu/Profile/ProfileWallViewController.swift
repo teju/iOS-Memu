@@ -45,13 +45,16 @@ UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate ,MGLMapViewDe
         posts_relative.rowHeight = UITableView.automaticDimension
         mapview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
+      
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         getUserData()
-        getFriendList()
-        DispatchQueue.main.async {
-            self.initMApView()
-            
-        }
-       
+          getFriendList()
+          DispatchQueue.main.async {
+              self.initMApView()
+          }
+         
         getUserWall()
     }
     func addAssetButtonTapped(_ view: AddAssetButtonView) {
@@ -106,7 +109,7 @@ UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate ,MGLMapViewDe
     
     }
     func getFriendList() {
-        RestDataSource.postFriendList(type: "FR", request: "to_me",search_word: "",searchByLoc: 0)
+        RestDataSource.postFriendList(type: "FR", request: "to_me",search_word: "",searchByLoc: 0, user_id: UserDefaults.user_id ?? "")
         .showLoading(on: self.view)
         .subscribe(onNext: { [weak self] value in
             self?.friend_lis = value.user_list

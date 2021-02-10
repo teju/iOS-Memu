@@ -109,10 +109,10 @@ extension RestDataSource {
         }
         .restSend()
     }
-    static func postFriendList(type : String , request : String,search_word :String,searchByLoc : Int) -> Observable<FriendsListResponse> {
+    static func postFriendList(type : String , request : String,search_word :String,searchByLoc : Int,user_id : String) -> Observable<FriendsListResponse> {
         
         let sendParameters: [String: Any] = [
-            "user_id": UserDefaults.user_id,"offset":0,
+            "user_id": user_id,"offset":0,
             "limit":10000,"type":type,"request":request,"search_word":search_word,"searchByLoc":searchByLoc]
         return json(.post, "profile/friend-list",
                     parameters: sendParameters)

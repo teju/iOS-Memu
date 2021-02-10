@@ -32,10 +32,15 @@ class FollowersViewController: UIViewController ,UITableViewDelegate,UITableView
          accepted_friends.rowHeight = UITableView.automaticDimension
         pending_friend_list.estimatedRowHeight = 70
         pending_friend_list.rowHeight = UITableView.automaticDimension
-        getUserData()
-        getMyFollowersList()
+       
     
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        getUserData()
+        getMyFollowersList()
+    }
+    
     func getUserData() {
         RestDataSource.postUserMainData(user_id: UserDefaults.user_id!)
         .showLoading(on: self.view)
@@ -91,7 +96,7 @@ class FollowersViewController: UIViewController ,UITableViewDelegate,UITableView
             UIScreen.main.bounds.width, height: UIScreen.main.bounds.height + CGFloat(70 * my_followers.count ))
         if(my_followers.count != 0) {
             i_follow.frame.origin.y = i_follow.frame.origin.y + (CGFloat(my_followers.count) - 1) * 60
-            underline.frame.origin.y = underline.frame.origin.y + (CGFloat(my_followers.count) - 1) * 60 - 42
+            underline.frame.origin.y = underline.frame.origin.y + (CGFloat(my_followers.count) - 1) * 60 
 
         } 
               

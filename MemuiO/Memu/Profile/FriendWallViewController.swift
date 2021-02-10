@@ -11,8 +11,12 @@ import Mapbox
 import CoreLocation
 import SwiftLocation
 
-class FriendWallViewController: UIViewController,UITableViewDataSource,UITableViewDelegate ,MGLMapViewDelegate{
+class FriendWallViewController: UIViewController,UITableViewDataSource,UITableViewDelegate ,MGLMapViewDelegate,UICollectionViewDataSource,
+UICollectionViewDelegate{
 
+    @IBOutlet weak var btnFollow: UIButton!
+    @IBOutlet weak var no_friend_list: UILabel!
+    @IBOutlet weak var friends_list: UICollectionView!
 
     @IBOutlet weak var btnAddFriend: UIButton!
     @IBOutlet weak var ratings: UILabel!
@@ -25,15 +29,20 @@ class FriendWallViewController: UIViewController,UITableViewDataSource,UITableVi
     @IBOutlet weak var scrollview: UIScrollView!
     var friend_lis = [Friend]()
     var user_Wall = [UserWall]()
-
+    @IBOutlet weak var ridesShared: UILabel!
+       @IBOutlet weak var distance_covered: UILabel!
     var type = "public"
     var friend_id = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         posts_relative.rowHeight = UITableView.automaticDimension
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         getUserData()
         getUserWall()
+        getFriendList()
     }
 
     @IBAction func back(_ sender: Any) {
@@ -48,8 +57,8 @@ class FriendWallViewController: UIViewController,UITableViewDataSource,UITableVi
         following.text = "\(value.followings)"
         posts.text = "\(value.posts)"
         ratings.text = value.rating
-      
-    
+        ridesShared.text = "\(value.rides_shared)"
+        distance_covered.text = value.distance_shared
     }
     
     func FriendRequest(type : String) {
@@ -70,6 +79,9 @@ class FriendWallViewController: UIViewController,UITableViewDataSource,UITableVi
             if(value.is_freind) {
                 self?.btnAddFriend.setTitle("Friends", for: .normal)
             }
+            if(value.is_follower) {
+                self?.btnFollow.setTitle("Following", for: .normal)
+            }
         }).disposed(by: rx.bag)
     }
     
@@ -82,7 +94,26 @@ class FriendWallViewController: UIViewController,UITableViewDataSource,UITableVi
             UIScreen.main.bounds.width, height: UIScreen.main.bounds.height+380*CGFloat(user_Wall.count))
        posts_relative.estimatedRowHeight = 380
     }
-    
+    func getFriendList() {
+        RestDataSource.postFriendList(type: "FR", request: "to_me",search_word: "",searchByLoc: 0, user_id: friend_id)
+        .showLoading(on: self.view)
+        .subscribe(onNext: { [weak self] value in
+            self?.friend_lis = value.user_list
+
+            self?.no_friend_list.text = value.message
+            if(self?.friend_lis.count != 0) {
+                self?.friends_list.isHidden = false
+                self?.no_friend_list.isHidden = true
+            } else {
+                self?.friends_list.isHidden = true
+                self?.no_friend_list.isHidden = false
+            }
+            self?.friends_list.dataSource = self
+            self?.friends_list.delegate = self
+            self?.friends_list.reloadData()
+
+        }).disposed(by: rx.bag)
+    }
     func getUserData() {
         RestDataSource.postUserMainData(user_id: friend_id)
         .showLoading(on: self.view)
@@ -139,14 +170,15 @@ class FriendWallViewController: UIViewController,UITableViewDataSource,UITableVi
                     let task = URLSession.shared.dataTask(with: imageURL!) { data, response, error in
 
                         guard let data = data, error == nil else { return }
-
+                     
                         DispatchQueue.main.async() {
-                            let image : UIImage = UIImage(data: data)!
-                            point.image = image
-                            point.image = self.resizeImage(image: point.image!, targetSize: CGSize(width: 100.0, height: 100.0))
-                            map_view.addAnnotation(point)
-                            map_view.setCenter(CLLocationCoordinate2DMake(lattitude, longitude), zoomLevel: 12, animated: false)
-                            print("profile_picture data \(data) error \(error)")
+                            if let image : UIImage = UIImage(data: data) {
+                                point.image = image
+                                point.image = self.resizeImage(image: point.image!, targetSize: CGSize(width: 100.0, height: 100.0))
+                                map_view.addAnnotation(point)
+                                map_view.setCenter(CLLocationCoordinate2DMake(lattitude, longitude), zoomLevel: 12, animated: false)
+                                print("profile_picture data \(data) error \(error)")
+                            }
                         }
                     }
 
@@ -201,7 +233,24 @@ class FriendWallViewController: UIViewController,UITableViewDataSource,UITableVi
       // Fallback to the default marker image.
       return nil
   }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return friend_lis.count
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) ->
+        UICollectionViewCell {
+            let cell = friends_list.dequeueReusableCell(withReuseIdentifier: "friends_cell", for: indexPath as IndexPath) as! FriendsCollectionViewCell
+            print("getFriendList value cellForItemAt \(friend_lis.count)")
 
+            let url = URL(string: friend_lis[indexPath.row].photo.profile_path)
+            cell.profile_pic.sd_setImage(with: url)
+            return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+        let mainVC = storyboard.instantiateViewController(withIdentifier: "FriendWallViewController") as! FriendWallViewController
+         mainVC.friend_id = friend_lis[indexPath.row].freind_id
+         self.navigationController?.pushViewController(mainVC, animated: true)
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
            return 380
