@@ -30,6 +30,17 @@ UICollectionViewDelegate{
         getUserData()
         getFriendList()
     }
+    @IBAction func followers(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+          let mainVC = storyboard.instantiateViewController(withIdentifier: "FollowersViewController") as! FollowersViewController
+           self.navigationController?.pushViewController(mainVC, animated: true)
+    }
+    
+    @IBAction func friends(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+        let mainVC = storyboard.instantiateViewController(withIdentifier: "FriendsViewController") as! FriendsViewController
+         self.navigationController?.pushViewController(mainVC, animated: true)
+    }
     @IBAction func back(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

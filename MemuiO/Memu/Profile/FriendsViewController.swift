@@ -33,6 +33,9 @@ class FriendsViewController: UIViewController ,UITableViewDelegate,UITableViewDa
         getFriendList()
     }
     
+    @IBAction func back(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     func getUserData() {
         RestDataSource.postUserMainData(user_id: UserDefaults.user_id!)
         .showLoading(on: self.view)
@@ -105,9 +108,7 @@ class FriendsViewController: UIViewController ,UITableViewDelegate,UITableViewDa
         ratings.text = value.rating
     }
     
-    @IBAction func back(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
     }

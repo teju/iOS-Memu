@@ -13,6 +13,7 @@ class FollowersViewController: UIViewController ,UITableViewDelegate,UITableView
     @IBOutlet weak var accepted_friends: UITableView!
     @IBOutlet weak var pending_friend_list: UITableView!
     
+    @IBOutlet weak var underline: UILabel!
     @IBOutlet weak var no_list_found: UILabel!
     
     @IBOutlet weak var ratings: UILabel!
@@ -90,6 +91,8 @@ class FollowersViewController: UIViewController ,UITableViewDelegate,UITableView
             UIScreen.main.bounds.width, height: UIScreen.main.bounds.height + CGFloat(70 * my_followers.count ))
         if(my_followers.count != 0) {
             i_follow.frame.origin.y = i_follow.frame.origin.y + (CGFloat(my_followers.count) - 1) * 60
+            underline.frame.origin.y = underline.frame.origin.y + (CGFloat(my_followers.count) - 1) * 60 - 42
+
         } 
               
     }
