@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="OpenSans-Bold.ttf">
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
+        <array key="opensansbold.ttf">
             <string>OpenSans-Bold</string>
         </array>
-        <array key="OpenSans-Light.ttf">
-            <string>OpenSans-Light</string>
+        <array key="poppins_bold.ttf">
+            <string>Poppins-Bold</string>
         </array>
-        <array key="OpenSans-Regular.ttf">
-            <string>OpenSans-Regular</string>
+        <array key="poppins_regular.ttf">
+            <string>Poppins-Regular</string>
         </array>
     </customFonts>
     <objects>
@@ -35,8 +38,8 @@
                     <rect key="frame" x="-11" y="-12" width="405" height="841"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let’s get you started “User”" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tyn-zS-KBW">
-                    <rect key="frame" x="118" y="80" width="249" height="65.333333333333314"/>
-                    <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="28"/>
+                    <rect key="frame" x="118" y="80" width="249" height="58.333333333333343"/>
+                    <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="25"/>
                     <color key="textColor" red="0.090196078431372548" green="0.14901960784313725" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -48,15 +51,15 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ga5-8m-Tor">
-                    <rect key="frame" x="179" y="390.66666666666669" width="180" height="16.333333333333314"/>
+                    <rect key="frame" x="179" y="395.33333333333331" width="180" height="16.333333333333314"/>
                     <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(I use Car/bike pooling/ public transport)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qF5-0i-zMH">
-                    <rect key="frame" x="179" y="411" width="180" height="28"/>
-                    <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="12"/>
-                    <nil key="textColor"/>
+                    <rect key="frame" x="179" y="415.66666666666669" width="180" height="11.666666666666686"/>
+                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
+                    <color key="textColor" red="0.090196078430000007" green="0.14901960780000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2Y-Sa-kab">
@@ -68,15 +71,15 @@
                     <state key="normal" image="Group 7"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yes, Private" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkg-q2-4rm">
-                    <rect key="frame" x="178" y="499" width="181" height="16.333333333333371"/>
+                    <rect key="frame" x="178" y="487.33333333333331" width="181" height="16.333333333333314"/>
                     <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(White Board - Car/Motorcycle)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DH-RM-Ewo">
-                    <rect key="frame" x="178" y="519.33333333333337" width="189" height="14"/>
-                    <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="12"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yes, Private (White Board - Car/Motorcycle)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DH-RM-Ewo">
+                    <rect key="frame" x="178" y="507.66666666666669" width="189" height="25.666666666666686"/>
+                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="11"/>
+                    <color key="textColor" red="0.090196078430000007" green="0.14901960780000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZl-ey-0rn">
@@ -89,7 +92,7 @@
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yes, Cab/Taxi/TT/Bike (Yellow Board)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0T-eg-xTn">
                     <rect key="frame" x="178" y="593.33333333333337" width="181" height="32.666666666666629"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -103,8 +106,8 @@
                     <state key="normal" backgroundImage="Group 5"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you own/drive a vehicle?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7n-kd-T2m">
-                    <rect key="frame" x="118" y="161.33333333333334" width="249" height="21"/>
-                    <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="18"/>
+                    <rect key="frame" x="118" y="145.33333333333334" width="249" height="20"/>
+                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="17"/>
                     <color key="textColor" red="0.090196078430000007" green="0.14901960780000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -131,7 +134,7 @@
                 <constraint firstItem="qF5-0i-zMH" firstAttribute="top" secondItem="ga5-8m-Tor" secondAttribute="bottom" constant="4" id="TfF-xw-zDE"/>
                 <constraint firstAttribute="bottom" secondItem="cdz-s0-z9k" secondAttribute="bottom" constant="-17" id="U9L-AB-3WI"/>
                 <constraint firstItem="nZl-ey-0rn" firstAttribute="leading" secondItem="bw0-6H-tHs" secondAttribute="trailing" constant="54" id="WRV-Us-VO2"/>
-                <constraint firstItem="d7n-kd-T2m" firstAttribute="top" secondItem="Tyn-zS-KBW" secondAttribute="bottom" constant="16" id="XBX-gV-qE6"/>
+                <constraint firstItem="d7n-kd-T2m" firstAttribute="top" secondItem="Tyn-zS-KBW" secondAttribute="bottom" constant="7" id="XBX-gV-qE6"/>
                 <constraint firstItem="B0T-eg-xTn" firstAttribute="bottom" secondItem="nZl-ey-0rn" secondAttribute="bottom" constant="-6" id="ZJs-lG-dqw"/>
                 <constraint firstItem="qF5-0i-zMH" firstAttribute="leading" secondItem="ga5-8m-Tor" secondAttribute="leading" id="hOq-ee-3Tt"/>
                 <constraint firstItem="B0T-eg-xTn" firstAttribute="top" secondItem="6DH-RM-Ewo" secondAttribute="bottom" constant="60" id="heQ-ac-3ZH"/>

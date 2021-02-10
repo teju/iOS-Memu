@@ -39,7 +39,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hr2-15-dbC">
-                                        <rect key="frame" x="38" y="534" width="348" height="50"/>
+                                        <rect key="frame" x="38" y="538" width="348" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="20"/>
                                         <state key="normal" title="Sign-up" backgroundImage="signupBackground"/>
@@ -48,7 +48,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IvJ-zA-gLZ">
-                                        <rect key="frame" x="38" y="596" width="348" height="50"/>
+                                        <rect key="frame" x="38" y="600" width="348" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="20"/>
                                         <state key="normal" title="Sign-In if already registered" backgroundImage="registerBackground">
@@ -234,7 +234,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scC-1o-SzO">
-                                                <rect key="frame" x="22" y="21" width="35" height="35"/>
+                                                <rect key="frame" x="22" y="20" width="35" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" backgroundImage="arrow_left"/>
@@ -324,11 +324,11 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ThS-ww-2JQ">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="3204"/>
                                         <subviews>
-                                            <view clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Blm-w9-39C" customClass="S1View" customModule="Memu" customModuleProvider="target">
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Blm-w9-39C" customClass="S1View" customModule="Memu" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="737"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             </view>
-                                            <view clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7la-Wo-OLu" customClass="S2View" customModule="Memu" customModuleProvider="target">
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7la-Wo-OLu" customClass="S2View" customModule="Memu" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="737" width="375" height="829"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             </view>
@@ -362,8 +362,8 @@
                                     <outletCollection property="gestureRecognizers" destination="zod-PG-h8j" appends="YES" id="xBz-4W-hyx"/>
                                 </connections>
                             </scrollView>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PuW-PF-nhj">
-                                <rect key="frame" x="54" y="1133" width="60" height="321"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PuW-PF-nhj">
+                                <rect key="frame" x="54" y="1045" width="60" height="321"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="WhitePoolCar" translatesAutoresizingMaskIntoConstraints="NO" id="Cki-DQ-UsJ">
                                         <rect key="frame" x="3" y="0.0" width="60" height="67"/>

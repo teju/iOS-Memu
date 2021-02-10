@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="OpenSans-Light.ttf">
-            <string>OpenSans-Light</string>
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
         </array>
-        <array key="OpenSans-Regular.ttf">
-            <string>OpenSans-Regular</string>
+        <array key="poppins_bold.ttf">
+            <string>Poppins-Bold</string>
         </array>
     </customFonts>
     <objects>
@@ -37,17 +37,18 @@
                     <rect key="frame" x="-16" y="-12" width="472" height="839"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gCr-R7-1Vx">
-                    <rect key="frame" x="144" y="331" width="262" height="40"/>
+                    <rect key="frame" x="144" y="325.5" width="262" height="40"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CYJ-Lm-BEt">
                             <rect key="frame" x="8" y="0.0" width="254" height="40"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Registration Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zxQ-f4-woG">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Registration No." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zxQ-f4-woG">
                                     <rect key="frame" x="0.0" y="0.0" width="204" height="40"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="Lrg-iC-eJJ"/>
                                     </constraints>
+                                    <color key="textColor" red="0.090196078430000007" green="0.14901960780000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next"/>
                                 </textField>
@@ -82,7 +83,7 @@
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="0.13369541952054795" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="CYJ-Lm-BEt" firstAttribute="top" secondItem="gCr-R7-1Vx" secondAttribute="top" id="Uwk-Z4-KcZ"/>
                         <constraint firstItem="CYJ-Lm-BEt" firstAttribute="leading" secondItem="gCr-R7-1Vx" secondAttribute="leading" constant="8" id="X5T-J6-miu"/>
@@ -91,17 +92,18 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y1Y-I3-XcE">
-                    <rect key="frame" x="144" y="381" width="262" height="40"/>
+                    <rect key="frame" x="144" y="375.5" width="262" height="40"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="piv-V8-6hU">
                             <rect key="frame" x="8" y="0.0" width="254" height="40"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Driving License Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qj6-y0-06P">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Driving License No." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qj6-y0-06P">
                                     <rect key="frame" x="0.0" y="0.0" width="204" height="40"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="T2q-EL-fU5"/>
                                     </constraints>
+                                    <color key="textColor" red="0.090196078430000007" green="0.14901960780000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="done"/>
                                 </textField>
@@ -136,7 +138,7 @@
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="0.13" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="piv-V8-6hU" firstAttribute="leading" secondItem="Y1Y-I3-XcE" secondAttribute="leading" constant="8" id="1wG-Se-jfQ"/>
                         <constraint firstItem="piv-V8-6hU" firstAttribute="top" secondItem="Y1Y-I3-XcE" secondAttribute="top" id="4pe-LE-yc7"/>
@@ -145,21 +147,21 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Zj-g4-WQ1">
-                    <rect key="frame" x="152" y="303" width="89" height="20"/>
+                    <rect key="frame" x="152" y="297.5" width="75" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="gk5-XL-pRU"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <inset key="imageEdgeInsets" minX="-8" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="Motor Bike" image="Tickbox-1">
-                        <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="titleColor" red="0.13725490200000001" green="0.23137254900000001" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HrF-8e-0sT">
-                    <rect key="frame" x="144" y="189" width="208" height="82"/>
+                    <rect key="frame" x="144" y="184.5" width="208" height="81"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kZY-my-GrL">
-                            <rect key="frame" x="8" y="0.0" width="200" height="82"/>
+                            <rect key="frame" x="8" y="0.0" width="200" height="81"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Vehicle Brand" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bgZ-jl-A9s">
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
@@ -167,25 +169,27 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="H0h-ou-I3g"/>
                                     </constraints>
+                                    <color key="textColor" red="0.090196078430000007" green="0.14901960780000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                 </textField>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line 10" translatesAutoresizingMaskIntoConstraints="NO" id="suv-kG-5md">
-                                    <rect key="frame" x="0.0" y="40" width="200" height="2"/>
+                                    <rect key="frame" x="0.0" y="40" width="200" height="1"/>
                                 </imageView>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Vehicle Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MAo-xR-RgR">
-                                    <rect key="frame" x="0.0" y="42" width="200" height="40"/>
+                                    <rect key="frame" x="0.0" y="41" width="200" height="40"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="F6K-tY-iOJ"/>
                                     </constraints>
+                                    <color key="textColor" red="0.090196078430000007" green="0.14901960780000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
                                 </textField>
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="0.13019049657534246" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="kZY-my-GrL" secondAttribute="trailing" id="4WU-P0-7m6"/>
                         <constraint firstAttribute="bottom" secondItem="kZY-my-GrL" secondAttribute="bottom" id="TJ4-dg-ClY"/>
@@ -195,18 +199,18 @@
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fantastic!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LzA-V6-IrO">
                     <rect key="frame" x="136" y="80" width="270" height="33"/>
-                    <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="28"/>
+                    <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="28"/>
                     <color key="textColor" red="0.090196078431372548" green="0.14901960784313725" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please add following details of your vehicle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8b-FE-JgJ">
-                    <rect key="frame" x="136" y="121" width="234" height="42"/>
-                    <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="18"/>
-                    <color key="textColor" red="0.1058823529" green="0.14117647059999999" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <rect key="frame" x="136" y="121" width="234" height="37.5"/>
+                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="16"/>
+                    <color key="textColor" red="0.090196078430000007" green="0.14901960780000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CDA-Ju-Lt4">
-                    <rect key="frame" x="356" y="189" width="50" height="80"/>
+                    <rect key="frame" x="356" y="184.5" width="50" height="80"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Upload PIC button" translatesAutoresizingMaskIntoConstraints="NO" id="t4N-NK-AXM">
                             <rect key="frame" x="15" y="16" width="20" height="20"/>
@@ -235,39 +239,39 @@
                     </constraints>
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Street Lights" translatesAutoresizingMaskIntoConstraints="NO" id="kIY-br-gZx">
-                    <rect key="frame" x="108" y="149" width="32" height="808"/>
+                    <rect key="frame" x="108" y="149" width="32" height="404"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="32" id="LvV-Fp-E4b"/>
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AQm-6Q-kqu">
-                    <rect key="frame" x="152" y="279" width="226" height="20"/>
+                    <rect key="frame" x="152" y="273.5" width="184" height="20"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZh-z4-0rK">
-                            <rect key="frame" x="0.0" y="0.0" width="89" height="20"/>
+                            <rect key="frame" x="0.0" y="0.0" width="75" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="vXJ-7e-aiq"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <inset key="imageEdgeInsets" minX="-8" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <state key="normal" title="Hatchback" image="TICKBOX">
-                                <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="titleColor" red="0.13725490200000001" green="0.23137254900000001" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXw-OI-rvm">
-                            <rect key="frame" x="99" y="0.0" width="64" height="20"/>
+                            <rect key="frame" x="85" y="0.0" width="50" height="20"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <inset key="imageEdgeInsets" minX="-8" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <state key="normal" title="Sedan" image="Tickbox-1">
-                                <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="titleColor" red="0.13725490200000001" green="0.23137254900000001" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mk-TY-tVz">
-                            <rect key="frame" x="173" y="0.0" width="53" height="20"/>
+                            <rect key="frame" x="145" y="0.0" width="39" height="20"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <inset key="imageEdgeInsets" minX="-8" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <state key="normal" title="SUV" image="Tickbox-1">
-                                <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="titleColor" red="0.13725490200000001" green="0.23137254900000001" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                         </button>
                     </subviews>

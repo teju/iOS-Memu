@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="OpenSans-Light.ttf">
-            <string>OpenSans-Light</string>
-        </array>
         <array key="OpenSans-Regular.ttf">
             <string>OpenSans-Regular</string>
+        </array>
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
+        <array key="poppins_bold.ttf">
+            <string>Poppins-Bold</string>
         </array>
     </customFonts>
     <objects>
@@ -79,7 +82,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPZ-DM-5MM">
-                    <rect key="frame" x="162" y="231.66666666666666" width="90" height="28.999999999999972"/>
+                    <rect key="frame" x="162" y="228.33333333333334" width="90" height="29.000000000000028"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="90" id="OTe-Td-IwP"/>
                     </constraints>
@@ -89,7 +92,7 @@
                     </state>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1f6-Pn-ld4">
-                    <rect key="frame" x="150" y="191.66666666666666" width="209" height="40"/>
+                    <rect key="frame" x="150" y="188.33333333333334" width="209" height="40"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gIc-tm-DgF">
                             <rect key="frame" x="8" y="0.0" width="201" height="40"/>
@@ -106,7 +109,7 @@
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="0.1336954195" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="gIc-tm-DgF" firstAttribute="leading" secondItem="1f6-Pn-ld4" secondAttribute="leading" constant="8" id="2ws-Gh-tRM"/>
                         <constraint firstItem="gIc-tm-DgF" firstAttribute="top" secondItem="1f6-Pn-ld4" secondAttribute="top" id="LiZ-3I-HCh"/>
@@ -115,7 +118,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ov6-zI-e61">
-                    <rect key="frame" x="150" y="263.66666666666669" width="209" height="40"/>
+                    <rect key="frame" x="150" y="260.33333333333331" width="209" height="40"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A9l-ym-ULs">
                             <rect key="frame" x="8" y="0.0" width="201" height="40"/>
@@ -132,7 +135,7 @@
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="0.1336954195" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="A9l-ym-ULs" secondAttribute="bottom" id="Ymf-tH-DvI"/>
                         <constraint firstAttribute="trailing" secondItem="A9l-ym-ULs" secondAttribute="trailing" id="koS-XF-q05"/>
@@ -141,19 +144,19 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your mobile number &amp; emailID" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAP-M6-uvd">
-                    <rect key="frame" x="150" y="126.33333333333333" width="195" height="49.333333333333329"/>
-                    <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="18"/>
+                    <rect key="frame" x="150" y="127.33333333333331" width="195" height="45"/>
+                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="16"/>
                     <color key="textColor" red="0.090196078430000007" green="0.14901960780000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Awesome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I28-O8-H4v">
-                    <rect key="frame" x="150" y="80" width="217" height="38.333333333333343"/>
-                    <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="28"/>
+                    <rect key="frame" x="150" y="80" width="217" height="39.333333333333343"/>
+                    <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="28"/>
                     <color key="textColor" red="0.090196078430000007" green="0.14901960780000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GNu-1k-3G0">
-                    <rect key="frame" x="162" y="303.66666666666669" width="90" height="29"/>
+                    <rect key="frame" x="162" y="300.33333333333331" width="90" height="29"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="90" id="2HI-ZF-WVW"/>
                     </constraints>
