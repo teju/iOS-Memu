@@ -100,6 +100,10 @@
 		793BF53424B2360600DDB0E9 /* PoolerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793BF53324B2360600DDB0E9 /* PoolerList.swift */; };
 		79405052249CA85900ECF703 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79405051249CA85900ECF703 /* BookingViewController.swift */; };
 		79405054249CA87700ECF703 /* BookingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79405053249CA87700ECF703 /* BookingStoryboard.storyboard */; };
+		7945A9A125D57F38008DAB5B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7945A9A025D57F38008DAB5B /* SettingsViewController.swift */; };
+		7945A9A325D58D5A008DAB5B /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7945A9A225D58D5A008DAB5B /* UserProfile.swift */; };
+		7945A9A625D590E4008DAB5B /* ProfileAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7945A9A525D590E4008DAB5B /* ProfileAddress.swift */; };
+		7945A9A825D59858008DAB5B /* VehicleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7945A9A725D59858008DAB5B /* VehicleTableViewCell.swift */; };
 		7949BCFF2496929E0062F053 /* roundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7949BCFE2496929E0062F053 /* roundImageView.swift */; };
 		794B79542513AEAD005047C9 /* UserMainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B79532513AEAD005047C9 /* UserMainData.swift */; };
 		794B79582513BBFF005047C9 /* FriendsListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B79572513BBFF005047C9 /* FriendsListResponse.swift */; };
@@ -269,6 +273,10 @@
 		793BF53324B2360600DDB0E9 /* PoolerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolerList.swift; sourceTree = "<group>"; };
 		79405051249CA85900ECF703 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		79405053249CA87700ECF703 /* BookingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookingStoryboard.storyboard; sourceTree = "<group>"; };
+		7945A9A025D57F38008DAB5B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		7945A9A225D58D5A008DAB5B /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		7945A9A525D590E4008DAB5B /* ProfileAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAddress.swift; sourceTree = "<group>"; };
+		7945A9A725D59858008DAB5B /* VehicleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleTableViewCell.swift; sourceTree = "<group>"; };
 		7949BCFE2496929E0062F053 /* roundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundImageView.swift; sourceTree = "<group>"; };
 		794B79532513AEAD005047C9 /* UserMainData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainData.swift; sourceTree = "<group>"; };
 		794B79572513BBFF005047C9 /* FriendsListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListResponse.swift; sourceTree = "<group>"; };
@@ -504,6 +512,7 @@
 		6DA40EDA245B51E500A09AD0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7945A9A425D590BA008DAB5B /* profile */,
 				792DE14625D40E3B005648C6 /* TopEarners */,
 				792DE14325D40B19005648C6 /* Wallet */,
 				794B795C2513E776005047C9 /* UserWall */,
@@ -702,6 +711,15 @@
 			path = TopEarners;
 			sourceTree = "<group>";
 		};
+		7945A9A425D590BA008DAB5B /* profile */ = {
+			isa = PBXGroup;
+			children = (
+				7945A9A225D58D5A008DAB5B /* UserProfile.swift */,
+				7945A9A525D590E4008DAB5B /* ProfileAddress.swift */,
+			);
+			path = profile;
+			sourceTree = "<group>";
+		};
 		794B79522513AE79005047C9 /* UserMainData */ = {
 			isa = PBXGroup;
 			children = (
@@ -786,6 +804,8 @@
 				79ACBBCE25D28501003C9406 /* ProfileDashboardViewController.swift */,
 				79ACBBD025D2E9AB003C9406 /* ReferralAddViewController.swift */,
 				79ACBBD425D3012F003C9406 /* CityTableViewCell.swift */,
+				7945A9A025D57F38008DAB5B /* SettingsViewController.swift */,
+				7945A9A725D59858008DAB5B /* VehicleTableViewCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -1070,6 +1090,7 @@
 				7962DBDE24A0894400C76511 /* VehiclePopupViewController.swift in Sources */,
 				7995D67A2497C0F800F6E24A /* NavigationViewDataSource.swift in Sources */,
 				79ACBBC925D277AA003C9406 /* UploadSuccessViewController.swift in Sources */,
+				7945A9A325D58D5A008DAB5B /* UserProfile.swift in Sources */,
 				79540C4B24A1331A0003330F /* ScheduledList.swift in Sources */,
 				79540C3324A0F0C00003330F /* MatchingBuddiesResponse.swift in Sources */,
 				791DC9B72593831E00EFF42B /* Int+Timepiece.swift in Sources */,
@@ -1095,6 +1116,7 @@
 				6DA40EF6245BF84A00A09AD0 /* Vehicle.swift in Sources */,
 				792FFA4325D15D0F00FEF55C /* AppFontName.swift in Sources */,
 				7995D6782497B30500F6E24A /* CustomViewController.swift in Sources */,
+				7945A9A825D59858008DAB5B /* VehicleTableViewCell.swift in Sources */,
 				7962DBE124A09A3100C76511 /* VehicleListResponse.swift in Sources */,
 				7903F5F42512854C000E5F07 /* FriendsViewController.swift in Sources */,
 				7962DBD8249F249500C76511 /* WeekDaysCollectionViewCell.swift in Sources */,
@@ -1116,10 +1138,12 @@
 				6DED6C5A24587359003F0AB1 /* UIExtensions.swift in Sources */,
 				79ACBBD525D3012F003C9406 /* CityTableViewCell.swift in Sources */,
 				6DA40EE1245B535400A09AD0 /* UserDefaults+Extension.swift in Sources */,
+				7945A9A625D590E4008DAB5B /* ProfileAddress.swift in Sources */,
 				6DA40ED9245B513A00A09AD0 /* Configuration.swift in Sources */,
 				79540C3824A0F1360003330F /* GooglePlacesAutocomplete.swift in Sources */,
 				6D0A10C0245368F8004E768B /* S2View.swift in Sources */,
 				6DA40EEB245B59A900A09AD0 /* RxExtensions.swift in Sources */,
+				7945A9A125D57F38008DAB5B /* SettingsViewController.swift in Sources */,
 				79540C4024A0F79A0003330F /* BackgroundLocationManager.swift in Sources */,
 				6DED6C5C24587442003F0AB1 /* HomeViewController.swift in Sources */,
 				6DA40ECB245B4F0B00A09AD0 /* LoginDataSource.swift in Sources */,

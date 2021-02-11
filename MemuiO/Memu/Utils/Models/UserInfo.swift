@@ -29,6 +29,8 @@ class UserInfo {
     var email = ""
     var photo = Photo()
     var accessToken = ""
+    var dl_number = ""
+    var office_email = ""
     var result = ResponceResult()
 //
 //    var officeAddress: String
@@ -39,12 +41,14 @@ class UserInfo {
     init(json: JSON) {
         
         id = json["user_id"].stringValue
+        dl_number = json["dl_number"].stringValue
+
         role = json["role_type"].stringValue
         accessToken = json["access_token"].stringValue
         mobile = json["mobile"].stringValue
         otp = json["otp"].stringValue
-        firstName = json["firstName"].stringValue
-        lastName = json["lastName"].stringValue
+        firstName = json["first_name"].stringValue
+        lastName = json["last_name"].stringValue
         name = json["name"].stringValue
         gender = json["gender"].stringValue
         email = json["email"].stringValue
@@ -55,8 +59,7 @@ class UserInfo {
 
         result = ResponceResult(json: json)
         
-//        officeAddress = json["officeAddress"].stringValue
-//        workEmail = json["workEmail"].stringValue
+        office_email = json["office_email"].stringValue
     }
     
     /// Convert UserInfo to JSON object

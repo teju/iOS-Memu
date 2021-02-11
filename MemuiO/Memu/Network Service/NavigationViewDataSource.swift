@@ -75,6 +75,17 @@ extension RestDataSource {
         }
         .restSend()
     }
+    static func postgetProfile(user_id : String) -> Observable<UserProfile> {
+        
+        let sendParameters: [String: Any] = [
+            "user_id": user_id]
+        return json(.post, "profile/user-details",
+                    parameters: sendParameters)
+            .map { json in
+                UserProfile(json: JSON(json.dictionaryObject!))
+        }
+        .restSend()
+    }
     static func getWalletBalance(user_id : String) -> Observable<WalletResponse> {
         let sendParameters: [String: Any] = [
             "user_id": user_id]

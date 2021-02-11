@@ -129,4 +129,9 @@ UICollectionViewDelegate{
         let mainVC = storyboard.instantiateViewController(withIdentifier: "ReferralAddViewController") as! ReferralAddViewController
         self.navigationController?.pushViewController(mainVC, animated: true)
     }
+    @IBAction func settings(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+        let mainVC = storyboard.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
+         self.navigationController?.pushViewController(mainVC, animated: true)
+    }
 }
