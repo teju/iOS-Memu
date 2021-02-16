@@ -28,6 +28,6 @@ class UserProfile {
         address = ProfileAddress(json: json["address"])
 
     }
-    
+   
     init() {}
 }

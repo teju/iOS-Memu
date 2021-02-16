@@ -11,14 +11,14 @@ import SwiftyJSON
 
 class Vehicle {
     
-    var vehicleType: Int
-    var vehicleBrand: String
-    var vehicleName: String
-    var vehicleNo: String
-    var vehicleModelType: String
+    var vehicleType: Int = 0
+    var vehicleBrand: String = ""
+    var vehicleName: String = ""
+    var vehicleNo: String = ""
+    var vehicleModelType: String = ""
     
-    var registrationNo: String
-    var licenseNo: String
+    var registrationNo: String = ""
+    var licenseNo: String = ""
     
     init(json: JSON) {
         

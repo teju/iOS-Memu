@@ -11,7 +11,9 @@ import UIKit
 class VehicleTableViewCell: UITableViewCell {
  @IBOutlet weak var reg_no: UITextField!
   @IBOutlet weak var type: UITextField!
+    @IBOutlet weak var yellowboard: UIButton!
     @IBOutlet weak var brand: UITextField!
+    @IBOutlet weak var whiteboard: UIButton!
     @IBOutlet weak var model: UITextField!
     override func awakeFromNib() {
         super.awakeFromNib()

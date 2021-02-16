@@ -21,7 +21,7 @@ class Address {
     var city = ""
     var location = ""
     var pincode = ""
-
+    var id = ""
     init(json: JSON) {
         
         type = json["type"].stringValue
@@ -34,7 +34,7 @@ class Address {
         city = json["city"].stringValue
         location = json["location"].stringValue
         pincode = json["pincode"].stringValue
-
+        id = json["id"].stringValue
     }
     
     /// Convert UserInfo to JSON object
@@ -52,7 +52,7 @@ class Address {
         } else {
             dic["address_line1"] = address
         }
-        
+        dic["id"] = id
         return dic
     }
     func toParams2() -> [String: Any] {
@@ -72,7 +72,7 @@ class Address {
         } else {
             dic["address_line1"] = address
         }
-        
+         dic["id"] = id
         return dic
     }
     
