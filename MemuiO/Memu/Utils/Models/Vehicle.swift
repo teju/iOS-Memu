@@ -19,9 +19,10 @@ class Vehicle {
     
     var registrationNo: String = ""
     var licenseNo: String = ""
-    
+    var id : String = ""
     init(json: JSON) {
-        
+        id = json["id"].stringValue
+
         vehicleType = json["vehicle_type"].intValue
         vehicleBrand = json["vehicle_brand"].stringValue
         vehicleName = json["vehicle_name"].stringValue
@@ -38,7 +39,7 @@ class Vehicle {
     /// - Returns: JSON object
     func toParams() -> [String: Any] {
         let dic: [String: Any] = [
-        
+            "id": id,
             "vehicle_type": vehicleType,
             "vehicle_brand": vehicleBrand,
             "vehicle_name": vehicleName,
@@ -56,7 +57,7 @@ class Vehicle {
         vehicleName = ""
         vehicleNo = ""
         vehicleModelType = ""
-        
+        id = ""
         registrationNo = ""
         licenseNo = ""
     }

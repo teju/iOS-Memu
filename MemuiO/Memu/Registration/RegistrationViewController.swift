@@ -609,7 +609,7 @@ extension RegistrationViewController: UIScrollViewDelegate, UITextFieldDelegate 
     }
 }
 
-extension UITextField {
+extension UIView {
 
     func setUnderLine() {
         let border = CALayer()

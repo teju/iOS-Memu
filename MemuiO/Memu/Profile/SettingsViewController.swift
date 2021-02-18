@@ -7,30 +7,41 @@
 //
 
 import UIKit
+import GooglePlaces
+import SwiftyJSON
 
-class SettingsViewController: UITableViewController {
-
-    @IBOutlet weak var vehicletable: UITableView!
+class SettingsViewController: UITableViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+    @IBOutlet weak var btnFemale: UIButton!
+    
+    @IBOutlet weak var btnMale: UIButton!
+    
+    @IBOutlet weak var btnOfficeAddress: UIButton!
+    @IBOutlet weak var btnHomeAddress: UIButton!
+    @IBOutlet weak var vehicletable: UICollectionView!
     @IBOutlet weak var lastname: UITextField!
     @IBOutlet weak var drivinfLL: UITextField!
-    @IBOutlet weak var officeAddress: UITextField!
-    @IBOutlet weak var homeAddress: UITextField!
+
     @IBOutlet weak var workEmail: UITextField!
     @IBOutlet weak var personalEmail: UITextField!
     @IBOutlet weak var mobile_number: UITextField!
     @IBOutlet weak var name: UITextField!
     var userProfile :UserProfile!
     var vehicle = [Vehicle]()
-    var address = [Address]()
-
     var VehicleCount = 0
     var btn = UIButton(type: .custom)
-
+    private var tag = 0
+    var addrDic = [Address]()
+    var vehicleParam = [Vehicle]()
+    var userDic: [String: Any] = [:]
+    var gender = ""
+    let selectedimage = UIImage(named: "Tickbox-1")
+    let unselectedimage = UIImage(named: "TICKBOX")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         drivinfLL.setUnderLine()
-        officeAddress.setUnderLine()
-        homeAddress.setUnderLine()
+        btnHomeAddress.setUnderLine()
+        btnOfficeAddress.setUnderLine()
         workEmail.setUnderLine()
         personalEmail.setUnderLine()
         mobile_number.setUnderLine()
@@ -38,39 +49,109 @@ class SettingsViewController: UITableViewController {
         lastname.setUnderLine()
         getProfileData()
         floatingButton()
+        vehicletable.register(VehicleTableViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "vehicle")
+
     }
+   @IBAction  func selectGender(_ sender: UIButton) {
+      
+
+        switch sender.tag {
+           case 0:
+               gender = "Male"
+               btnFemale.setImage(selectedimage, for: .normal)
+               btnMale.setImage(unselectedimage, for: .normal)
+           case 1:
+               gender = "Female"
+               btnMale.setImage(selectedimage, for: .normal)
+               btnFemale.setImage(unselectedimage, for: .normal)
+           default:
+               return
+           }
+       }
+   
     func prepareParams() {
-       let userDic: [String: Any] = [
-        "mobile": mobile_number.text ?? "",
+        userDic =
+        ["mobile": mobile_number.text ?? "",
         "first_name": name.text ?? "",
         "last_name": lastname.text ?? "",
         "office_email": workEmail.text ?? "",
         "dl_number": drivinfLL.text ?? "",
-        "gender": "male",
-         "email": personalEmail.text ?? ""]
-        
-        address.append(userProfile.address.home)
-        if(!userProfile.address.office.formattedAddress.isEmpty) {
-            address.append(userProfile.address.office)
-        }
+        "gender": gender,
+        "email": personalEmail.text ?? ""]
         
         for var i in 0..<vehicle.count {
-            let index = IndexPath(row: 0, section: 0)
-            let cell: VehicleTableViewCell = self.vehicletable.cellForRow(at: index) as! VehicleTableViewCell
+            let index = IndexPath(row: i, section: 0)
+            let cell: VehicleTableViewCell = self.vehicletable.cellForItem(at: index) as! VehicleTableViewCell
             let vehicleM =  Vehicle()
             vehicleM.vehicleNo = cell.reg_no.text ?? ""
             vehicleM.vehicleName = cell.model.text ?? ""
             vehicleM.vehicleModelType = cell.type.text ?? ""
             vehicleM.vehicleBrand = cell.brand.text ?? ""
-            vehicleM.vehicleType = 2
-
-            vehicle[i] = vehicleM
+            if(cell.yellowboard.isChecked) {
+                vehicleM.vehicleType = 1
+            } else if(cell.whiteboard.isChecked){
+                vehicleM.vehicleType = 2
+            }
+            vehicleM.id = vehicle[i].id
+            vehicleParam.append(vehicleM)
         }
 
-       
-        let dict: [String: Any] = ["user_id":UserDefaults.user_id,"userInfo": userDic,"Vehicle":vehicle.map{ $0.toParams() },"Address":address.map{ $0.toParams() }]
-        print("userDic \(dict)")
-        saveProfileData(userDic: dict)
+       let dict: [String: Any] = ["user_id":UserDefaults.user_id,"userInfo": self.userDic,"Vehicle":self.vehicleParam.map{ $0.toParams() },"Address":self.addrDic.map{ $0.toParams2()}]
+              print("userDic dict  \(dict)")
+       self.saveProfileData(userDic: dict)
+    }
+    
+    func gettoAddress(coordinate : CLLocationCoordinate2D,id : String, type : String){
+        let address = Address()
+        if(!id.isEmpty) {
+            address.id = id
+        }
+       address.type = type
+       address.lattitude = "\(coordinate.latitude)"
+       address.longitude = "\(coordinate.longitude)"
+
+       var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
+         let ceo: CLGeocoder = CLGeocoder()
+         center.latitude = coordinate.latitude
+         center.longitude = coordinate.longitude
+
+         let loc: CLLocation = CLLocation(latitude:center.latitude, longitude: center.longitude)
+         ceo.reverseGeocodeLocation(loc, completionHandler:
+             {(placemarks, error) in
+                 if (error != nil)
+                 {
+                     print("reverse geodcode fail: \(error!.localizedDescription)")
+                 }
+                 let pm = placemarks! as [CLPlacemark]
+                 var addressString = ""
+                 if pm.count > 0 {
+                     let pm = placemarks![0]
+                    
+                     if pm.subLocality != nil {
+                         addressString = addressString + pm.subLocality! + ", "
+                     }
+                     if pm.thoroughfare != nil {
+                         addressString = addressString + pm.thoroughfare! + ", "
+                     }
+                     if pm.locality != nil {
+                         addressString = addressString + pm.locality! + ", "
+                     }
+                     if pm.country != nil {
+                         addressString = addressString + pm.country! + ", "
+                     }
+                     if pm.postalCode != nil {
+                         addressString = addressString + pm.postalCode! + " "
+                     }
+                     address.formattedAddress = addressString
+                    address.country = pm.country ?? ""
+                    address.state = pm.country ?? ""
+                    address.pincode = pm.postalCode ?? ""
+                    address.city = pm.locality ?? ""
+                    self.addrDic.append(address)
+                    
+               }
+         })
+      
     }
     func floatingButton(){
         btn.frame = CGRect(x: UIScreen.main.bounds.width / 2 - 50, y: UIScreen.main.bounds.height - 70, width: 100, height: 45)
@@ -84,9 +165,21 @@ class SettingsViewController: UITableViewController {
     }
     
     @objc func save(_ sender: Any) {
-        
         prepareParams()
     }
+   @objc func updateVehicleType(_ sender: CheckBoxButton) {
+        let index = IndexPath(row: sender.tag, section: 0)
+
+        let cell: VehicleTableViewCell = self.vehicletable.cellForItem(at: index) as! VehicleTableViewCell
+       
+        if(sender == cell.yellowboard) {
+            vehicle[sender.tag].vehicleType = 2
+        } else {
+            vehicle[sender.tag].vehicleType = 1
+        }
+        vehicletable.reloadData()
+    }
+    
     @IBAction func back(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -96,13 +189,22 @@ class SettingsViewController: UITableViewController {
     }
     func initData() {
         self.drivinfLL.text = userProfile.personal_details.dl_number
-        self.officeAddress.text = userProfile.address.office.formattedAddress
-        self.homeAddress.text = userProfile.address.home.formattedAddress
+        self.btnOfficeAddress.setTitle(userProfile.address.office.formattedAddress, for: .normal)
+        self.btnHomeAddress.setTitle(userProfile.address.home.formattedAddress, for: .normal)
         self.workEmail.text = userProfile.personal_details.office_email
         self.personalEmail.text = userProfile.personal_details.email
         self.mobile_number.text = userProfile.personal_details.mobile
         self.name.text = userProfile.personal_details.firstName
         self.lastname.text = userProfile.personal_details.lastName
+        if(userProfile.personal_details.gender == "male") {
+            gender = "Male"
+            btnFemale.setImage(selectedimage, for: .normal)
+            btnMale.setImage(unselectedimage, for: .normal)
+        } else {
+            gender = "Female"
+            btnMale.setImage(selectedimage, for: .normal)
+            btnFemale.setImage(unselectedimage, for: .normal)
+        }
     }
     
     func getProfileData() {
@@ -116,8 +218,8 @@ class SettingsViewController: UITableViewController {
                     self?.vehicle.append(Vehicle())
                 }
                 self?.VehicleCount = self?.vehicle.count as! Int
-                self?.vehicletable.contentSize.height = CGFloat(300 * self!.VehicleCount)
-                self?.vehicletable.backgroundColor = UIColor.red
+                self?.vehicletable.dataSource = self
+                self?.vehicletable.delegate = self
                 self?.tableView.reloadData()
                 self?.vehicletable.reloadData()
             }).disposed(by: rx.bag)
@@ -133,63 +235,88 @@ class SettingsViewController: UITableViewController {
                 
                }).disposed(by: rx.bag)
        }
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(tableView == vehicletable) {
-            return VehicleCount
-        }
-        return super.tableView(tableView, numberOfRowsInSection: section)
+    
+    @IBAction func pickAddress(_ sender: UIButton) {
+        self.tag = sender.tag
+       let autocompleteController = GMSAutocompleteViewController()
+       autocompleteController.delegate = self
+       let searchBarTextAttributes: [NSAttributedString.Key : AnyObject] = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.black, NSAttributedString.Key(rawValue: NSAttributedString.Key.font.rawValue): UIFont.systemFont(ofSize: UIFont.systemFontSize)]
+       UITextField.appearance(whenContainedInInstancesOf: [UITableView.self]).defaultTextAttributes = searchBarTextAttributes
+       // Specify the place data types to return.
+       let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) |
+           UInt(GMSPlaceField.placeID.rawValue))!
+       autocompleteController.placeFields = fields
 
+       // Specify a filter.
+       let filter = GMSAutocompleteFilter()
+       filter.type = .noFilter
+       filter.country = "IN"
+       autocompleteController.autocompleteFilter = filter
+
+       // Display the autocomplete view controller.
+       present(autocompleteController, animated: true, completion: nil)
     }
     
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if(tableView == vehicletable) {
-            let cell = self.vehicletable.dequeueReusableCell(withIdentifier: "vehicle",
-                       for: indexPath as IndexPath) as! VehicleTableViewCell
-            cell.reg_no.setUnderLine()
-            cell.type.setUnderLine()
-            cell.brand.setUnderLine()
-            cell.model.setUnderLine()
-            if(indexPath.row <= vehicle.count - 1) {
-                let vehicle_details = vehicle[indexPath.row]
-                cell.reg_no.text = vehicle[indexPath.row].registrationNo
-                cell.type.text = vehicle[indexPath.row].vehicleModelType
-                cell.brand.text = vehicle[indexPath.row].vehicleBrand
-                cell.model.text = vehicle[indexPath.row].vehicleName
-                if( vehicle[indexPath.row].vehicleType == 2) {
-                    cell.whiteboard.setImage(UIImage(named: "TICKBOX"), for: .normal)
-                    cell.yellowboard.setImage(UIImage(named: "Tickbox-1"), for: .normal)
-                } else {
-                    cell.whiteboard.setImage(UIImage(named: "TICKBOX"), for: .normal)
-                    cell.yellowboard.setImage(UIImage(named: "Tickbox-1"), for: .normal)
-                }
-            }
-            return cell
-        }
-        return super.tableView(tableView, cellForRowAt: indexPath)
-
-    }
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if(tableView == vehicletable) {
-            return 300
-        }
-        else if(indexPath.row == 2) {
-            return CGFloat(300 * VehicleCount)
-        }
-        return super.tableView(tableView, heightForRowAt: indexPath)
-
-           
-    }
+  
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+           VehicleCount
+       }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if(indexPath.row == 3) {
-            vehicle.append(Vehicle())
-            VehicleCount = self.vehicle.count as! Int
-            self.vehicletable.frame = CGRect(x: vehicletable.frame.origin.x, y: vehicletable.frame.origin.y, width: vehicletable.frame.size.width, height: CGFloat(300 * VehicleCount))
-            self.tableView.reloadData()
-            self.vehicletable.reloadData()
-            
-        }
+         if(indexPath.row == 3) {
+                     vehicle.append(Vehicle())
+                     VehicleCount = self.vehicle.count as! Int
+                     self.vehicletable.frame = CGRect(x: vehicletable.frame.origin.x, y: vehicletable.frame.origin.y, width: vehicletable.frame.size.width, height: CGFloat(300 * VehicleCount))
+                     self.tableView.reloadData()
+                     self.vehicletable.reloadData()
+                     
+                 }
     }
+      
+       func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = vehicletable.dequeueReusableCell(withReuseIdentifier: "vehicle",
+                                  for: indexPath as IndexPath) as! VehicleTableViewCell
+           cell.reg_no.setUnderLine()
+           cell.type.setUnderLine()
+           cell.brand.setUnderLine()
+           cell.model.setUnderLine()
+           cell.reg_no.text = vehicle[indexPath.row].vehicleNo
+           cell.type.text = vehicle[indexPath.row].vehicleModelType
+           cell.brand.text = vehicle[indexPath.row].vehicleBrand
+           cell.model.text = vehicle[indexPath.row].vehicleName
+           if( vehicle[indexPath.row].vehicleType == 1) {
+                cell.yellowboard.isChecked = false
+                cell.whiteboard.isChecked = true
+                cell.yellowboard.buttonClicked(sender: cell.yellowboard)
+                cell.whiteboard.buttonClicked(sender: cell.whiteboard)
+           } else {
+               cell.yellowboard.isChecked = true
+               cell.whiteboard.isChecked = false
+               cell.yellowboard.buttonClicked(sender: cell.yellowboard)
+               cell.whiteboard.buttonClicked(sender: cell.whiteboard)
+           }
+        cell.yellowboard.isUserInteractionEnabled = true
+        cell.whiteboard.isUserInteractionEnabled = true
+
+            cell.whiteboard.tag = indexPath.row
+            cell.yellowboard.tag = indexPath.row
+            cell.yellowboard.addTarget(self,action: #selector(updateVehicleType(_:)), for: .touchUpInside)
+
+            cell.whiteboard.addTarget(self,action: #selector(updateVehicleType(_:)), for: .touchUpInside)
+
+           return cell
+       }
+          func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+           return CGSize(width: UIScreen.main.bounds.width, height: 200)
+       }
+   
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if(indexPath.row == 2) {
+            return CGFloat(280 * VehicleCount)
+        } 
+        return super.tableView(tableView, heightForRowAt: indexPath)
+    }
+    
 }
 extension UIWindow {
     static var key: UIWindow? {
@@ -198,5 +325,72 @@ extension UIWindow {
         } else {
             return UIApplication.shared.keyWindow
         }
+    }
+}
+extension SettingsViewController: GooglePlacesAutocompleteDelegate {
+  func placeSelected(place: Place) {
+    print(place.description)
+  }
+
+  func placeViewClosed() {
+    dismiss(animated: true, completion: nil)
+  }
+}
+
+extension SettingsViewController: GMSAutocompleteViewControllerDelegate {
+    
+    // Handle the user's selection.
+    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+        print("Place name: \(place.formattedAddress)")
+        print("Place ID: \(place.placeID)")
+        
+        let placesClient = GMSPlacesClient.shared()
+        placesClient.lookUpPlaceID(place.placeID!) { (place, error) in
+            if let error = error {
+                print("lookup place id query error: \(error.localizedDescription)")
+                return
+            }
+            if let place = place {
+                print("Place name \(place.name)")
+                print("Place address \(place.formattedAddress!)")
+                print("Place placeID \(place.placeID)")
+                print("Place attributions \(place.attributions)")
+                print("\(place.coordinate.latitude)")
+                print("\(place.coordinate.longitude)")
+            
+                self.dismiss(animated: true, completion: {
+                    self.updateLocation(place)
+                })
+            }
+        }
+    }
+    
+    private func updateLocation(_ place: GMSPlace) {
+        if tag == 0 {
+            self.btnHomeAddress.setTitle(place.formattedAddress!, for: .normal)
+            gettoAddress(coordinate: place.coordinate, id: userProfile.address.home.id, type: "home")
+        } else {
+            self.btnOfficeAddress.setTitle( place.formattedAddress!, for: .normal)
+            gettoAddress(coordinate: place.coordinate, id: userProfile.address.office.id, type: "office")
+        }
+    }
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+        // TODO: handle the error.
+        print("Error: ", error.localizedDescription)
+    }
+    
+    // User canceled the operation.
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    // Turn the network activity indicator on and off again.
+    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 }

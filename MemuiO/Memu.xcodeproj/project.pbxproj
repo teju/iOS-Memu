@@ -96,6 +96,7 @@
 		792DE14C25D4445E005648C6 /* next_button.gif in Resources */ = {isa = PBXBuildFile; fileRef = 792DE14B25D4445D005648C6 /* next_button.gif */; };
 		792FFA4125D15B9000FEF55C /* font in Resources */ = {isa = PBXBuildFile; fileRef = 792FFA4025D15B9000FEF55C /* font */; };
 		792FFA4325D15D0F00FEF55C /* AppFontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792FFA4225D15D0F00FEF55C /* AppFontName.swift */; };
+		793B221E25DE96DE006CF9E0 /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B221D25DE96DD006CF9E0 /* CheckBoxButton.swift */; };
 		793BF53224B21DF400DDB0E9 /* CustomBottomBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793BF53124B21DF400DDB0E9 /* CustomBottomBannerView.swift */; };
 		793BF53424B2360600DDB0E9 /* PoolerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793BF53324B2360600DDB0E9 /* PoolerList.swift */; };
 		79405052249CA85900ECF703 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79405051249CA85900ECF703 /* BookingViewController.swift */; };
@@ -269,6 +270,7 @@
 		792DE14B25D4445D005648C6 /* next_button.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = next_button.gif; sourceTree = "<group>"; };
 		792FFA4025D15B9000FEF55C /* font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = font; sourceTree = "<group>"; };
 		792FFA4225D15D0F00FEF55C /* AppFontName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFontName.swift; sourceTree = "<group>"; };
+		793B221D25DE96DD006CF9E0 /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
 		793BF53124B21DF400DDB0E9 /* CustomBottomBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBottomBannerView.swift; sourceTree = "<group>"; };
 		793BF53324B2360600DDB0E9 /* PoolerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolerList.swift; sourceTree = "<group>"; };
 		79405051249CA85900ECF703 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
@@ -589,6 +591,7 @@
 				7949BCFE2496929E0062F053 /* roundImageView.swift */,
 				79540C3F24A0F79A0003330F /* BackgroundLocationManager.swift */,
 				792FFA4225D15D0F00FEF55C /* AppFontName.swift */,
+				793B221D25DE96DD006CF9E0 /* CheckBoxButton.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1173,6 +1176,7 @@
 				79FD4FA324A1F3020015B28F /* MatchingBuddiesCollectionViewCell.swift in Sources */,
 				79540C4424A118190003330F /* HistoryTableViewCell.swift in Sources */,
 				7949BCFF2496929E0062F053 /* roundImageView.swift in Sources */,
+				793B221E25DE96DE006CF9E0 /* CheckBoxButton.swift in Sources */,
 				7995D67C2497C74300F6E24A /* Photo.swift in Sources */,
 				7962DBDC249FD5E100C76511 /* MAtchingRidersTableViewCell.swift in Sources */,
 				7995D6812497D65F00F6E24A /* MapFeedsResponse.swift in Sources */,

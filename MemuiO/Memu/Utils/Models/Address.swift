@@ -22,6 +22,7 @@ class Address {
     var location = ""
     var pincode = ""
     var id = ""
+    var address_line1 = ""
     init(json: JSON) {
         
         type = json["type"].stringValue
@@ -52,7 +53,10 @@ class Address {
         } else {
             dic["address_line1"] = address
         }
-        dic["id"] = id
+        if !id.isEmpty {
+             dic["id"] = id
+        }
+       
         return dic
     }
     func toParams2() -> [String: Any] {
@@ -72,7 +76,9 @@ class Address {
         } else {
             dic["address_line1"] = address
         }
-         dic["id"] = id
+        if(!id.isEmpty) {
+            dic["id"] = id
+        }
         return dic
     }
     

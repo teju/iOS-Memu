@@ -8,22 +8,21 @@
 
 import UIKit
 
-class VehicleTableViewCell: UITableViewCell {
+class VehicleTableViewCell: UICollectionViewCell {
  @IBOutlet weak var reg_no: UITextField!
   @IBOutlet weak var type: UITextField!
-    @IBOutlet weak var yellowboard: UIButton!
+    @IBOutlet weak var yellowboard: CheckBoxButton!
     @IBOutlet weak var brand: UITextField!
-    @IBOutlet weak var whiteboard: UIButton!
+    @IBOutlet weak var whiteboard: CheckBoxButton!
     @IBOutlet weak var model: UITextField!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    override func layoutSubviews() {
+           super.layoutSubviews()
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+           contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20))
+       }
 
 }

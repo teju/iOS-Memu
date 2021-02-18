@@ -19,6 +19,11 @@ class ProfileAddress {
         office = Address(json: json["office"])
 
     }
-    
+    func toParams() -> [String: Any] {
+        let dic: [String: Any] = [
+            "home": home,
+            "office":office]
+        return dic
+    }
     init() {}
 }
