@@ -11,7 +11,6 @@ pod 'SDWebImage', '~> 4.3.3'
 pod 'MapboxNavigation', '~> 0.40.0'
 pod 'Firebase/Messaging'
 pod 'SwiftGifOrigin'
-
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RxDataSources'

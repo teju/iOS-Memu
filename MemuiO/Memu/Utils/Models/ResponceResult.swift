@@ -13,15 +13,17 @@ class ResponceResult {
     
     var status: String
     var message: String
-    
+    var generate_signature: String
     init(json: JSON) {
 
         status = json["status"].stringValue
         message = json["message"].stringValue
+        generate_signature = json["generate_signature"].stringValue
     }
     
     init() {
         status = ""
         message = ""
+        generate_signature = ""
     }
 }

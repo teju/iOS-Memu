@@ -123,6 +123,9 @@ UICollectionViewDelegate{
          self.navigationController?.pushViewController(mainVC, animated: true)
     }
     @IBAction func myEarnings(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+        let mainVC = storyboard.instantiateViewController(withIdentifier: "WalletViewController") as! WalletViewController
+         self.navigationController?.pushViewController(mainVC, animated: true)
     }
     @IBAction func refreealAdd(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Profile", bundle: nil)

@@ -64,6 +64,28 @@ extension RestDataSource {
         }
         .restSend()
     }
+    static func postWalletData(user_id : String) -> Observable<WalletBalance> {
+        
+        let sendParameters: [String: Any] = [
+            "user_id": user_id]
+        return json(.post, "payment/wallet-balance",
+                    parameters: sendParameters)
+            .map { json in
+                WalletBalance(json: JSON(json.dictionaryObject!))
+        }
+        .restSend()
+    }
+    static func postpayment(wallet : [String : Any],mode : String) -> Observable<ResponceResult> {
+        
+        let sendParameters: [String: Any] = [
+            "user_id": UserDefaults.user_id,"wallet":wallet]
+        return json(.post, "payment/wallet-balance",
+                    parameters: sendParameters)
+            .map { json in
+                ResponceResult(json: JSON(json.dictionaryObject!))
+        }
+        .restSend()
+    }
     static func postTopEarners(user_id : String) -> Observable<TopEarners> {
         
         let sendParameters: [String: Any] = [
@@ -72,6 +94,16 @@ extension RestDataSource {
                     parameters: sendParameters)
             .map { json in
                 TopEarners(json: JSON(json.dictionaryObject!))
+        }
+        .restSend()
+    }
+    static func postchecksum(checksum : [String : Any]) -> Observable<ResponceResult> {
+        let sendParameters: [String: Any] = [
+            "paytm_params": checksum,"user_id": UserDefaults.user_id]
+        return json(.post, "payment/check-sum",
+                    parameters: sendParameters)
+            .map { json in
+                ResponceResult(json: JSON(json.dictionaryObject!))
         }
         .restSend()
     }
