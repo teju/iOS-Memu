@@ -155,6 +155,8 @@
 		79AF49CA249A86E900711030 /* DistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF49C9249A86E900711030 /* DistCollectionViewCell.swift */; };
 		79BF483625E51A4D009ACD93 /* InfoAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BF483525E51A4D009ACD93 /* InfoAlertViewController.swift */; };
 		79BF483925E52256009ACD93 /* dialogs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79BF483825E52256009ACD93 /* dialogs.storyboard */; };
+		79CCF9D325E6BD1200A36006 /* ProfilePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCF9D225E6BD1200A36006 /* ProfilePhoto.swift */; };
+		79CCF9D525E6D32100A36006 /* loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79CCF9D425E6D32100A36006 /* loading@2x.png */; };
 		79FD4FA324A1F3020015B28F /* MatchingBuddiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FD4FA224A1F3010015B28F /* MatchingBuddiesCollectionViewCell.swift */; };
 		79FD4FA524A210440015B28F /* MatchedBuddies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FD4FA424A210440015B28F /* MatchedBuddies.swift */; };
 		79FD4FA724A22BC30015B28F /* ReurringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FD4FA624A22BC30015B28F /* ReurringViewController.swift */; };
@@ -354,6 +356,8 @@
 		79AF49C9249A86E900711030 /* DistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistCollectionViewCell.swift; sourceTree = "<group>"; };
 		79BF483525E51A4D009ACD93 /* InfoAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAlertViewController.swift; sourceTree = "<group>"; };
 		79BF483825E52256009ACD93 /* dialogs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = dialogs.storyboard; sourceTree = "<group>"; };
+		79CCF9D225E6BD1200A36006 /* ProfilePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhoto.swift; sourceTree = "<group>"; };
+		79CCF9D425E6D32100A36006 /* loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading@2x.png"; sourceTree = "<group>"; };
 		79FD4FA224A1F3010015B28F /* MatchingBuddiesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingBuddiesCollectionViewCell.swift; sourceTree = "<group>"; };
 		79FD4FA424A210440015B28F /* MatchedBuddies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedBuddies.swift; sourceTree = "<group>"; };
 		79FD4FA624A22BC30015B28F /* ReurringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReurringViewController.swift; sourceTree = "<group>"; };
@@ -415,6 +419,7 @@
 		188AE074241CE70C0079E2BB /* Memu */ = {
 			isa = PBXGroup;
 			children = (
+				79CCF9D425E6D32100A36006 /* loading@2x.png */,
 				7911141925E3CF8C004F7E95 /* PaytmSwift-Bridging-Header.h */,
 				79BF483A25E52260009ACD93 /* dialogs */,
 				792DE14B25D4445D005648C6 /* next_button.gif */,
@@ -569,6 +574,7 @@
 				7995D67B2497C74300F6E24A /* Photo.swift */,
 				7962DBE924A0D13100C76511 /* FindOfferRideREsponse.swift */,
 				7911141C25E40F8B004F7E95 /* WalletBalance.swift */,
+				79CCF9D225E6BD1200A36006 /* ProfilePhoto.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1052,6 +1058,7 @@
 				6D4C1692246A883C0049076B /* OpenSans-LightItalic.ttf in Resources */,
 				6DED6C6524589619003F0AB1 /* PoolImgView.xib in Resources */,
 				792DE14C25D4445E005648C6 /* next_button.gif in Resources */,
+				79CCF9D525E6D32100A36006 /* loading@2x.png in Resources */,
 				6D12BA2F2453B006000D52D1 /* S3View.xib in Resources */,
 				6D4C1694246A883C0049076B /* OpenSans-SemiBold.ttf in Resources */,
 				6D4C169A246A883C0049076B /* OpenSans-SemiBoldItalic.ttf in Resources */,
@@ -1169,6 +1176,7 @@
 				79540C3324A0F0C00003330F /* MatchingBuddiesResponse.swift in Sources */,
 				791DC9B72593831E00EFF42B /* Int+Timepiece.swift in Sources */,
 				79AF49C8249A5C6B00711030 /* AlertMapFeeds.swift in Sources */,
+				79CCF9D325E6BD1200A36006 /* ProfilePhoto.swift in Sources */,
 				792DE14825D40E4C005648C6 /* TopEarners.swift in Sources */,
 				6DED6C742458C33C003F0AB1 /* ProfileImgView.swift in Sources */,
 				7915E38525126BE0001163CF /* PostsTableViewCell.swift in Sources */,

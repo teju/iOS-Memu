@@ -39,7 +39,7 @@ class ProfileImageViewController: UIViewController, AddAssetButtonViewDelegate {
     
         RestDataSource.uploadImage(url: "\(RestDataSource.appBaseUrl)profile/update-profile-image", image: image, param: "profile").showLoading(on: self.view)
         .subscribe(onNext: { [weak self] value in
-            UserDefaults.profile_picture = value.photo.profile_path
+            UserDefaults.profile_picture = value.profile_path
             let url = URL(string: UserDefaults.profile_picture!)
             self?.image_view.sd_setImage(with: url)
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {

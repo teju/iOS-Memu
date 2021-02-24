@@ -73,7 +73,9 @@ class SettingsViewController: UITableViewController,UICollectionViewDelegate,UIC
     
         RestDataSource.uploadImage(url: "\(RestDataSource.appBaseUrl)profile/update-profile-image", image: image, param: "profile").showLoading(on: self.view)
         .subscribe(onNext: { [weak self] value in
-            UserDefaults.profile_picture = value.photo.profile_path
+            UserDefaults.profile_picture = value.profile_path
+            print("profile_pic \(UserDefaults.profile_picture!) profile_path \(value)")
+
             let url = URL(string: UserDefaults.profile_picture!)
             self?.profile_pic.sd_setImage(with: url)
            
@@ -232,6 +234,10 @@ class SettingsViewController: UITableViewController,UICollectionViewDelegate,UIC
             btnMale.setImage(selectedimage, for: .normal)
             btnFemale.setImage(unselectedimage, for: .normal)
         }
+        let url = URL(string:UserDefaults.profile_picture!)
+
+        self.profile_pic.sd_setImage(with: url)
+
     }
     
     func getProfileData() {

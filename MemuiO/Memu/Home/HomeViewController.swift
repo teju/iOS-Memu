@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MaterialComponents.MaterialActivityIndicator
 
 class HomeViewController: UIViewController {
     
@@ -24,7 +25,10 @@ class HomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         let url = URL(string: UserDefaults.profile_picture!)
+        print("profile_pic \(UserDefaults.profile_picture!)")
+
         self.profile_pic.sd_setImage(with: url)
+       
     }
     
     @IBAction func profile(_ sender: Any) {

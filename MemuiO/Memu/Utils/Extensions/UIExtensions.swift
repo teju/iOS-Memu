@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MaterialComponents.MaterialActivityIndicator
 
 extension UIViewController {
     
@@ -202,7 +203,7 @@ extension UIView {
 class LoadingView: UIView {
     
     /// loading indicator
-    var activityIndicator: UIActivityIndicatorView!
+    var activityIndicator = MDCActivityIndicator()
     
     /// flag: true - the view is terminated, false - else
     var terminated = false
@@ -240,14 +241,13 @@ class LoadingView: UIView {
      - parameter dimming: true - need to add semitransparent overlay, false - just loading indicator
      */
     private func setupUI(dimming: Bool) {
-        activityIndicator = UIActivityIndicatorView()
+        
         activityIndicator.center = self.center
         self.addSubview(activityIndicator)
         
         if dimming {
             self.backgroundColor = UIColor(white: 0.0, alpha: 0.7)
         } else {
-            activityIndicator.style = .gray
             self.backgroundColor = UIColor.clear
         }
         self.alpha = 0.0

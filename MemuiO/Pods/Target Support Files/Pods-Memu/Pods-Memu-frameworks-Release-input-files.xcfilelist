@@ -5,6 +5,8 @@ ${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework
 ${BUILT_PRODUCTS_DIR}/GooglePlacesSearchController/GooglePlacesSearchController.framework
 ${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework
 ${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework
+${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework
+${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework
 ${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework
 ${PODS_ROOT}/MapboxAccounts/MapboxAccounts.framework
 ${BUILT_PRODUCTS_DIR}/MapboxCoreNavigation/MapboxCoreNavigation.framework
@@ -13,6 +15,9 @@ ${BUILT_PRODUCTS_DIR}/MapboxMobileEvents/MapboxMobileEvents.framework
 ${BUILT_PRODUCTS_DIR}/MapboxNavigation/MapboxNavigation.framework
 ${PODS_ROOT}/MapboxNavigationNative/MapboxNavigationNative.framework
 ${BUILT_PRODUCTS_DIR}/MapboxSpeech/MapboxSpeech.framework
+${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework
+${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework
+${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework
 ${BUILT_PRODUCTS_DIR}/NSObject+Rx/NSObject_Rx.framework
 ${BUILT_PRODUCTS_DIR}/Polyline/Polyline.framework
 ${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework

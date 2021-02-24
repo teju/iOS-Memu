@@ -162,7 +162,7 @@ public class RestDataSource {
             .string()
     }
     
-    static func uploadImage(url: String, image: UIImage,param:String, callback: ((String)->())? = nil) ->  Observable<File> {
+    static func uploadImage(url: String, image: UIImage,param:String, callback: ((String)->())? = nil) ->  Observable<ProfilePhoto> {
         
            return Observable.create({observer in
                let name = "\(UUID().uuidString).png"
@@ -171,12 +171,11 @@ public class RestDataSource {
 
             let headers =  ["Authorization": "\("Bearer ")\( UserDefaults.accessToken ?? "")"]
             print("Upload image url 1048576====\(headers)", url, image)
+             let imageData = image.jpegData(compressionQuality: 0.3)!
 
-               let image = image.compress(toSize: 1048576) // dodo is it correct? Azure fails if larger file
                Alamofire.upload(multipartFormData: { multipartFormData in
-                   if let imageData = image.toData() {
-                       multipartFormData.append(imageData, withName: "profile", fileName: name, mimeType: "image/png")
-                   }
+                    multipartFormData.append(imageData, withName: "profile", fileName: name, mimeType: "image/jpeg")
+                   
                    for (key, value) in parameters {
                     multipartFormData.append((value?.data(using: .utf8))!, withName: key)
                    }}, to: url, method: .post, headers: headers,
@@ -192,8 +191,8 @@ public class RestDataSource {
                                        #if DEBUG
                                        print(JSON(value))
                                        #endif
-                                       let file = File(json: JSON(value))
-                                       observer.onNext(file)
+                                    let file  = JSON(value)
+                                       observer.onNext(ProfilePhoto(json: file))
                                        observer.onCompleted()
                                     
                                    }
