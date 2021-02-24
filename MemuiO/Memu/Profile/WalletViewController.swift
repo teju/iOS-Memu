@@ -27,6 +27,9 @@ class WalletViewController: UITableViewController {
         amount.setUnderLine()
     }
     
+    @IBAction func back(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     @IBAction func thousand(_ sender: Any) {
         if let amountDidgit = amount.text {
             let amt = (amountDidgit as NSString).intValue + 1000
@@ -128,24 +131,25 @@ class WalletViewController: UITableViewController {
     extension WalletViewController : PGTransactionDelegate{
         func didSucceedTransaction(_ controller: PGTransactionViewController!, response: [AnyHashable : Any]!) {
             print(response)
-            showAlert(title: "Transaction Successfull", message: NSString.localizedStringWithFormat("Response- %@", response) as String)
+            self.showAlert("Transaction Successfull",NSString.localizedStringWithFormat("Response- %@", response) as String)
+
             getRecharge()
         }
 
 
         func didFailTransaction(_ controller: PGTransactionViewController!, error: Error!, response: [AnyHashable : Any]!) {
             print("didFailTransaction \(error)")
-            showAlert(title: "Transaction Failed", message: error.localizedDescription)
+            self.showAlert("Transaction Failed",error.localizedDescription)
         }
         func didCancelTransaction(_ controller: PGTransactionViewController!, error: Error!, response: [AnyHashable : Any]!) {
             
-           showAlert(title: "Transaction Cancelled", message: error.localizedDescription)
-            
+            self.showAlert("Transaction Failed", error.localizedDescription)
+
         }
         
         func didFinishCASTransaction(_ controller: PGTransactionViewController!, response: [AnyHashable : Any]!) {
             print(response)
-            showAlert(title: "cas", message: "")
+            self.showAlert("cas", "")
         }
         
         

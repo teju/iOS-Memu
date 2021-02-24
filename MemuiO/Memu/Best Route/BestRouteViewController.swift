@@ -13,6 +13,7 @@ import SwiftLocation
 
 class BestRouteViewController: UIViewController {
     
+    @IBOutlet weak var btnNExt: UIButton!
     @IBAction func back(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -29,7 +30,8 @@ class BestRouteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let image = UIImage.gif(name: "next_button") as UIImage?
+        btnNExt.setImage(image, for: .normal)
         // Do any additional setup after loading the view.
         updateUI()
     }

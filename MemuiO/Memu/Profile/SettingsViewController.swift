@@ -10,11 +10,14 @@ import UIKit
 import GooglePlaces
 import SwiftyJSON
 
-class SettingsViewController: UITableViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+class SettingsViewController: UITableViewController,UICollectionViewDelegate,UICollectionViewDataSource,AddAssetButtonViewDelegate {
     @IBOutlet weak var btnFemale: UIButton!
+    @IBOutlet weak var btnUpload: AddAssetButtonView!
+    @IBOutlet weak var profile_pic: roundImageView!
     
     @IBOutlet weak var btnMale: UIButton!
-    
+    private var isUpload = false
+
     @IBOutlet weak var btnOfficeAddress: UIButton!
     @IBOutlet weak var btnHomeAddress: UIButton!
     @IBOutlet weak var vehicletable: UICollectionView!
@@ -50,9 +53,33 @@ class SettingsViewController: UITableViewController,UICollectionViewDelegate,UIC
         getProfileData()
         floatingButton()
         vehicletable.register(VehicleTableViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "vehicle")
+        btnUpload.delegate = self
 
     }
-   @IBAction  func selectGender(_ sender: UIButton) {
+    func addAssetButtonTapped(_ view: AddAssetButtonView) {
+        btnUpload.addAssetButtonTapped(btnUpload)
+    }
+    
+    func addAssetImageChanged(_ image: UIImage, filename: String, modalDismissed: Bool) {
+        btnUpload.imageView?.image = nil
+        
+        if !isUpload {
+            uploadImage(image)
+            isUpload = true
+        }
+    }
+   
+    private func uploadImage(_ image: UIImage) {
+    
+        RestDataSource.uploadImage(url: "\(RestDataSource.appBaseUrl)profile/update-profile-image", image: image, param: "profile").showLoading(on: self.view)
+        .subscribe(onNext: { [weak self] value in
+            UserDefaults.profile_picture = value.photo.profile_path
+            let url = URL(string: UserDefaults.profile_picture!)
+            self?.profile_pic.sd_setImage(with: url)
+           
+        }).disposed(by: rx.bag)
+    }
+    @IBAction  func selectGender(_ sender: UIButton) {
       
 
         switch sender.tag {

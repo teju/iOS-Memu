@@ -17,18 +17,20 @@ extension UIViewController {
     /// — message: Pass string of content message
     /// — options: Pass multiple UIAlertAction title like “OK”,”Cancel” etc
     /// — completion: The block to execute after the presentation finishes.
-    func showAlert(title: String, message: String, options: [String], completion: @escaping (Int) -> Void) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        for (index, option) in options.enumerated() {
-            alertController.addAction(UIAlertAction.init(title: option, style: .default, handler: { _ in
-                completion(index)
-            }))
-        }
-        topMostViewController().present(alertController, animated: true, completion: nil)
+    func showAlert(title: String, message: String, btnOkay : String,btnCancel : String, completion: (()->())? = nil) {
+        let popvc = UIStoryboard(name: "dialogs", bundle: nil).instantiateViewController(withIdentifier: "InfoAlertViewController") as! InfoAlertViewController
+            popvc.alerttitle = title
+            popvc.alertdescription = message
+            popvc.btnOKtitle = btnOkay
+            popvc.btnCancelTitle = btnCancel
+            self.addChild(popvc)
+   
+            popvc.view.frame = self.view.frame
+            self.view.addSubview(popvc.view)
+            popvc.didMove(toParent: self)
     }
     
-    /// Get the top most view in the app
-    /// — Returns: It returns current foreground UIViewcontroller
+
     func topMostViewController() -> UIViewController {
         var topViewController: UIViewController? = UIApplication.shared.keyWindow?.rootViewController
         while ((topViewController?.presentedViewController) != nil) {
@@ -45,15 +47,14 @@ extension UIViewController {
      - parameter completion: the completion callback
      */
     func showAlert(_ title: String, _ message: String, completion: (()->())? = nil) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK"), style: UIAlertAction.Style.default,
-                                      handler: { (_) -> Void in
-                                        alert.dismiss(animated: true, completion: nil)
-                                        DispatchQueue.main.async {
-                                            completion?()
-                                        }
-        }))
-        self.present(alert, animated: true, completion: nil)
+        let popvc = UIStoryboard(name: "dialogs", bundle: nil).instantiateViewController(withIdentifier: "InfoAlertViewController") as! InfoAlertViewController
+        popvc.alerttitle = title
+        popvc.alertdescription = message
+        self.addChild(popvc)
+        popvc.view.frame = self.view.frame
+       
+        self.view.addSubview(popvc.view)
+        popvc.didMove(toParent: self)
     }
     
     func create<T: UIViewController>(_ viewControllerClass: T.Type, storyboardName: String? = nil) -> T? {

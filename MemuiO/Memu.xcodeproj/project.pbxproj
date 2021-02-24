@@ -154,6 +154,7 @@
 		79AF49C8249A5C6B00711030 /* AlertMapFeeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF49C7249A5C6B00711030 /* AlertMapFeeds.swift */; };
 		79AF49CA249A86E900711030 /* DistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF49C9249A86E900711030 /* DistCollectionViewCell.swift */; };
 		79BF483625E51A4D009ACD93 /* InfoAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BF483525E51A4D009ACD93 /* InfoAlertViewController.swift */; };
+		79BF483925E52256009ACD93 /* dialogs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79BF483825E52256009ACD93 /* dialogs.storyboard */; };
 		79FD4FA324A1F3020015B28F /* MatchingBuddiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FD4FA224A1F3010015B28F /* MatchingBuddiesCollectionViewCell.swift */; };
 		79FD4FA524A210440015B28F /* MatchedBuddies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FD4FA424A210440015B28F /* MatchedBuddies.swift */; };
 		79FD4FA724A22BC30015B28F /* ReurringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FD4FA624A22BC30015B28F /* ReurringViewController.swift */; };
@@ -352,6 +353,7 @@
 		79AF49C7249A5C6B00711030 /* AlertMapFeeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMapFeeds.swift; sourceTree = "<group>"; };
 		79AF49C9249A86E900711030 /* DistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistCollectionViewCell.swift; sourceTree = "<group>"; };
 		79BF483525E51A4D009ACD93 /* InfoAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAlertViewController.swift; sourceTree = "<group>"; };
+		79BF483825E52256009ACD93 /* dialogs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = dialogs.storyboard; sourceTree = "<group>"; };
 		79FD4FA224A1F3010015B28F /* MatchingBuddiesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingBuddiesCollectionViewCell.swift; sourceTree = "<group>"; };
 		79FD4FA424A210440015B28F /* MatchedBuddies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedBuddies.swift; sourceTree = "<group>"; };
 		79FD4FA624A22BC30015B28F /* ReurringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReurringViewController.swift; sourceTree = "<group>"; };
@@ -414,6 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				7911141925E3CF8C004F7E95 /* PaytmSwift-Bridging-Header.h */,
+				79BF483A25E52260009ACD93 /* dialogs */,
 				792DE14B25D4445D005648C6 /* next_button.gif */,
 				79ACBBCA25D27885003C9406 /* onboarding_account.gif */,
 				792FFA4025D15B9000FEF55C /* font */,
@@ -431,6 +434,7 @@
 				188AE080241CE7120079E2BB /* LaunchScreen.storyboard */,
 				6DA40EC2245B4C2500A09AD0 /* Login */,
 				188AE07B241CE70C0079E2BB /* Main.storyboard */,
+				79BF483825E52256009ACD93 /* dialogs.storyboard */,
 				6DA40EC6245B4E0700A09AD0 /* Network Service */,
 				796C1C2F2512499600CD22ED /* Profile */,
 				6DED6C5D2458954E003F0AB1 /* Registration */,
@@ -612,6 +616,7 @@
 		6DED6C582458733B003F0AB1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				79BF483725E51FE6009ACD93 /* dialogs */,
 				7911141025E3CF16004F7E95 /* SDK */,
 				79DC0C0825935E2900851BCF /* calendar */,
 				79540C3624A0F1300003330F /* GooglePlacesAutocomplete.swift */,
@@ -626,7 +631,6 @@
 				79540C3F24A0F79A0003330F /* BackgroundLocationManager.swift */,
 				792FFA4225D15D0F00FEF55C /* AppFontName.swift */,
 				793B221D25DE96DD006CF9E0 /* CheckBoxButton.swift */,
-				79BF483525E51A4D009ACD93 /* InfoAlertViewController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -880,6 +884,21 @@
 			path = AlertMApFeeds;
 			sourceTree = "<group>";
 		};
+		79BF483725E51FE6009ACD93 /* dialogs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = dialogs;
+			sourceTree = "<group>";
+		};
+		79BF483A25E52260009ACD93 /* dialogs */ = {
+			isa = PBXGroup;
+			children = (
+				79BF483525E51A4D009ACD93 /* InfoAlertViewController.swift */,
+			);
+			path = dialogs;
+			sourceTree = "<group>";
+		};
 		79DC0C0825935E2900851BCF /* calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -1014,6 +1033,7 @@
 			files = (
 				6D4C1696246A883C0049076B /* OpenSans-Bold.ttf in Resources */,
 				6DED6C762458C351003F0AB1 /* ProfileImgView.xib in Resources */,
+				79BF483925E52256009ACD93 /* dialogs.storyboard in Resources */,
 				6D4C1691246A883C0049076B /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				6D4C1695246A883C0049076B /* OpenSans-ExtraBold.ttf in Resources */,
 				6DA40ED3245B4F8900A09AD0 /* APPSTORE_Configuration.plist in Resources */,

@@ -18,7 +18,6 @@ import SwiftLocation
 import DropDown
 
 class BookingViewController: UIViewController ,UICollectionViewDataSource,WWCalendarTimeSelectorProtocol, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
-    @IBOutlet weak var btnNext: UIButton!
     
     @IBOutlet weak var btnSelectTime: UIButton!
     @IBOutlet weak var btnDate: UIButton!
@@ -61,8 +60,6 @@ class BookingViewController: UIViewController ,UICollectionViewDataSource,WWCale
         btnseat.titleLabel?.textAlignment = .center
         btnSelectTime.titleLabel?.textAlignment = .center
         btnDate.titleLabel?.textAlignment = .center
-        btnNext.isHidden = true
-        btnNext.frame = CGRect(x: self.scroll_view.frame.width - 100, y: UIScreen.main.bounds.height+260, width: 60, height: 60)
         self.bg_view.frame.size.height = self.bg_view.frame.height
         updateUI()
     }
@@ -80,9 +77,8 @@ class BookingViewController: UIViewController ,UICollectionViewDataSource,WWCale
         //getFromAddress(strtype: "offer_ride", strno_of_kms: "16")
     }
     @IBAction func offerRide(_ sender: Any) {
-        btnNext.isHidden = false
         if(currentloc == nil || destinationloc == nil) {
-           self.showAlert("", "Please select source and destination")
+            self.showAlert("",  "Please select source and destination")
         } else {
             print("offerRide \(vehicle_id)")
             let popvc = UIStoryboard(name: "NavigationController", bundle: nil).instantiateViewController(withIdentifier: "VehiclePopupViewController") as! VehiclePopupViewController
@@ -108,7 +104,6 @@ class BookingViewController: UIViewController ,UICollectionViewDataSource,WWCale
         }
     }
     @IBAction func findRide(_ sender: Any) {
-        btnNext.isHidden = true
 
         if(currentloc == nil || destinationloc == nil) {
           self.showAlert("", "Please select source and destination")
