@@ -31,6 +31,17 @@ extension UIViewController {
             popvc.didMove(toParent: self)
     }
     
+    func showAlert(title: String, userName: String, userImage : URL, rightImage:UIImage, completion: (()->())? = nil) {
+         let popvc = UIStoryboard(name: "dialogs", bundle: nil).instantiateViewController(withIdentifier: "UserDataAlertViewController") as! UserDataAlertViewController
+             popvc.alerttitle = title
+             popvc.userImage = userImage
+             popvc.userName = userName
+             popvc.rightImage = rightImage
+             self.addChild(popvc)
+             popvc.view.frame = self.view.frame
+             self.view.addSubview(popvc.view)
+             popvc.didMove(toParent: self)
+     }
 
     func topMostViewController() -> UIViewController {
         var topViewController: UIViewController? = UIApplication.shared.keyWindow?.rootViewController

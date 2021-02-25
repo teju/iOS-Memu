@@ -91,6 +91,8 @@ class WalletViewController: UITableViewController {
     }
     
     func getTopEarnersData() {
+        let randomInt = Int.random(in: 1..<10000)
+
        orderDict["MID"] = "EYZGKu85499319132530";//paste here your merchant id   //mandatory
        orderDict["CHANNEL_ID"] = "WAP";
        orderDict["INDUSTRY_TYPE_ID"] = "Retail";
@@ -98,9 +100,9 @@ class WalletViewController: UITableViewController {
         if let amountDidgit = amount.text {
             orderDict["TXN_AMOUNT"] = amountDidgit.digits
         }
-       orderDict["ORDER_ID"] = "\(Date().timeIntervalSince1970)";
+       orderDict["ORDER_ID"] = "OREDRID_\(randomInt)";
         orderDict["CUST_ID"] = UserDefaults.user_id;
-        orderDict["CALLBACK_URL"] = "https://securegw.paytm.in/theia/paytmCallback?ORDER_ID= \(Date().timeIntervalSince1970)"
+        orderDict["CALLBACK_URL"] = "https://securegw.paytm.in/theia/paytmCallback?ORDER_ID=OREDRID_\(randomInt)"
         RestDataSource.postchecksum(checksum: orderDict)
             .showLoading(on: self.view)
             .subscribe(onNext: { [weak self] value in
@@ -114,13 +116,9 @@ class WalletViewController: UITableViewController {
         print("makePayment orderDict \(orderDict)")
             let pgOrder = PGOrder(params: orderDict )
             let transaction = PGTransactionViewController.init(transactionFor: pgOrder)
-                
                 transaction!.serverType = eServerTypeProduction
                 transaction!.merchant = merchant
                 transaction!.delegate = self
-                transaction!.merchant.merchantID =  orderDict["MID"]
-                transaction?.merchant.industryID = "Retail"
-                transaction?.merchant.website = "DEFAULT"
                 transaction?.loggingEnabled = true
                 self.navigationController?.pushViewController(transaction!, animated: true)
         }

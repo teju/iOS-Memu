@@ -24,7 +24,9 @@ class FollowersViewController: UIViewController ,UITableViewDelegate,UITableView
     @IBOutlet weak var profile_pic: roundImageView!
     var my_followers = [Friend]()
     var i_follow_list = [Friend]()
-    
+    var pending_friend_list_y = CGFloat(0)
+    var underline_y = CGFloat(0)
+    var i_follow_y = CGFloat(0)
     @IBOutlet weak var i_follow: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +34,9 @@ class FollowersViewController: UIViewController ,UITableViewDelegate,UITableView
          accepted_friends.rowHeight = UITableView.automaticDimension
         pending_friend_list.estimatedRowHeight = 70
         pending_friend_list.rowHeight = UITableView.automaticDimension
-       
+        pending_friend_list_y = pending_friend_list.frame.origin.y
+        underline_y = underline.frame.origin.y
+        i_follow_y = i_follow.frame.origin.y
     
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -74,29 +78,35 @@ class FollowersViewController: UIViewController ,UITableViewDelegate,UITableView
         }).disposed(by: rx.bag)
     }
     func RemoveFollowerAPI(friend_id : String) {
-           RestDataSource.postAcceptRemove(type: "FL", freind_id: friend_id, status: "Remove")
+        RestDataSource.postAcceptRemove(type: "FL", freind_id: friend_id, status: "Remove")
            .showLoading(on: self.view)
            .subscribe(onNext: { [weak self] value in
-            self?.getMyFollowersList()
+            if(value.status == "success") {
+                self?.getMyFollowersList()
+            } else {
+                self?.showAlert("", value.message)
+
+            }
            }).disposed(by: rx.bag)
        }
     func friendList() {
-        self.accepted_friends.frame.size.height = CGFloat(70 * 3)
+        self.accepted_friends.frame.size.height = CGFloat(70 * my_followers.count)
         self.accepted_friends.reloadData()
         self.accepted_friends.layoutIfNeeded()
         self.accepted_friends.setNeedsFocusUpdate()
     }
     
     func  pendingList ()  {
+        
         self.pending_friend_list.reloadData()
         self.pending_friend_list.layoutIfNeeded()
         self.pending_friend_list.setNeedsFocusUpdate()
-        self.pending_friend_list.frame = CGRect(x:0, y:self.pending_friend_list.frame.origin.y + CGFloat(60) * (CGFloat(my_followers.count) - 1) , width:self.pending_friend_list.frame.size.width, height:CGFloat(70 * i_follow_list.count));
+        self.pending_friend_list.frame = CGRect(x:0, y:self.pending_friend_list_y + CGFloat(60) * (CGFloat(my_followers.count) - 1) , width:self.pending_friend_list.frame.size.width, height:CGFloat(70 * i_follow_list.count));
         self.scrollview.contentSize = CGSize(width:
             UIScreen.main.bounds.width, height: UIScreen.main.bounds.height + CGFloat(70 * my_followers.count ))
         if(my_followers.count != 0) {
-            i_follow.frame.origin.y = i_follow.frame.origin.y + (CGFloat(my_followers.count) - 1) * 60
-            underline.frame.origin.y = underline.frame.origin.y + (CGFloat(my_followers.count) - 1) * 60 
+            i_follow.frame.origin.y = i_follow_y + (CGFloat(my_followers.count) - 1) * 60
+            underline.frame.origin.y = underline_y + (CGFloat(my_followers.count) - 1) * 60 
 
         } 
               

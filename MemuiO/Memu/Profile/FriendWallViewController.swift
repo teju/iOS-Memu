@@ -65,8 +65,17 @@ UICollectionViewDelegate{
         RestDataSource.postFriendRequest(type: type, friend_id: (friend_id))
         .showLoading(on: self.view)
         .subscribe(onNext: { [weak self] value in
-            self?.showAlert(value.status, value.message)
-            
+            if(value.status == "success") {
+                let url = URL(string: value.user_details.photo.original_path)
+                var rightImage = "myfriends"
+                if(type == "FL") {
+                    rightImage = "followers_noti"
+                }
+                self?.showAlert(title: value.message, userName: value.user_details.name, userImage: url!, rightImage: UIImage(named: rightImage)!)
+                self?.getUserWall()
+            } else {
+                self?.showAlert("", value.message)
+            }
         }).disposed(by: rx.bag)
     }
     

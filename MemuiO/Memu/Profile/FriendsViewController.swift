@@ -22,6 +22,7 @@ class FriendsViewController: UIViewController ,UITableViewDelegate,UITableViewDa
     @IBOutlet weak var profile_pic: roundImageView!
     var pending_list = [Friend]()
     var friend_list = [Friend]()
+    var pending_friend_list_y = CGFloat(0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,8 @@ class FriendsViewController: UIViewController ,UITableViewDelegate,UITableViewDa
          accepted_friends.rowHeight = UITableView.automaticDimension
         pending_friend_list.estimatedRowHeight = 70
         pending_friend_list.rowHeight = UITableView.automaticDimension
-       
+        pending_friend_list_y = pending_friend_list.frame.origin.y
+
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -83,7 +85,7 @@ class FriendsViewController: UIViewController ,UITableViewDelegate,UITableViewDa
         self.pending_friend_list.reloadData()
         self.pending_friend_list.layoutIfNeeded()
         self.pending_friend_list.setNeedsFocusUpdate()
-        self.pending_friend_list.frame = CGRect(x:0, y:self.pending_friend_list.frame.origin.y + CGFloat(50) , width:self.pending_friend_list.frame.size.width, height:CGFloat(70 * pending_list.count));
+        self.pending_friend_list.frame = CGRect(x:0, y: pending_friend_list_y + CGFloat(50) , width:self.pending_friend_list.frame.size.width, height:CGFloat(70 * pending_list.count));
         self.scrollview.contentSize = CGSize(width:
             UIScreen.main.bounds.width, height: UIScreen.main.bounds.height + CGFloat(70 * friend_list.count ))
               
@@ -92,7 +94,7 @@ class FriendsViewController: UIViewController ,UITableViewDelegate,UITableViewDa
         self.RemoveFollowerAPI(friend_id: friend_list[sender.tag].freind_id,type: "Remove")
     }
     @objc func AcceptFriend(_ sender: UIButton) {
-           self.RemoveFollowerAPI(friend_id: pending_list[sender.tag].freind_id,type: "Accept")
+           self.RemoveFollowerAPI(friend_id: pending_list[sender.tag].freind_id,type: "Accepted")
        }
     func RemoveFollowerAPI(friend_id : String,type:String) {
         RestDataSource.postAcceptRemove(type: "FR", freind_id: friend_id, status: type)

@@ -184,7 +184,7 @@ extension RestDataSource {
         }
         .restSend()
     }
-    static func postFriendRequest(type : String ,friend_id : String) -> Observable<ResponceResult> {
+    static func postFriendRequest(type : String ,friend_id : String) -> Observable<AddFriend> {
         
         let sendParameters: [String: Any] = [
             "user_id": UserDefaults.user_id,"offset":0,
@@ -192,7 +192,7 @@ extension RestDataSource {
         return json(.post, "profile/friend-request",
                     parameters: sendParameters)
             .map { json in
-                ResponceResult(json: JSON(json.dictionaryObject!))
+                AddFriend(json: JSON(json.dictionaryObject!))
         }
         .restSend()
     }
