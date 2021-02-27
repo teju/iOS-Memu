@@ -39,6 +39,7 @@ class MapFeedsPopUpController: UIViewController, UICollectionViewDataSource, UIC
                 self?.collection_view.delegate =  self
                 self?.collection_view.dataSource = self
                 self?.map_feeds = value.map_feeds
+                self?.map_feeds.insert(AlertMapFeeds(), at: 1)
             } else {
                 self?.showAlert(value.status, value.message)
             }
@@ -50,6 +51,8 @@ class MapFeedsPopUpController: UIViewController, UICollectionViewDataSource, UIC
         .subscribe(onNext: { [weak self] value in
             if value.status == "success" {
                 self?.removeAnimate()
+                NotificationCenter.default.post(name: Notification.Name("showNotify"), object: nil, userInfo:nil)
+
             } else {
                 self?.showAlert(value.status, value.message)
             }
@@ -122,16 +125,16 @@ class MapFeedsPopUpController: UIViewController, UICollectionViewDataSource, UIC
             
             let width = Int((collectionViewWidth - extraSpace - inset) / numberofItem)
                         
-            return CGSize(width: width, height: width +  30)
+            return CGSize(width: width, height: width - 10 )
         }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-        // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mapfeeds", for: indexPath as IndexPath) as! MapFeedsCollectionViewCell
-        cell.feed_title.text = map_feeds[indexPath.row].name
-        let imageURL = URL(string: map_feeds[indexPath.row].logo_wt_pin)!
-        cell.feed_img.sd_setImage(with: imageURL)
+        if(!map_feeds[indexPath.row].name.isEmpty) {
+            cell.feed_title.text = map_feeds[indexPath.row].name
+            let imageURL = URL(string: map_feeds[indexPath.row].logo_wt_pin)!
+            cell.feed_img.sd_setImage(with: imageURL)
+        }
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -148,8 +151,11 @@ class MapFeedsPopUpController: UIViewController, UICollectionViewDataSource, UIC
     // MARK: - UICollectionViewDelegate protocol
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if(indexPath.row != 2) {
+            updateUI(feed_id: map_feeds[indexPath.row].id)
+        }
         // handle tap events
-        updateUI(feed_id: map_feeds[indexPath.row].id)
-        print("You selected cell #\(indexPath.item)!")
+        
+        print("You selected cell #\(map_feeds[indexPath.row].name)!")
     }
 }

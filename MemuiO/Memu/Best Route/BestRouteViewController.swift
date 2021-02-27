@@ -58,8 +58,7 @@ class BestRouteViewController: UIViewController {
         self.tag = sender.tag
         let autocompleteController = GMSAutocompleteViewController()
         autocompleteController.delegate = self
-        let searchBarTextAttributes: [NSAttributedString.Key : AnyObject] = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.black, NSAttributedString.Key(rawValue: NSAttributedString.Key.font.rawValue): UIFont.systemFont(ofSize: UIFont.systemFontSize)]
-        UITextField.appearance(whenContainedInInstancesOf: [UITableView.self]).defaultTextAttributes = searchBarTextAttributes
+        
         // Specify the place data types to return.
         let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) |
             UInt(GMSPlaceField.placeID.rawValue))!

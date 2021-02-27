@@ -41,6 +41,7 @@ class MatchingRidersViewController: UIViewController,UITableViewDataSource,UITab
                     self?.matching_riders.reloadData()
                 }
               } else {
+                self?.removeAnimate()
                   self?.showAlert(value.status, value.message)
               }
           }).disposed(by: rx.bag)

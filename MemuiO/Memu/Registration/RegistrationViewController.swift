@@ -620,5 +620,20 @@ extension UIView {
         self.layer.addSublayer(border)
         self.layer.masksToBounds = true
     }
-
+    func setUnderLine(colour : UIColor) {
+           let border = CALayer()
+           let width = CGFloat(0.5)
+           border.borderColor = colour.cgColor
+           border.frame = CGRect(x: 0, y: self.frame.size.height - width, width:  self.frame.size.width - 10, height: self.frame.size.height)
+           border.borderWidth = width
+           self.layer.addSublayer(border)
+           self.layer.masksToBounds = true
+       }
+    func removeUnderline() {
+        for layer in layer.sublayers! {
+           if layer.isKind(of: CAShapeLayer.self) {
+              layer.removeFromSuperlayer()
+           }
+        }
+    }
 }

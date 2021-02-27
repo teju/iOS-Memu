@@ -68,7 +68,7 @@ class BookingViewController: UIViewController ,UICollectionViewDataSource,WWCale
         print("viewWillAppear")
     }
     override func viewDidAppear(_ animated: Bool) {
-        scroll_view.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height+500)
+        scroll_view.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height+420)
         
     }
     func setVehicleID(vehicle_id : String,rs_per_km : String) {

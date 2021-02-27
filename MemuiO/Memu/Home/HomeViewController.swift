@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
         super.viewDidAppear(true)
         let url = URL(string: UserDefaults.profile_picture!)
         self.profile_pic.sd_setImage(with: url)
-        
+       // self.showAlert(title: "Great! referral reward", userName: "user", userImage: url!, liked: false, desc: "You have received")
     }
     
     @IBAction func profile(_ sender: Any) {

@@ -129,6 +129,7 @@
 		79540C4424A118190003330F /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79540C4324A118190003330F /* HistoryTableViewCell.swift */; };
 		79540C4924A130D20003330F /* HistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79540C4824A130D20003330F /* HistoryResponse.swift */; };
 		79540C4B24A1331A0003330F /* ScheduledList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79540C4A24A1331A0003330F /* ScheduledList.swift */; };
+		79547F0B25EABE9A00A6D9B0 /* Coins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79547F0A25EABE9900A6D9B0 /* Coins.swift */; };
 		7962DBD8249F249500C76511 /* WeekDaysCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962DBD7249F249500C76511 /* WeekDaysCollectionViewCell.swift */; };
 		7962DBDA249FCA7100C76511 /* MatchingRidersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962DBD9249FCA7100C76511 /* MatchingRidersViewController.swift */; };
 		7962DBDC249FD5E100C76511 /* MAtchingRidersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962DBDB249FD5E100C76511 /* MAtchingRidersTableViewCell.swift */; };
@@ -160,6 +161,8 @@
 		79BF483925E52256009ACD93 /* dialogs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79BF483825E52256009ACD93 /* dialogs.storyboard */; };
 		79CCF9D325E6BD1200A36006 /* ProfilePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCF9D225E6BD1200A36006 /* ProfilePhoto.swift */; };
 		79CCF9D525E6D32100A36006 /* loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79CCF9D425E6D32100A36006 /* loading@2x.png */; };
+		79EEB90A25EA473400CD8E8B /* ShortNotifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EEB90925EA473400CD8E8B /* ShortNotifyViewController.swift */; };
+		79EEB90C25EA530700CD8E8B /* MapFeedAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EEB90B25EA530700CD8E8B /* MapFeedAlertViewController.swift */; };
 		79FD4FA324A1F3020015B28F /* MatchingBuddiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FD4FA224A1F3010015B28F /* MatchingBuddiesCollectionViewCell.swift */; };
 		79FD4FA524A210440015B28F /* MatchedBuddies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FD4FA424A210440015B28F /* MatchedBuddies.swift */; };
 		79FD4FA724A22BC30015B28F /* ReurringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FD4FA624A22BC30015B28F /* ReurringViewController.swift */; };
@@ -333,6 +336,7 @@
 		79540C4324A118190003330F /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		79540C4824A130D20003330F /* HistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryResponse.swift; sourceTree = "<group>"; };
 		79540C4A24A1331A0003330F /* ScheduledList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledList.swift; sourceTree = "<group>"; };
+		79547F0A25EABE9900A6D9B0 /* Coins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coins.swift; sourceTree = "<group>"; };
 		7962DBD7249F249500C76511 /* WeekDaysCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDaysCollectionViewCell.swift; sourceTree = "<group>"; };
 		7962DBD9249FCA7100C76511 /* MatchingRidersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingRidersViewController.swift; sourceTree = "<group>"; };
 		7962DBDB249FD5E100C76511 /* MAtchingRidersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAtchingRidersTableViewCell.swift; sourceTree = "<group>"; };
@@ -364,6 +368,8 @@
 		79BF483825E52256009ACD93 /* dialogs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = dialogs.storyboard; sourceTree = "<group>"; };
 		79CCF9D225E6BD1200A36006 /* ProfilePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhoto.swift; sourceTree = "<group>"; };
 		79CCF9D425E6D32100A36006 /* loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading@2x.png"; sourceTree = "<group>"; };
+		79EEB90925EA473400CD8E8B /* ShortNotifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortNotifyViewController.swift; sourceTree = "<group>"; };
+		79EEB90B25EA530700CD8E8B /* MapFeedAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeedAlertViewController.swift; sourceTree = "<group>"; };
 		79FD4FA224A1F3010015B28F /* MatchingBuddiesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingBuddiesCollectionViewCell.swift; sourceTree = "<group>"; };
 		79FD4FA424A210440015B28F /* MatchedBuddies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedBuddies.swift; sourceTree = "<group>"; };
 		79FD4FA624A22BC30015B28F /* ReurringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReurringViewController.swift; sourceTree = "<group>"; };
@@ -843,6 +849,7 @@
 				79540C4824A130D20003330F /* HistoryResponse.swift */,
 				79540C4A24A1331A0003330F /* ScheduledList.swift */,
 				79FD4FA424A210440015B28F /* MatchedBuddies.swift */,
+				79547F0A25EABE9900A6D9B0 /* Coins.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -918,6 +925,8 @@
 			children = (
 				79BF483525E51A4D009ACD93 /* InfoAlertViewController.swift */,
 				79175D1525E74B9100A19091 /* UserDataAlertViewController.swift */,
+				79EEB90925EA473400CD8E8B /* ShortNotifyViewController.swift */,
+				79EEB90B25EA530700CD8E8B /* MapFeedAlertViewController.swift */,
 			);
 			path = dialogs;
 			sourceTree = "<group>";
@@ -1184,6 +1193,7 @@
 				79AF49C6249A5B9300711030 /* AlertMapFeedsResponse.swift in Sources */,
 				79FD4FA524A210440015B28F /* MatchedBuddies.swift in Sources */,
 				794B795E2513E791005047C9 /* UserWallResponse.swift in Sources */,
+				79EEB90C25EA530700CD8E8B /* MapFeedAlertViewController.swift in Sources */,
 				6DA40EF8245C1AE500A09AD0 /* Location.swift in Sources */,
 				7962DBDE24A0894400C76511 /* VehiclePopupViewController.swift in Sources */,
 				7995D67A2497C0F800F6E24A /* NavigationViewDataSource.swift in Sources */,
@@ -1266,9 +1276,11 @@
 				791DC9B62593831E00EFF42B /* NSDate+Timepiece.swift in Sources */,
 				79540C4924A130D20003330F /* HistoryResponse.swift in Sources */,
 				6DA40EC4245B4C4600A09AD0 /* LoginViewController.swift in Sources */,
+				79EEB90A25EA473400CD8E8B /* ShortNotifyViewController.swift in Sources */,
 				6DED6C6A2458B473003F0AB1 /* PoolCarImgView.swift in Sources */,
 				793BF53224B21DF400DDB0E9 /* CustomBottomBannerView.swift in Sources */,
 				6DF46FD32453660000855FEA /* S1View.swift in Sources */,
+				79547F0B25EABE9A00A6D9B0 /* Coins.swift in Sources */,
 				7968D5C92499E1C700FAC835 /* MapFeedsPopUpController.swift in Sources */,
 				791DC9B52593831E00EFF42B /* NSCalendar+Timepiece.swift in Sources */,
 				6DA40EFC245E313100A09AD0 /* File.swift in Sources */,

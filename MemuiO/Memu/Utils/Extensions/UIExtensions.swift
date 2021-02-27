@@ -42,7 +42,25 @@ extension UIViewController {
              self.view.addSubview(popvc.view)
              popvc.didMove(toParent: self)
      }
-
+    func showAlert(title: String, userName: String, userImage : URL, liked:Bool,desc:String,completion: (()->())? = nil) {
+        let popvc = UIStoryboard(name: "dialogs", bundle: nil).instantiateViewController(withIdentifier: "ShortNotifyViewController") as! ShortNotifyViewController
+            popvc.alerttitle = title
+            popvc.userImage = userImage
+            popvc.userName = userName
+            popvc.isLiked = liked
+            popvc.descriptionVal = desc
+            self.addChild(popvc)
+            popvc.view.frame = self.view.frame
+            self.view.addSubview(popvc.view)
+            popvc.didMove(toParent: self)
+    }
+    func showAlert(completion: (()->())? = nil) {
+           let popvc = UIStoryboard(name: "dialogs", bundle: nil).instantiateViewController(withIdentifier: "MapFeedAlertViewController") as! MapFeedAlertViewController
+           self.addChild(popvc)
+           popvc.view.frame = self.view.frame
+           self.view.addSubview(popvc.view)
+           popvc.didMove(toParent: self)
+       }
     func topMostViewController() -> UIViewController {
         var topViewController: UIViewController? = UIApplication.shared.keyWindow?.rootViewController
         while ((topViewController?.presentedViewController) != nil) {

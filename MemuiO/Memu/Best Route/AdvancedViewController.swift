@@ -75,7 +75,7 @@ class AdvancedViewController: UIViewController, MGLMapViewDelegate, CLLocationMa
             collection_view.isHidden = true
             btnstart?.isHidden = false
             let popvc = UIStoryboard(name: "NavigationController", bundle: nil).instantiateViewController(withIdentifier: "MatchingRidersViewController") as! MatchingRidersViewController
-             popvc.trip_or_rider_id = trip_or_rider_id
+              popvc.trip_or_rider_id = trip_or_rider_id
               popvc.type = type
                self.addChild(popvc)
                 
@@ -101,6 +101,17 @@ class AdvancedViewController: UIViewController, MGLMapViewDelegate, CLLocationMa
 
     }
    
+    @IBAction func start(_ sender: Any) {
+        guard let route = currentRoute, let routeOptions = routeOptions else { return }
+               // For demonstration purposes, simulate locations if the Simulate Navigation option is on.
+           
+       let storyboard = UIStoryboard(name: "NavigationController", bundle: nil)
+              let loginPage = storyboard.instantiateViewController(withIdentifier: "CustomViewController") as! CustomViewController
+           loginPage.userRoute = route
+       loginPage.userRouteOptions = routeOptions
+       loginPage.trip_id = trip_or_rider_id
+              self.navigationController?.pushViewController(loginPage, animated: true)
+    }
     @objc func goBack(notification: Notification) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -126,15 +137,7 @@ class AdvancedViewController: UIViewController, MGLMapViewDelegate, CLLocationMa
     
     @IBAction func tappedButton(sender: UIButton) {
         
-        guard let route = currentRoute, let routeOptions = routeOptions else { return }
-        // For demonstration purposes, simulate locations if the Simulate Navigation option is on.
-    
-        let storyboard = UIStoryboard(name: "NavigationController", bundle: nil)
-               let loginPage = storyboard.instantiateViewController(withIdentifier: "CustomViewController") as! CustomViewController
-            loginPage.userRoute = route
-        loginPage.userRouteOptions = routeOptions
-        loginPage.trip_id = trip_or_rider_id
-               self.navigationController?.pushViewController(loginPage, animated: true)
+       
     }
     
 //     @objc func handleLongPress(_ gesture: UILongPressGestureRecognizer) {

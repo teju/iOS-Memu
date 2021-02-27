@@ -20,14 +20,17 @@ class ScheduledList {
     var no_of_seats = ""
     var vehicle_id = ""
 
-
+    var coins_earned = 0
     var fromaddress = Address()
     var toaddress = Address()
+    var coins_spent = Coins()
+    
     var matched_budies = [MatchedBuddies]()
 
     init(json: JSON) {
        status = json["status"].stringValue
        id = json["id"].stringValue
+        coins_earned = json["coins_earned"].intValue
        type = json["type"].stringValue
        date = json["date"].stringValue
        time = json["time"].stringValue
@@ -41,6 +44,7 @@ class ScheduledList {
         if(toaddressJson.count != 0) {
             toaddress = Address(json: JSON(toaddressJson.dictionaryObject!))
         }
+        coins_spent = Coins(json: json["coins_spent"])
         matched_budies = json["matched_budies"].arrayValue.map { MatchedBuddies(json: $0) }
 
 

@@ -10,6 +10,10 @@ import UIKit
 
 class HistoryTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var money_earned: UILabel!
+    @IBOutlet weak var money_spent: UILabel!
+
+    @IBOutlet weak var coins: UIView!
     @IBOutlet weak var matching_buddies: UICollectionView!
     @IBOutlet weak var dateTime: UILabel!
     @IBOutlet weak var toAddress: UILabel!

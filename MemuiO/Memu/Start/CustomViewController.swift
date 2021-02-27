@@ -23,7 +23,7 @@ class CustomViewController: UIViewController, MGLMapViewDelegate {
     var destination: MGLPointAnnotation!
     let directions = Directions.shared
     var navigationService: NavigationService!
-    var simulateLocation = false
+    var simulateLocation = true
 
     var userRoute: Route?
     var user: UserInfo!
@@ -45,9 +45,7 @@ class CustomViewController: UIViewController, MGLMapViewDelegate {
     // View that is placed over the instructions banner while we are previewing
     var previewInstructionsView: StepInstructionsView?
     
-    @IBAction func map_feeds(_ sender: Any) {
-        
-    }
+    
     @IBAction func recenture(_ sender: Any) {
          mapView.recenterMap()
     }
@@ -71,7 +69,7 @@ class CustomViewController: UIViewController, MGLMapViewDelegate {
         
         voiceController = MapboxVoiceController(navigationService: navigationService)
         
-        mapView.compassView.isHidden = false
+        mapView.compassView.isHidden = true
         mapView.logoView.isHidden = true
         instructionsBannerView.isHidden = true
         bottomView.isHidden = true
@@ -91,16 +89,17 @@ class CustomViewController: UIViewController, MGLMapViewDelegate {
         self.mapView.delegate = self
         // Center map on user
         mapView.recenterMap()
-        time_remaining.textColor = UIColor.systemGreen
         if(trip_id != "") {
             startTrip()
              btnEndTrip.isHidden = false
         } else {
             btnEndTrip.isHidden = true
         }
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.showNotify(notification:)), name: Notification.Name("showNotify"), object: nil)
     }
-    
+    @objc func showNotify(notification: Notification) {
+        self.showAlert()
+    }
     @IBAction func endTripAction(_ sender: Any) {
         endTrip(no_of_kms: distance_time.text!)
     }
@@ -516,8 +515,8 @@ extension CustomViewController: StepsViewControllerDelegate {
 }
 class CustomDayStyle: DayStyle {
  
-    private let backgroundColor = #colorLiteral(red: 0.06276176125, green: 0.6164312959, blue: 0.3432356119, alpha: 1)
-    private let darkBackgroundColor = #colorLiteral(red: 0.0473754704, green: 0.4980872273, blue: 0.2575169504, alpha: 1)
+    private let backgroundColor = #colorLiteral(red: 0.06274509804, green: 0, blue: 0.2901960784, alpha: 1)
+    private let darkBackgroundColor = #colorLiteral(red: 0.06274509804, green: 0, blue: 0.2901960784, alpha: 1)
     private let secondaryBackgroundColor = #colorLiteral(red: 0.9842069745, green: 0.9843751788, blue: 0.9841964841, alpha: 1)
     private let blueColor = #colorLiteral(red: 0.26683864, green: 0.5903761983, blue: 1, alpha: 1)
     private let lightGrayColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)

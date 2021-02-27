@@ -11,8 +11,6 @@ import UIKit
 class ReurringViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout{
     @IBOutlet weak var to_address: UILabel!
     
-    @IBOutlet weak var matchingcount: UILabel!
-    @IBOutlet weak var profile_img: UIImageView!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var from_address: UILabel!
     @IBOutlet weak var weekDayscollection: UICollectionView!
@@ -26,23 +24,17 @@ class ReurringViewController: UIViewController,UICollectionViewDelegate,UICollec
         from_address.text = complted_list?.fromaddress.formattedAddress
         to_address.text = complted_list?.toaddress.formattedAddress
         time.text = complted_list?.time
-        if(complted_list?.matched_budies.count != 0) {
-            let imageURL = URL(string: complted_list?.matched_budies[0].photo.profile_path ?? "")!
-            profile_img.sd_setImage(with: imageURL)
-            if((complted_list?.matched_budies.count)! > 1) {
-                matchingcount.text = "\(complted_list?.matched_budies.count ?? 0 - 1)+"
-            } else {
-                matchingcount.isHidden = true
-            }
-        } else {
-            profile_img.isHidden = true
-            matchingcount.isHidden = true
-        }
+        
         daysarray = complted_list?.days.components(separatedBy: ",") as! [String]
         print("daysarray \(daysarray)")
 
     }
     
+    @IBAction func close(_ sender: Any) {
+        NotificationCenter.default.post(name: Notification.Name("GOBACK"), object: nil, userInfo:nil)
+
+        self.removeAnimate()
+    }
     @IBAction func pause(_ sender: Any) {
         editRecurring(status: getStatus())
     }

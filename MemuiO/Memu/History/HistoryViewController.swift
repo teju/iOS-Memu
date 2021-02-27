@@ -11,7 +11,10 @@ import CoreLocation
 import SwiftLocation
 class HistoryViewController: UIViewController ,UITableViewDataSource,UITableViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var no_rides: UILabel!
     
+    @IBOutlet weak var btnCompletedRides: UIButton!
+    @IBOutlet weak var btnscheduledRides: UIButton!
     @IBOutlet weak var table_title: UILabel!
     
     @IBOutlet weak var no_recurring_list: UILabel!
@@ -22,7 +25,7 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
     var scheduled_list = [ScheduledList]()
     var complted_list = [ScheduledList]()
     var matched_budies = [MatchedBuddies]()
-
+    var isCompletedRides = false
     override func viewDidLoad() {
         super.viewDidLoad()
         let imageURL = URL(string: UserDefaults.profile_picture!)!
@@ -43,11 +46,15 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func completedRides(_ sender: Any) {
+        btnCompletedRides.setUnderLine(colour: UIColor.black)
+        btnscheduledRides.removeUnderline()
         table_title.text = "Completed Rides"
         getHistoryList(url: "booking/my-completed-rides")
 
     }
     @IBAction func scheduledRides(_ sender: Any) {
+        btnCompletedRides.removeUnderline()
+        btnscheduledRides.setUnderLine(colour: UIColor.black)
         table_title.text = "Upcoming Rides"
         getHistoryList(url: "booking/my-rides")
     }
@@ -60,25 +67,34 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
         .showLoading(on: self.view)
         .subscribe(onNext: { [weak self] value in
             if value.status == "success" {
-            
+                self?.no_rides.isHidden = true
+                var scrollheight = 260
                 if(value.scheduled_list.count != 0) {
+                    self?.isCompletedRides = false
                     self?.scheduled_list = value.scheduled_list
                 } else {
+                    scrollheight = 280
+                    self?.isCompletedRides = true
                     self?.scheduled_list = value.completed_list
                 }
 
                 
                 DispatchQueue.main.async() {
 
-                    self?.history_cell.frame.size.height = CGFloat(220 * (self?.scheduled_list.count)!) + CGFloat(10 * (self?.scheduled_list.count)!)
+                    self?.history_cell.frame.size.height = CGFloat(scrollheight * (self?.scheduled_list.count)!) + CGFloat(10 * (self?.scheduled_list.count)!)
                     self?.history_cell.reloadData()
                     self?.history_cell.layoutIfNeeded()
                     self?.history_cell.setNeedsFocusUpdate();
                     self?.scrollView.contentSize = CGSize(width:
-                        UIScreen.main.bounds.width, height: UIScreen.main.bounds.height+CGFloat((self?.scheduled_list.count)! * 220) - 180)
+                        UIScreen.main.bounds.width, height: UIScreen.main.bounds.height+CGFloat((self?.scheduled_list.count)! * scrollheight) - 180)
                 }
             } else {
-                self?.showAlert(value.status, value.message)
+                self?.scheduled_list.removeAll()
+                self?.no_rides.isHidden = false
+                self?.no_rides.text = value.message
+                DispatchQueue.main.async() {
+                     self?.history_cell.reloadData()
+                }
             }
         }).disposed(by: rx.bag)
     }
@@ -93,6 +109,8 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
             } else {
                 self?.no_recurring_list.isHidden = false
                 self?.no_recurring_list.text = value.message
+                self?.complted_list.removeAll()
+                self?.recurring_cell.reloadData()
                // self?.showAlert(value.status, value.message)
             }
         }).disposed(by: rx.bag)
@@ -107,7 +125,14 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
         let time = scheduled_list[indexPath.section].time
         cell.dateTime.text = "\(date) \(time)"
         matched_budies = scheduled_list[indexPath.section].matched_budies
-
+        if(isCompletedRides) {
+            cell.coins.isHidden = false
+            let coins_spent = scheduled_list[indexPath.section].coins_spent.amount + scheduled_list[indexPath.section].coins_spent.memu_amount
+            cell.money_spent.text = "Money Earned: \(coins_spent)"
+            cell.money_earned.text = "Money Earned: \(scheduled_list[indexPath.section].coins_earned)"
+        } else {
+            cell.coins.isHidden = true
+        }
         cell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
 
        return cell
@@ -195,7 +220,10 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 220
+        if isCompletedRides {
+            return 280
+        }
+        return 260
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "NavigationController", bundle: nil)
