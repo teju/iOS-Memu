@@ -164,6 +164,7 @@
 		79C4164F25ED337B004B9A71 /* TripSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C4164E25ED337B004B9A71 /* TripSummary.swift */; };
 		79CCF9D325E6BD1200A36006 /* ProfilePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCF9D225E6BD1200A36006 /* ProfilePhoto.swift */; };
 		79CCF9D525E6D32100A36006 /* loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79CCF9D425E6D32100A36006 /* loading@2x.png */; };
+		79CE4BB525ED4C43009CD9AB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CE4BB425ED4C43009CD9AB /* Security.framework */; };
 		79EEB90A25EA473400CD8E8B /* ShortNotifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EEB90925EA473400CD8E8B /* ShortNotifyViewController.swift */; };
 		79EEB90C25EA530700CD8E8B /* MapFeedAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EEB90B25EA530700CD8E8B /* MapFeedAlertViewController.swift */; };
 		79FD4FA324A1F3020015B28F /* MatchingBuddiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FD4FA224A1F3010015B28F /* MatchingBuddiesCollectionViewCell.swift */; };
@@ -192,7 +193,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		79A2AE8025DFE7EC00ECB846 /* Embed Frameworks */ = {
+		79C4165A25ED4184004B9A71 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
@@ -375,6 +376,7 @@
 		79C4164E25ED337B004B9A71 /* TripSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSummary.swift; sourceTree = "<group>"; };
 		79CCF9D225E6BD1200A36006 /* ProfilePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhoto.swift; sourceTree = "<group>"; };
 		79CCF9D425E6D32100A36006 /* loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading@2x.png"; sourceTree = "<group>"; };
+		79CE4BB425ED4C43009CD9AB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		79EEB90925EA473400CD8E8B /* ShortNotifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortNotifyViewController.swift; sourceTree = "<group>"; };
 		79EEB90B25EA530700CD8E8B /* MapFeedAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeedAlertViewController.swift; sourceTree = "<group>"; };
 		79FD4FA224A1F3010015B28F /* MatchingBuddiesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingBuddiesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 			files = (
 				6B1C0F86633BFA6E0D4AE9B7 /* Pods_Memu.framework in Frameworks */,
 				7911141B25E3D179004F7E95 /* SystemConfiguration.framework in Frameworks */,
+				79CE4BB525ED4C43009CD9AB /* Security.framework in Frameworks */,
 				7911141825E3CF46004F7E95 /* libPaymentsSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -961,6 +964,7 @@
 		CE5AC56D1C89B945121B4FE4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				79CE4BB425ED4C43009CD9AB /* Security.framework */,
 				7911141A25E3D179004F7E95 /* SystemConfiguration.framework */,
 				1574AE5B15A4878B89264431 /* Pods_Memu.framework */,
 			);
@@ -980,7 +984,7 @@
 				188AE070241CE70C0079E2BB /* Resources */,
 				A5F71525540C41960D149FF0 /* [CP] Embed Pods Frameworks */,
 				B7B680809BF02044B2DE4734 /* [CP] Copy Pods Resources */,
-				79A2AE8025DFE7EC00ECB846 /* Embed Frameworks */,
+				79C4165A25ED4184004B9A71 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

@@ -2,18 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
+	<key>LSApplicationQueriesSchemes</key>
 	<array>
-		<string>font/poppins_regular.ttf</string>
-		<string>font/poppins_bold.ttf</string>
-		<string>font/Poppins-SemiBold.ttf</string>
+		<string>paytm</string>
 	</array>
-	<key>MGLMapboxMetricsEnabledSettingShownInApp</key>
-	<string>yes</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -26,12 +20,25 @@
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>paytmEYZGKu85499319132530</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MGLMapboxAccessToken</key>
 	<string>pk.eyJ1IjoidGVqYXN3aW5pMTIiLCJhIjoiY2szeW4xNjZpMG5sNjNqczh0Y2Foc3l1YiJ9.2-baGFYmq-h827W1JN2yNQ</string>
+	<key>MGLMapboxMetricsEnabledSettingShownInApp</key>
+	<string>yes</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -47,6 +54,12 @@
 	<string>The app will access your Photo Library to select a photo and upload the profile picture.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>The app will use Photos to attach to your profile</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>font/poppins_regular.ttf</string>
+		<string>font/poppins_bold.ttf</string>
+		<string>font/Poppins-SemiBold.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -90,5 +103,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>
