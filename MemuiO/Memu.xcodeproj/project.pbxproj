@@ -141,6 +141,8 @@
 		7966FAAE251407D00050CB32 /* FriendWallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7966FAAD251407D00050CB32 /* FriendWallViewController.swift */; };
 		7968D5C92499E1C700FAC835 /* MapFeedsPopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7968D5C82499E1C700FAC835 /* MapFeedsPopUpController.swift */; };
 		7968D5CB2499F05900FAC835 /* MapFeedsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7968D5CA2499F05900FAC835 /* MapFeedsCollectionViewCell.swift */; };
+		79696D4225ECE17A0057E060 /* TripCompletedAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79696D4125ECE17A0057E060 /* TripCompletedAlertViewController.swift */; };
+		796BE6C825ED0F67000BC901 /* TripCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796BE6C725ED0F67000BC901 /* TripCompletedViewController.swift */; };
 		796C1C31251249C900CD22ED /* ProfileWallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C1C30251249C900CD22ED /* ProfileWallViewController.swift */; };
 		796C1C33251249E600CD22ED /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 796C1C32251249E500CD22ED /* Profile.storyboard */; };
 		7995D6702497936E00F6E24A /* NavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7995D66F2497936E00F6E24A /* NavigationController.storyboard */; };
@@ -159,6 +161,7 @@
 		79AF49CA249A86E900711030 /* DistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF49C9249A86E900711030 /* DistCollectionViewCell.swift */; };
 		79BF483625E51A4D009ACD93 /* InfoAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BF483525E51A4D009ACD93 /* InfoAlertViewController.swift */; };
 		79BF483925E52256009ACD93 /* dialogs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79BF483825E52256009ACD93 /* dialogs.storyboard */; };
+		79C4164F25ED337B004B9A71 /* TripSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C4164E25ED337B004B9A71 /* TripSummary.swift */; };
 		79CCF9D325E6BD1200A36006 /* ProfilePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCF9D225E6BD1200A36006 /* ProfilePhoto.swift */; };
 		79CCF9D525E6D32100A36006 /* loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79CCF9D425E6D32100A36006 /* loading@2x.png */; };
 		79EEB90A25EA473400CD8E8B /* ShortNotifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EEB90925EA473400CD8E8B /* ShortNotifyViewController.swift */; };
@@ -168,6 +171,7 @@
 		79FD4FA724A22BC30015B28F /* ReurringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FD4FA624A22BC30015B28F /* ReurringViewController.swift */; };
 		79FD4FA924A25DB70015B28F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79FD4FA824A25DB70015B28F /* GoogleService-Info.plist */; };
 		79FD4FAB24A26B890015B28F /* CustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FD4FAA24A26B890015B28F /* CustomPointAnnotation.swift */; };
+		79FE37CE25ECD0C800DFC1CB /* NaviAlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE37CD25ECD0C800DFC1CB /* NaviAlertsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -348,6 +352,8 @@
 		7966FAAD251407D00050CB32 /* FriendWallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendWallViewController.swift; sourceTree = "<group>"; };
 		7968D5C82499E1C700FAC835 /* MapFeedsPopUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeedsPopUpController.swift; sourceTree = "<group>"; };
 		7968D5CA2499F05900FAC835 /* MapFeedsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeedsCollectionViewCell.swift; sourceTree = "<group>"; };
+		79696D4125ECE17A0057E060 /* TripCompletedAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCompletedAlertViewController.swift; sourceTree = "<group>"; };
+		796BE6C725ED0F67000BC901 /* TripCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCompletedViewController.swift; sourceTree = "<group>"; };
 		796C1C30251249C900CD22ED /* ProfileWallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWallViewController.swift; sourceTree = "<group>"; };
 		796C1C32251249E500CD22ED /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		7995D66F2497936E00F6E24A /* NavigationController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NavigationController.storyboard; sourceTree = "<group>"; };
@@ -366,6 +372,7 @@
 		79AF49C9249A86E900711030 /* DistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistCollectionViewCell.swift; sourceTree = "<group>"; };
 		79BF483525E51A4D009ACD93 /* InfoAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAlertViewController.swift; sourceTree = "<group>"; };
 		79BF483825E52256009ACD93 /* dialogs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = dialogs.storyboard; sourceTree = "<group>"; };
+		79C4164E25ED337B004B9A71 /* TripSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSummary.swift; sourceTree = "<group>"; };
 		79CCF9D225E6BD1200A36006 /* ProfilePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhoto.swift; sourceTree = "<group>"; };
 		79CCF9D425E6D32100A36006 /* loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading@2x.png"; sourceTree = "<group>"; };
 		79EEB90925EA473400CD8E8B /* ShortNotifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortNotifyViewController.swift; sourceTree = "<group>"; };
@@ -375,6 +382,7 @@
 		79FD4FA624A22BC30015B28F /* ReurringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReurringViewController.swift; sourceTree = "<group>"; };
 		79FD4FA824A25DB70015B28F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		79FD4FAA24A26B890015B28F /* CustomPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPointAnnotation.swift; sourceTree = "<group>"; };
+		79FE37CD25ECD0C800DFC1CB /* NaviAlertsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviAlertsViewController.swift; sourceTree = "<group>"; };
 		E57830C9FE0A4A90B83B6076 /* Pods-Memu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memu.debug.xcconfig"; path = "Target Support Files/Pods-Memu/Pods-Memu.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -588,6 +596,7 @@
 				7962DBE924A0D13100C76511 /* FindOfferRideREsponse.swift */,
 				7911141C25E40F8B004F7E95 /* WalletBalance.swift */,
 				79CCF9D225E6BD1200A36006 /* ProfilePhoto.swift */,
+				79C4164E25ED337B004B9A71 /* TripSummary.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -617,6 +626,7 @@
 				7962DBDB249FD5E100C76511 /* MAtchingRidersTableViewCell.swift */,
 				79FD4FAA24A26B890015B28F /* CustomPointAnnotation.swift */,
 				793BF53124B21DF400DDB0E9 /* CustomBottomBannerView.swift */,
+				796BE6C725ED0F67000BC901 /* TripCompletedViewController.swift */,
 			);
 			path = Start;
 			sourceTree = "<group>";
@@ -927,6 +937,8 @@
 				79175D1525E74B9100A19091 /* UserDataAlertViewController.swift */,
 				79EEB90925EA473400CD8E8B /* ShortNotifyViewController.swift */,
 				79EEB90B25EA530700CD8E8B /* MapFeedAlertViewController.swift */,
+				79FE37CD25ECD0C800DFC1CB /* NaviAlertsViewController.swift */,
+				79696D4125ECE17A0057E060 /* TripCompletedAlertViewController.swift */,
 			);
 			path = dialogs;
 			sourceTree = "<group>";
@@ -1220,6 +1232,7 @@
 				6DED6C632458960D003F0AB1 /* PoolImgView.swift in Sources */,
 				6DA40EF2245B751B00A09AD0 /* StartViewController.swift in Sources */,
 				6DA40ED7245B509C00A09AD0 /* Date+Extension.swift in Sources */,
+				79C4164F25ED337B004B9A71 /* TripSummary.swift in Sources */,
 				6D12BA382453B062000D52D1 /* S5View.swift in Sources */,
 				794B79542513AEAD005047C9 /* UserMainData.swift in Sources */,
 				6DA40EF6245BF84A00A09AD0 /* Vehicle.swift in Sources */,
@@ -1262,6 +1275,7 @@
 				791DC9B32593831E00EFF42B /* WWCalendarTimeSelector.swift in Sources */,
 				6D12BA2D2453AFFC000D52D1 /* S3View.swift in Sources */,
 				794B79582513BBFF005047C9 /* FriendsListResponse.swift in Sources */,
+				796BE6C825ED0F67000BC901 /* TripCompletedViewController.swift in Sources */,
 				188AE076241CE70C0079E2BB /* AppDelegate.swift in Sources */,
 				7903F5FA25129770000E5F07 /* FollowersViewController.swift in Sources */,
 				6DA40ED5245B503B00A09AD0 /* TokenUtil.swift in Sources */,
@@ -1269,9 +1283,11 @@
 				794B79602513E7B7005047C9 /* UserWall.swift in Sources */,
 				792DE14525D40B37005648C6 /* WalletResponse.swift in Sources */,
 				7962DBDA249FCA7100C76511 /* MatchingRidersViewController.swift in Sources */,
+				79696D4225ECE17A0057E060 /* TripCompletedAlertViewController.swift in Sources */,
 				791DC9B82593831E00EFF42B /* String+Timepiece.swift in Sources */,
 				793BF53424B2360600DDB0E9 /* PoolerList.swift in Sources */,
 				6DED6C672458976E003F0AB1 /* CustomView.swift in Sources */,
+				79FE37CE25ECD0C800DFC1CB /* NaviAlertsViewController.swift in Sources */,
 				6DA40EF4245BEAAF00A09AD0 /* ResponceResult.swift in Sources */,
 				791DC9B62593831E00EFF42B /* NSDate+Timepiece.swift in Sources */,
 				79540C4924A130D20003330F /* HistoryResponse.swift in Sources */,

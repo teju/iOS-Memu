@@ -208,12 +208,25 @@ extension RestDataSource {
         }
         .restSend()
     }
-    static func startTrip(trip_id : String) -> Observable<ResponceResult> {
+    static func startTrip(trip_id : String,no_of_kms:String) -> Observable<ResponceResult> {
         
         let sendParameters: [String: Any] = [
+            "no_of_kms":no_of_kms,
             "user_id": UserDefaults.user_id,
             "trip_id":trip_id]
         return json(.post, "booking/start-trip",
+                    parameters: sendParameters)
+            .map { json in
+                ResponceResult(json: JSON(json.dictionaryObject!))
+        }
+        .restSend()
+    }
+    static func newstartshortestpathTrip(action : String) -> Observable<ResponceResult> {
+        
+        let sendParameters: [String: Any] = [
+            "user_id": UserDefaults.user_id,
+            "action":action]
+        return json(.post, "profile/shortest-path-start-stop",
                     parameters: sendParameters)
             .map { json in
                 ResponceResult(json: JSON(json.dictionaryObject!))
@@ -230,6 +243,19 @@ extension RestDataSource {
                     parameters: sendParameters)
             .map { json in
                 ResponceResult(json: JSON(json.dictionaryObject!))
+        }
+        .restSend()
+    }
+    static func getTripSummary(trip_id : String,type : String) -> Observable<TripSummary> {
+        
+        let sendParameters: [String: Any] = [
+            "type":type,
+            "user_id": UserDefaults.user_id,
+            "trip_id":trip_id]
+        return json(.post, "booking/trip-summary",
+                    parameters: sendParameters)
+            .map { json in
+                TripSummary(json: JSON(json.dictionaryObject!))
         }
         .restSend()
     }

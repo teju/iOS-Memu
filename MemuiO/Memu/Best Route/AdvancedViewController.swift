@@ -12,6 +12,7 @@ class AdvancedViewController: UIViewController, MGLMapViewDelegate, CLLocationMa
     var trip_or_rider_id = ""
     var type = ""
     var complted_list = ScheduledList()
+    var status = ""
 
     var currentRoute: Route? {
         get {
@@ -72,7 +73,6 @@ class AdvancedViewController: UIViewController, MGLMapViewDelegate, CLLocationMa
             }
         }
         if(isFromHome) {
-            collection_view.isHidden = true
             btnstart?.isHidden = false
             let popvc = UIStoryboard(name: "NavigationController", bundle: nil).instantiateViewController(withIdentifier: "MatchingRidersViewController") as! MatchingRidersViewController
               popvc.trip_or_rider_id = trip_or_rider_id
@@ -85,7 +85,6 @@ class AdvancedViewController: UIViewController, MGLMapViewDelegate, CLLocationMa
 
                popvc.didMove(toParent: self)
         } else if(isFromRecurring) {
-            collection_view.isHidden = true
             btnstart?.isHidden = true
             let popvc = UIStoryboard(name: "HistoryStoryboard", bundle: nil).instantiateViewController(withIdentifier: "ReurringViewController") as! ReurringViewController
             popvc.complted_list = complted_list
@@ -102,15 +101,20 @@ class AdvancedViewController: UIViewController, MGLMapViewDelegate, CLLocationMa
     }
    
     @IBAction func start(_ sender: Any) {
+
         guard let route = currentRoute, let routeOptions = routeOptions else { return }
                // For demonstration purposes, simulate locations if the Simulate Navigation option is on.
-           
+        let dist = (route.distance) / 1000
+
        let storyboard = UIStoryboard(name: "NavigationController", bundle: nil)
               let loginPage = storyboard.instantiateViewController(withIdentifier: "CustomViewController") as! CustomViewController
-           loginPage.userRoute = route
-       loginPage.userRouteOptions = routeOptions
-       loginPage.trip_id = trip_or_rider_id
-              self.navigationController?.pushViewController(loginPage, animated: true)
+            loginPage.userRoute = route
+            loginPage.no_of_kms = "\(dist)"
+            loginPage.userRouteOptions = routeOptions
+            loginPage.trip_id = trip_or_rider_id
+            loginPage.status = status
+            loginPage.tripType = type
+            self.navigationController?.pushViewController(loginPage, animated: true)
     }
     @objc func goBack(notification: Notification) {
         self.navigationController?.popViewController(animated: true)

@@ -206,6 +206,7 @@ class RegistrationViewController: UIViewController {
             carTaxi.isHidden = true
             isCarDoorClose = true
             user.role = "rider"
+            user.vehicle.vehicleType = 1
             self.scrollToSelectVehicleMultiplier(by: 1.93)
         case 2:
             sender.setImage(UIImage(named: "Group 71"), for: .normal)
@@ -214,6 +215,7 @@ class RegistrationViewController: UIViewController {
             carTaxi.isHidden = false
             isCarTaxi = true
             user.role = "driver"
+            user.vehicle.vehicleType = 2
             self.scrollToSelectVehicleMultiplier(by: 1.91)
         default:
             return
@@ -308,13 +310,7 @@ class RegistrationViewController: UIViewController {
                 contentView3.txtVehicleName.becomeFirstResponder()
                 return false
             }
-            else if contentView3.txtRegistrationNo.textValue.isEmpty {
-                contentView3.txtRegistrationNo.becomeFirstResponder()
-                return false
-            } else if contentView3.txtLicenseNo.textValue.isEmpty {
-                contentView3.txtLicenseNo.becomeFirstResponder()
-                return false
-            }
+            
             else {
                 user.vehicle.vehicleBrand = contentView3.txtVehicleBrand.textValue
                 user.vehicle.vehicleName = contentView3.txtVehicleName.textValue

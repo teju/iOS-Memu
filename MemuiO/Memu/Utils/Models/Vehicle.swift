@@ -49,7 +49,16 @@ class Vehicle {
         return dic
     }
 
-    
+    func toParams2() -> [String: Any] {
+        let dic: [String: Any] = [
+            "vehicle_brand": vehicleBrand,
+            "vehicle_name": vehicleName,
+            "vehicle_no": vehicleNo,
+            "vehicle_model_type": vehicleModelType
+        ]
+        return dic
+    }
+
     
     init() {
         vehicleType = 0

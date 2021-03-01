@@ -18,7 +18,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         BackgroundLocationManager.instance.start()
         self.navigationController?.navigationBar.isHidden = true
-        
         btnName.setTitle(UserDefaults.name, for: .normal)
     }
     
@@ -26,6 +25,8 @@ class HomeViewController: UIViewController {
         super.viewDidAppear(true)
         let url = URL(string: UserDefaults.profile_picture!)
         self.profile_pic.sd_setImage(with: url)
+       
+        //self.showAlert(title: "Traffic Jam expected in 2 Kms", userName: "user", userImage: url!, alertImage: url!)
        // self.showAlert(title: "Great! referral reward", userName: "user", userImage: url!, liked: false, desc: "You have received")
     }
     

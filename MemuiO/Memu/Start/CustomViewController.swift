@@ -24,15 +24,17 @@ class CustomViewController: UIViewController, MGLMapViewDelegate {
     let directions = Directions.shared
     var navigationService: NavigationService!
     var simulateLocation = true
+    var tripType = ""
 
     var userRoute: Route?
     var user: UserInfo!
     var feeds = [MapFeeds]()
     var trip_id = ""
+    var status = ""
     @IBOutlet weak var distance_time: UILabel!
     @IBOutlet weak var time_remaining: UILabel!
     var userRouteOptions: RouteOptions?
-
+    var no_of_kms = ""
     @IBOutlet weak var btnEndTrip: UIButton!
     // Start voice instructions
     var voiceController: MapboxVoiceController!
@@ -89,11 +91,10 @@ class CustomViewController: UIViewController, MGLMapViewDelegate {
         self.mapView.delegate = self
         // Center map on user
         mapView.recenterMap()
-        if(trip_id != "") {
+        if(trip_id != "" && status != "started") {
             startTrip()
-             btnEndTrip.isHidden = false
         } else {
-            btnEndTrip.isHidden = true
+            startEndShortestPathTrip(action: "start")
         }
         NotificationCenter.default.addObserver(self, selector: #selector(self.showNotify(notification:)), name: Notification.Name("showNotify"), object: nil)
     }
@@ -101,7 +102,11 @@ class CustomViewController: UIViewController, MGLMapViewDelegate {
         self.showAlert()
     }
     @IBAction func endTripAction(_ sender: Any) {
-        endTrip(no_of_kms: distance_time.text!)
+        if(trip_id != "") {
+            endTrip()
+        } else {
+            startEndShortestPathTrip(action: "stop")
+        }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -165,18 +170,45 @@ class CustomViewController: UIViewController, MGLMapViewDelegate {
         }).disposed(by: rx.bag)
     }
     func startTrip() {
-        RestDataSource.startTrip(trip_id: trip_id)
+        RestDataSource.startTrip(trip_id: trip_id,no_of_kms:no_of_kms)
             .showLoading(on: self.view)
             .subscribe(onNext: { [weak self] value in
-                self?.showAlert(value.status, value.message)
+               
             }).disposed(by: rx.bag)
     }
-    func endTrip(no_of_kms : String) {
+    func startEndShortestPathTrip(action : String) {
+        RestDataSource.newstartshortestpathTrip(action: action)
+            .showLoading(on: self.view)
+            .subscribe(onNext: { [weak self] value in
+                if(action != "start") {
+                    self?.naviCompleted()
+                     let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
+                       self?.navigationController?.pushViewController(mainVC, animated: true)
+
+                    }
+                }
+               
+            }).disposed(by: rx.bag)
+    }
+   
+    func endTrip() {
         RestDataSource.endtTrip(trip_id: trip_id, no_of_kms: no_of_kms)
             .showLoading(on: self.view)
             .subscribe(onNext: { [weak self] value in
-                self?.showAlert(value.status, value.message)
+                let storyboard = UIStoryboard(name: "NavigationController", bundle: nil)
+                 let mainVC = storyboard.instantiateViewController(withIdentifier: "TripCompletedViewController") as! TripCompletedViewController
+                mainVC.tripID = self?.trip_id as! String
+                mainVC.triptype = self?.tripType as! String
+                self?.navigationController?.pushViewController(mainVC, animated: true)
             }).disposed(by: rx.bag)
+    }
+    func naviCompleted(completion: (()->())? = nil) {
+           let popvc = UIStoryboard(name: "dialogs", bundle: nil).instantiateViewController(withIdentifier: "TripCompletedAlertViewController") as! TripCompletedAlertViewController
+           self.addChild(popvc)
+           popvc.view.frame = self.view.frame
+           self.view.addSubview(popvc.view)
+           popvc.didMove(toParent: self)
     }
     func addMArkers(feeds : [MapFeeds]) {
  
@@ -335,7 +367,7 @@ class CustomViewController: UIViewController, MGLMapViewDelegate {
         if routeProgress.currentLegProgress.userHasArrivedAtWaypoint {
             navigationService.stop()
             if(trip_id != "") {
-             endTrip(no_of_kms: distance_time.text!)
+             endTrip()
             }
         }
     }

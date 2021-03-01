@@ -61,7 +61,13 @@ class BookingViewController: UIViewController ,UICollectionViewDataSource,WWCale
         btnSelectTime.titleLabel?.textAlignment = .center
         btnDate.titleLabel?.textAlignment = .center
         self.bg_view.frame.size.height = self.bg_view.frame.height
+         NotificationCenter.default.addObserver(self, selector: #selector(self.offerRideNow(notification:)), name: Notification.Name("vehicleDeatils"), object: nil)
         updateUI()
+    }
+    @objc func offerRideNow(notification: Notification) {
+       if(currentloc !=  nil && destinationloc != nil && vehicle_id != "" && rs_per_km != "") {
+           getFromAddress(strtype: "offer_ride", strno_of_kms: "15")
+       }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -99,12 +105,10 @@ class BookingViewController: UIViewController ,UICollectionViewDataSource,WWCale
     }
     
     @IBAction func btnNext(_ sender: Any) {
-        if(currentloc !=  nil && destinationloc != nil && vehicle_id != "" && rs_per_km != "") {
-            getFromAddress(strtype: "offer_ride", strno_of_kms: "15")
-        }
+        
     }
     @IBAction func findRide(_ sender: Any) {
-
+        
         if(currentloc == nil || destinationloc == nil) {
           self.showAlert("", "Please select source and destination")
         } else {
@@ -170,7 +174,6 @@ class BookingViewController: UIViewController ,UICollectionViewDataSource,WWCale
                 } else {
                     mainVC.trip_or_rider_id = value.trip_rider_id
                 }
-                
                 mainVC.type = strtype
                 self?.navigationController?.pushViewController(mainVC, animated: true)
             } else {

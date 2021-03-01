@@ -30,6 +30,7 @@ class VehiclePopupViewController: UIViewController {
         if(self.vehicle_id != "" && rs_per_km.text == "") {
            self.showAlert("", "Please enter the rate per kilometer")
         } else {
+           
             removeAnimate()
         }
     }
@@ -47,6 +48,7 @@ class VehiclePopupViewController: UIViewController {
                 self.view.removeFromSuperview()
                 self.removeFromParent()
                  self.parentVC?.setVehicleID(vehicle_id: self.vehicle_id, rs_per_km: self.rs_per_km.text ?? "")
+                 NotificationCenter.default.post(name: Notification.Name("vehicleDeatils"), object: nil, userInfo:nil)
             }
         })
     }
@@ -81,7 +83,7 @@ class VehiclePopupViewController: UIViewController {
         
         // You can also use localizationKeysDataSource instead. Check the docs.
         for feed in value.vehicle_list {
-            vehicleArray.append(feed.vehicle_no)
+            vehicleArray.append(feed.vehicle_name)
         }
         if(value.vehicle_list.count != 0) {
             self.btnVehicleList.setTitle(vehicleArray[0], for: .normal)

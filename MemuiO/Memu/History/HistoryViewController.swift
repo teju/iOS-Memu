@@ -233,6 +233,7 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
         mainVC.isFromHome = true
         mainVC.trip_or_rider_id = scheduled_list[indexPath.row].id
         mainVC.type = scheduled_list[indexPath.row].type
+        mainVC.status = scheduled_list[indexPath.row].status
         self.navigationController?.pushViewController(mainVC, animated: true)
     }
    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
