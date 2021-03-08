@@ -137,7 +137,60 @@ public class RestDataSource {
             return json
         }
     }
-    
+     static func json(_ url: URLConvertible, parameters: [String: Any]? = nil, encoding: ParameterEncoding = JSONEncoding.default, headers: [String: String]? = nil, addAuthHeader: Bool = true) -> Observable<JSON> {
+
+            
+            return RestDataSource.default.rx
+                .request(.get, "\(url)", parameters: parameters, encoding: encoding, headers: headers)
+                .observeOn(ConcurrentDispatchQueueScheduler.init(qos: .default)) // process everything in background
+                .responseData()
+                .flatMap { (result: DataResponse<Data>) -> Observable<Data> in
+                    #if DEBUG
+                    if let request = result.request {
+                        logRequest(request: request, true)
+                        if let response = result.response {
+                            logResponse(result.value as AnyObject, forRequest: request, response: response)
+                        }
+                    }
+                    #endif
+                    if result.response?.statusCode == 401 && addAuthHeader {
+                        TokenUtil.cleanup()
+    //                    AuthenticationUtil.sharedInstance.cleanUp()
+    //
+    //                    // notify
+    //                    if let viewController = UIApplication.shared.delegate?.window??.rootViewController {
+    //                        UserDefaults.eventId = ""
+    //                        UserDefaults.eventImageUrl = ""
+    //                        UserDefaults.isEventRegistered = false
+    //                        Switcher.updateRootVC(nil)
+    //                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+    //                            viewController.showAlert("", ErrorMessages.sessionExpired.text)
+    //                        }
+    //                    }
+
+                        // do not trigger regular UI alert
+                        return Observable<Data>.empty()
+                    }
+                        // response value received
+                    else if let value = result.value {
+
+                        // guard from error messages
+                        guard let statusCode = result.response?.statusCode, 200...205 ~= statusCode else {
+                            let errorText = JSON(value)["message"].string?.components(separatedBy: ":").last
+                            let message: Error? = errorText
+                            return Observable.error(message ?? result.error ?? ErrorMessages.resourceNotFound.text)
+                        }
+                        // successful response
+                        return Observable.just(value)
+                    }
+                    // no value even
+                    return Observable.error(result.error ?? ErrorMessages.resourceNotFound.text)
+            }
+            .map { data in
+                let json = (try? JSON(data: data)) ?? JSON.null
+                return json
+            }
+        }
     /// json call shortcut
     ///
     /// - Parameters:
@@ -316,6 +369,8 @@ extension Reactive where Base: DataRequest {
                 if let error = response.result.error {
                     observer.on(.error(error))
                 } else {
+                    print("responseDataPRint \(response)")
+
                     observer.on(.next(response))
                     observer.on(.completed)
                 }

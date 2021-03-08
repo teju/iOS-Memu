@@ -7,9 +7,22 @@
 //
 
 import UIKit
-class WalletViewController: UITableViewController {
+import AppInvokeSDK
+class WalletViewController: UITableViewController ,AIDelegate{
+    func openPaymentWebVC(_ controller: UIViewController?) {
+        if let vc = controller {
+            DispatchQueue.main.async {[weak self] in
+                self?.present(vc, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func didFinish(with status: AIPaymentStatus, response: [String : Any]) {
+        
+    }
+    private let appInvokeself = AIHandler()
+
     @IBOutlet weak var total_balance: UILabel!
-    var merchant:PGMerchantConfiguration!
     var orderDict: [String: String] = [:]
     var wallet: [String: String] = [:]
     var walletBAlance = ""
@@ -25,6 +38,7 @@ class WalletViewController: UITableViewController {
         getUserData()
         getWalletData()
         amount.setUnderLine()
+       
     }
     
     @IBAction func back(_ sender: Any) {
@@ -91,68 +105,29 @@ class WalletViewController: UITableViewController {
     }
     
     func getTopEarnersData() {
+        
         let randomInt = Int.random(in: 1..<10000)
 
-       orderDict["MID"] = "EYZGKu85499319132530";//paste here your merchant id   //mandatory
-       orderDict["CHANNEL_ID"] = "WAP";
-       orderDict["INDUSTRY_TYPE_ID"] = "Retail";
-       orderDict["WEBSITE"] = "DEFAULT";
-        if let amountDidgit = amount.text {
-            orderDict["TXN_AMOUNT"] = amountDidgit.digits
-        }
-       orderDict["ORDER_ID"] = "OREDRID_\(randomInt)";
-        orderDict["CUST_ID"] = UserDefaults.user_id;
-        orderDict["CALLBACK_URL"] = "https://securegw.paytm.in/theia/paytmCallback?ORDER_ID=OREDRID_\(randomInt)"
-        RestDataSource.postchecksum(checksum: orderDict)
-            .showLoading(on: self.view)
-            .subscribe(onNext: { [weak self] value in
-                self?.makePayment(CHECKSUMHASH: value.generate_signature)
-            }).disposed(by: rx.bag)
+//       orderDict["MID"] = "EYZGKu85499319132530";//paste here your merchant id   //mandatory
+//       orderDict["CHANNEL_ID"] = "WAP";
+//       orderDict["INDUSTRY_TYPE_ID"] = "Retail";
+//       orderDict["WEBSITE"] = "DEFAULT";
+//        if let amountDidgit = amount.text {
+//            orderDict["TXN_AMOUNT"] = amountDidgit.digits
+//        }
+//       orderDict["ORDER_ID"] = "OREDRID_\(randomInt)";
+//        orderDict["CUST_ID"] = UserDefaults.user_id;
+//        orderDict["CALLBACK_URL"] = "https://securegw.paytm.in/theia/paytmCallback?ORDER_ID=OREDRID_\(randomInt)"
+//        RestDataSource.postchecksum(orderID: "OREDRID_\(randomInt)")
+//            .showLoading(on: self.view)
+//            .subscribe(onNext: { [weak self] value in
+//               
+//            }).disposed(by: rx.bag)
+        self.appInvokeself.openPaytm(merchantId: "EYZGKu85499319132530", orderId: "OREDRID_\(randomInt)", txnToken: "txnToken",amount: self.amount.text!.digits, callbackUrl: "https://securegw.paytm.in/theia/paytmCallback?ORDER_ID=OREDRID_\(randomInt)", delegate: self, environment: AIEnvironment.production)
     }
-    
-    func makePayment(CHECKSUMHASH : String){
-            merchant = PGMerchantConfiguration.default()
-           orderDict["CHECKSUMHASH"] = CHECKSUMHASH;
-        print("makePayment orderDict \(orderDict)")
-            let pgOrder = PGOrder(params: orderDict )
-            let transaction = PGTransactionViewController.init(transactionFor: pgOrder)
-                transaction!.serverType = eServerTypeProduction
-                transaction!.merchant = merchant
-                transaction!.delegate = self
-                transaction?.loggingEnabled = true
-                self.navigationController?.pushViewController(transaction!, animated: true)
-        }
-        
-    }
-
-    /*all actions related to transaction are catched here*/
-    extension WalletViewController : PGTransactionDelegate{
-        func didSucceedTransaction(_ controller: PGTransactionViewController!, response: [AnyHashable : Any]!) {
-            print(response)
-            self.showAlert("Transaction Successfull",NSString.localizedStringWithFormat("Response- %@", response) as String)
-
-            getRecharge()
-        }
-
-
-        func didFailTransaction(_ controller: PGTransactionViewController!, error: Error!, response: [AnyHashable : Any]!) {
-            print("didFailTransaction \(error)")
-            self.showAlert("Transaction Failed",error.localizedDescription)
-        }
-        func didCancelTransaction(_ controller: PGTransactionViewController!, error: Error!, response: [AnyHashable : Any]!) {
-            
-            self.showAlert("Transaction Failed", error.localizedDescription)
-
-        }
-        
-        func didFinishCASTransaction(_ controller: PGTransactionViewController!, response: [AnyHashable : Any]!) {
-            print(response)
-            self.showAlert("cas", "")
-        }
-        
-        
-
-    }
+   
+   
+}
 
 extension String {
     var digits: String {

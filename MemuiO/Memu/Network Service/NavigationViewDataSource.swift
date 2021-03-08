@@ -97,10 +97,10 @@ extension RestDataSource {
         }
         .restSend()
     }
-    static func postchecksum(checksum : [String : Any]) -> Observable<ResponceResult> {
+    static func postchecksum(orderID : String) -> Observable<ResponceResult> {
         let sendParameters: [String: Any] = [
-            "paytm_params": checksum,"user_id": UserDefaults.user_id]
-        return json(.post, "payment/check-sum",
+            "mid": "EYZGKu85499319132530","orderId":orderID]
+        return json( "https://securegw.paytm.in/theia/api/v1/initiateTransaction?mid=EYZGKu85499319132530&orderId=\(orderID)",
                     parameters: sendParameters)
             .map { json in
                 ResponceResult(json: JSON(json.dictionaryObject!))

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -80,7 +80,6 @@
 		7903F5F825128C79000E5F07 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7903F5F725128C79000E5F07 /* FriendsTableViewCell.swift */; };
 		7903F5FA25129770000E5F07 /* FollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7903F5F92512976F000E5F07 /* FollowersViewController.swift */; };
 		79053B0525DFA6F300083797 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79053B0425DFA6F300083797 /* WalletViewController.swift */; };
-		7911141825E3CF46004F7E95 /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7911141525E3CF45004F7E95 /* libPaymentsSDK.a */; };
 		7911141B25E3D179004F7E95 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7911141A25E3D179004F7E95 /* SystemConfiguration.framework */; };
 		7911141D25E40F8B004F7E95 /* WalletBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7911141C25E40F8B004F7E95 /* WalletBalance.swift */; };
 		7915E38525126BE0001163CF /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915E38425126BDF001163CF /* PostsTableViewCell.swift */; };
@@ -145,6 +144,8 @@
 		796BE6C825ED0F67000BC901 /* TripCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796BE6C725ED0F67000BC901 /* TripCompletedViewController.swift */; };
 		796C1C31251249C900CD22ED /* ProfileWallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C1C30251249C900CD22ED /* ProfileWallViewController.swift */; };
 		796C1C33251249E600CD22ED /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 796C1C32251249E500CD22ED /* Profile.storyboard */; };
+		79942BDA25F27908007D3983 /* AppInvokeSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79942BD925F27908007D3983 /* AppInvokeSDK.xcframework */; };
+		79942BDB25F27908007D3983 /* AppInvokeSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79942BD925F27908007D3983 /* AppInvokeSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		7995D6702497936E00F6E24A /* NavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7995D66F2497936E00F6E24A /* NavigationController.storyboard */; };
 		7995D6782497B30500F6E24A /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7995D6772497B30500F6E24A /* CustomViewController.swift */; };
 		7995D67A2497C0F800F6E24A /* NavigationViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7995D6792497C0F800F6E24A /* NavigationViewDataSource.swift */; };
@@ -199,6 +200,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				79942BDB25F27908007D3983 /* AppInvokeSDK.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,12 +288,6 @@
 		7903F5F725128C79000E5F07 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		7903F5F92512976F000E5F07 /* FollowersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersViewController.swift; sourceTree = "<group>"; };
 		79053B0425DFA6F300083797 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
-		7911141125E3CF44004F7E95 /* PaymentsSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentsSDK.h; sourceTree = "<group>"; };
-		7911141225E3CF44004F7E95 /* PGTransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGTransactionViewController.h; sourceTree = "<group>"; };
-		7911141325E3CF44004F7E95 /* PGMerchantConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGMerchantConfiguration.h; sourceTree = "<group>"; };
-		7911141425E3CF45004F7E95 /* PGOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGOrder.h; sourceTree = "<group>"; };
-		7911141525E3CF45004F7E95 /* libPaymentsSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPaymentsSDK.a; sourceTree = "<group>"; };
-		7911141725E3CF46004F7E95 /* PGServerEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGServerEnvironment.h; sourceTree = "<group>"; };
 		7911141925E3CF8C004F7E95 /* PaytmSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PaytmSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		7911141A25E3D179004F7E95 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		7911141C25E40F8B004F7E95 /* WalletBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletBalance.swift; sourceTree = "<group>"; };
@@ -357,6 +353,7 @@
 		796BE6C725ED0F67000BC901 /* TripCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCompletedViewController.swift; sourceTree = "<group>"; };
 		796C1C30251249C900CD22ED /* ProfileWallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWallViewController.swift; sourceTree = "<group>"; };
 		796C1C32251249E500CD22ED /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		79942BD925F27908007D3983 /* AppInvokeSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AppInvokeSDK.xcframework; path = "../../../../Downloads/Paytm_iOS_All_in_One_SDK-master/AppInvokeSDK.xcframework"; sourceTree = "<group>"; };
 		7995D66F2497936E00F6E24A /* NavigationController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NavigationController.storyboard; sourceTree = "<group>"; };
 		7995D6772497B30500F6E24A /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		7995D6792497C0F800F6E24A /* NavigationViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewDataSource.swift; sourceTree = "<group>"; };
@@ -396,7 +393,7 @@
 				6B1C0F86633BFA6E0D4AE9B7 /* Pods_Memu.framework in Frameworks */,
 				7911141B25E3D179004F7E95 /* SystemConfiguration.framework in Frameworks */,
 				79CE4BB525ED4C43009CD9AB /* Security.framework in Frameworks */,
-				7911141825E3CF46004F7E95 /* libPaymentsSDK.a in Frameworks */,
+				79942BDA25F27908007D3983 /* AppInvokeSDK.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,7 +646,6 @@
 			isa = PBXGroup;
 			children = (
 				79BF483725E51FE6009ACD93 /* dialogs */,
-				7911141025E3CF16004F7E95 /* SDK */,
 				79DC0C0825935E2900851BCF /* calendar */,
 				79540C3624A0F1300003330F /* GooglePlacesAutocomplete.swift */,
 				79540C3724A0F1360003330F /* GooglePlacesAutocomplete.xib */,
@@ -766,19 +762,6 @@
 				6D0A10C124536905004E768B /* S2View.xib */,
 			);
 			path = S2;
-			sourceTree = "<group>";
-		};
-		7911141025E3CF16004F7E95 /* SDK */ = {
-			isa = PBXGroup;
-			children = (
-				7911141525E3CF45004F7E95 /* libPaymentsSDK.a */,
-				7911141125E3CF44004F7E95 /* PaymentsSDK.h */,
-				7911141325E3CF44004F7E95 /* PGMerchantConfiguration.h */,
-				7911141425E3CF45004F7E95 /* PGOrder.h */,
-				7911141725E3CF46004F7E95 /* PGServerEnvironment.h */,
-				7911141225E3CF44004F7E95 /* PGTransactionViewController.h */,
-			);
-			path = SDK;
 			sourceTree = "<group>";
 		};
 		792DE14325D40B19005648C6 /* Wallet */ = {
@@ -964,6 +947,7 @@
 		CE5AC56D1C89B945121B4FE4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				79942BD925F27908007D3983 /* AppInvokeSDK.xcframework */,
 				79CE4BB425ED4C43009CD9AB /* Security.framework */,
 				7911141A25E3D179004F7E95 /* SystemConfiguration.framework */,
 				1574AE5B15A4878B89264431 /* Pods_Memu.framework */,
