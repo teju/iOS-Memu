@@ -15,7 +15,6 @@
 		188AE082241CE7120079E2BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188AE080241CE7120079E2BB /* LaunchScreen.storyboard */; };
 		188AE08D241CE7120079E2BB /* MemuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188AE08C241CE7120079E2BB /* MemuTests.swift */; };
 		188AE098241CE7120079E2BB /* MemuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188AE097241CE7120079E2BB /* MemuUITests.swift */; };
-		6B1C0F86633BFA6E0D4AE9B7 /* Pods_Memu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1574AE5B15A4878B89264431 /* Pods_Memu.framework */; };
 		6D0A10C0245368F8004E768B /* S2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0A10BF245368F8004E768B /* S2View.swift */; };
 		6D0A10C224536905004E768B /* S2View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D0A10C124536905004E768B /* S2View.xib */; };
 		6D12BA2D2453AFFC000D52D1 /* S3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D12BA2C2453AFFC000D52D1 /* S3View.swift */; };
@@ -129,6 +128,7 @@
 		79540C4924A130D20003330F /* HistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79540C4824A130D20003330F /* HistoryResponse.swift */; };
 		79540C4B24A1331A0003330F /* ScheduledList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79540C4A24A1331A0003330F /* ScheduledList.swift */; };
 		79547F0B25EABE9A00A6D9B0 /* Coins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79547F0A25EABE9900A6D9B0 /* Coins.swift */; };
+		7961885125FF2AA80092376C /* AppInvokeSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7961885025FF2AA70092376C /* AppInvokeSDK.xcframework */; };
 		7962DBD8249F249500C76511 /* WeekDaysCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962DBD7249F249500C76511 /* WeekDaysCollectionViewCell.swift */; };
 		7962DBDA249FCA7100C76511 /* MatchingRidersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962DBD9249FCA7100C76511 /* MatchingRidersViewController.swift */; };
 		7962DBDC249FD5E100C76511 /* MAtchingRidersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962DBDB249FD5E100C76511 /* MAtchingRidersTableViewCell.swift */; };
@@ -144,8 +144,6 @@
 		796BE6C825ED0F67000BC901 /* TripCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796BE6C725ED0F67000BC901 /* TripCompletedViewController.swift */; };
 		796C1C31251249C900CD22ED /* ProfileWallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C1C30251249C900CD22ED /* ProfileWallViewController.swift */; };
 		796C1C33251249E600CD22ED /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 796C1C32251249E500CD22ED /* Profile.storyboard */; };
-		79942BDA25F27908007D3983 /* AppInvokeSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79942BD925F27908007D3983 /* AppInvokeSDK.xcframework */; };
-		79942BDB25F27908007D3983 /* AppInvokeSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79942BD925F27908007D3983 /* AppInvokeSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		7995D6702497936E00F6E24A /* NavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7995D66F2497936E00F6E24A /* NavigationController.storyboard */; };
 		7995D6782497B30500F6E24A /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7995D6772497B30500F6E24A /* CustomViewController.swift */; };
 		7995D67A2497C0F800F6E24A /* NavigationViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7995D6792497C0F800F6E24A /* NavigationViewDataSource.swift */; };
@@ -200,7 +198,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				79942BDB25F27908007D3983 /* AppInvokeSDK.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,7 +205,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1574AE5B15A4878B89264431 /* Pods_Memu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Memu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		188AE072241CE70C0079E2BB /* Memu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188AE075241CE70C0079E2BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		188AE077241CE70C0079E2BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -338,6 +334,7 @@
 		79540C4824A130D20003330F /* HistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryResponse.swift; sourceTree = "<group>"; };
 		79540C4A24A1331A0003330F /* ScheduledList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledList.swift; sourceTree = "<group>"; };
 		79547F0A25EABE9900A6D9B0 /* Coins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coins.swift; sourceTree = "<group>"; };
+		7961885025FF2AA70092376C /* AppInvokeSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AppInvokeSDK.xcframework; sourceTree = "<group>"; };
 		7962DBD7249F249500C76511 /* WeekDaysCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDaysCollectionViewCell.swift; sourceTree = "<group>"; };
 		7962DBD9249FCA7100C76511 /* MatchingRidersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingRidersViewController.swift; sourceTree = "<group>"; };
 		7962DBDB249FD5E100C76511 /* MAtchingRidersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAtchingRidersTableViewCell.swift; sourceTree = "<group>"; };
@@ -353,7 +350,6 @@
 		796BE6C725ED0F67000BC901 /* TripCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCompletedViewController.swift; sourceTree = "<group>"; };
 		796C1C30251249C900CD22ED /* ProfileWallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWallViewController.swift; sourceTree = "<group>"; };
 		796C1C32251249E500CD22ED /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		79942BD925F27908007D3983 /* AppInvokeSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AppInvokeSDK.xcframework; path = "../../../../Downloads/Paytm_iOS_All_in_One_SDK-master/AppInvokeSDK.xcframework"; sourceTree = "<group>"; };
 		7995D66F2497936E00F6E24A /* NavigationController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NavigationController.storyboard; sourceTree = "<group>"; };
 		7995D6772497B30500F6E24A /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		7995D6792497C0F800F6E24A /* NavigationViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewDataSource.swift; sourceTree = "<group>"; };
@@ -390,10 +386,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B1C0F86633BFA6E0D4AE9B7 /* Pods_Memu.framework in Frameworks */,
 				7911141B25E3D179004F7E95 /* SystemConfiguration.framework in Frameworks */,
+				7961885125FF2AA80092376C /* AppInvokeSDK.xcframework in Frameworks */,
 				79CE4BB525ED4C43009CD9AB /* Security.framework in Frameworks */,
-				79942BDA25F27908007D3983 /* AppInvokeSDK.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -947,10 +942,9 @@
 		CE5AC56D1C89B945121B4FE4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				79942BD925F27908007D3983 /* AppInvokeSDK.xcframework */,
+				7961885025FF2AA70092376C /* AppInvokeSDK.xcframework */,
 				79CE4BB425ED4C43009CD9AB /* Security.framework */,
 				7911141A25E3D179004F7E95 /* SystemConfiguration.framework */,
-				1574AE5B15A4878B89264431 /* Pods_Memu.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1483,7 +1477,8 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = K8U68KC3F7;
+				DEVELOPMENT_TEAM = N32ZZPC379;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1499,7 +1494,7 @@
 					"$(PROJECT_DIR)/Memu/Utils/SDK",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.memu.Memu;
+				PRODUCT_BUNDLE_IDENTIFIER = world.memu.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Memu/PaytmSwift-Bridging-Header.h";
@@ -1517,7 +1512,8 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = K8U68KC3F7;
+				DEVELOPMENT_TEAM = N32ZZPC379;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1533,7 +1529,7 @@
 					"$(PROJECT_DIR)/Memu/Utils/SDK",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.memu.Memu;
+				PRODUCT_BUNDLE_IDENTIFIER = world.memu.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Memu/PaytmSwift-Bridging-Header.h";
