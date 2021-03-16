@@ -71,6 +71,13 @@ class WalletViewController: UITableViewController ,AIDelegate{
             self?.initUSerData(value: value)
         }).disposed(by: rx.bag)
     }
+    func getTokenData() {
+        RestDataSource.postUserMainData(user_id: UserDefaults.user_id!)
+        .showLoading(on: self.view)
+        .subscribe(onNext: { [weak self] value in
+            self?.initUSerData(value: value)
+        }).disposed(by: rx.bag)
+    }
     func getWalletData() {
         RestDataSource.postWalletData(user_id: UserDefaults.user_id!)
         .showLoading(on: self.view)
@@ -108,24 +115,21 @@ class WalletViewController: UITableViewController ,AIDelegate{
         
         let randomInt = Int.random(in: 1..<10000)
 
-//       orderDict["MID"] = "EYZGKu85499319132530";//paste here your merchant id   //mandatory
-//       orderDict["CHANNEL_ID"] = "WAP";
-//       orderDict["INDUSTRY_TYPE_ID"] = "Retail";
-//       orderDict["WEBSITE"] = "DEFAULT";
-//        if let amountDidgit = amount.text {
-//            orderDict["TXN_AMOUNT"] = amountDidgit.digits
-//        }
-//       orderDict["ORDER_ID"] = "OREDRID_\(randomInt)";
-//        orderDict["CUST_ID"] = UserDefaults.user_id;
-//        orderDict["CALLBACK_URL"] = "https://securegw.paytm.in/theia/paytmCallback?ORDER_ID=OREDRID_\(randomInt)"
-//        RestDataSource.postchecksum(orderID: "OREDRID_\(randomInt)")
-//            .showLoading(on: self.view)
-//            .subscribe(onNext: { [weak self] value in
-//               
-//            }).disposed(by: rx.bag)
-        self.appInvokeself.openPaytm(merchantId: "EYZGKu85499319132530", orderId: "OREDRID_\(randomInt)", txnToken: "txnToken",amount: self.amount.text!.digits, callbackUrl: "https://securegw.paytm.in/theia/paytmCallback?ORDER_ID=OREDRID_\(randomInt)", delegate: self, environment: AIEnvironment.production)
+       orderDict["MID"] = "EYZGKu85499319132530";//paste here your merchant id   //mandatory
+        if let amountDidgit = amount.text {
+            orderDict["amount"] = amountDidgit.digits
+        }
+       orderDict["orderId"] = "OREDRID_\(randomInt)";
+        RestDataSource.postchecksum(paytm_params: orderDict)
+            .showLoading(on: self.view)
+            .subscribe(onNext: { [weak self] value in
+                self?.gotoPaytm(txnToken: value.body.txnToken, orderID: (self?.orderDict["orderId"]!)!)
+        }).disposed(by: rx.bag)
+        
     }
-   
+    func gotoPaytm(txnToken :String,orderID : String) {
+         self.appInvokeself.openPaytm(merchantId: "EYZGKu85499319132530", orderId: orderID, txnToken: "txnToken",amount: self.amount.text!.digits, callbackUrl: "https://securegw.paytm.in/theia/paytmCallback?ORDER_ID=\(orderID)", delegate: self, environment: AIEnvironment.production)
+    }
    
 }
 

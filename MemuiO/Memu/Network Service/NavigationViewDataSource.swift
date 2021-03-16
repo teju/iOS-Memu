@@ -97,13 +97,13 @@ extension RestDataSource {
         }
         .restSend()
     }
-    static func postchecksum(orderID : String) -> Observable<ResponceResult> {
+    static func postchecksum(paytm_params : [String: Any]) -> Observable<CheckSum> {
         let sendParameters: [String: Any] = [
-            "mid": "EYZGKu85499319132530","orderId":orderID]
-        return json( "https://securegw.paytm.in/theia/api/v1/initiateTransaction?mid=EYZGKu85499319132530&orderId=\(orderID)",
-                    parameters: sendParameters)
-            .map { json in
-                ResponceResult(json: JSON(json.dictionaryObject!))
+            "user_id": UserDefaults.user_id,"paytm_params":paytm_params]
+        return json(.post, "payment/initiate-transaction",
+                parameters: sendParameters)
+                    .map { json in
+                        CheckSum(json: JSON(json.dictionaryObject!))
         }
         .restSend()
     }
