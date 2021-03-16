@@ -1510,12 +1510,14 @@
 					"$(PROJECT_DIR)/Memu/Utils/SDK",
 				);
 				MARKETING_VERSION = 1.0.0;
+				NEW_SETTING = "arm64 arm64e armv7 armv7s";
 				PRODUCT_BUNDLE_IDENTIFIER = world.memu.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Memu/PaytmSwift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Debug;
 		};
@@ -1545,12 +1547,14 @@
 					"$(PROJECT_DIR)/Memu/Utils/SDK",
 				);
 				MARKETING_VERSION = 1.0.0;
+				NEW_SETTING = "arm64 arm64e armv7 armv7s";
 				PRODUCT_BUNDLE_IDENTIFIER = world.memu.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Memu/PaytmSwift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Release;
 		};
