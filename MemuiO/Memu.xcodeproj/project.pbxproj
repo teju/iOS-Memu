@@ -15,6 +15,7 @@
 		188AE082241CE7120079E2BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188AE080241CE7120079E2BB /* LaunchScreen.storyboard */; };
 		188AE08D241CE7120079E2BB /* MemuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188AE08C241CE7120079E2BB /* MemuTests.swift */; };
 		188AE098241CE7120079E2BB /* MemuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188AE097241CE7120079E2BB /* MemuUITests.swift */; };
+		4BB9DEED762D38FE55BE9182 /* Pods_Memu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 015B26823C0FF9E4204A0E9A /* Pods_Memu.framework */; };
 		6D0A10C0245368F8004E768B /* S2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0A10BF245368F8004E768B /* S2View.swift */; };
 		6D0A10C224536905004E768B /* S2View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D0A10C124536905004E768B /* S2View.xib */; };
 		6D12BA2D2453AFFC000D52D1 /* S3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D12BA2C2453AFFC000D52D1 /* S3View.swift */; };
@@ -207,6 +208,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		015B26823C0FF9E4204A0E9A /* Pods_Memu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Memu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		188AE072241CE70C0079E2BB /* Memu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188AE075241CE70C0079E2BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		188AE077241CE70C0079E2BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 				7911141B25E3D179004F7E95 /* SystemConfiguration.framework in Frameworks */,
 				7961885125FF2AA80092376C /* AppInvokeSDK.xcframework in Frameworks */,
 				79CE4BB525ED4C43009CD9AB /* Security.framework in Frameworks */,
+				4BB9DEED762D38FE55BE9182 /* Pods_Memu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -959,6 +962,7 @@
 				7961885025FF2AA70092376C /* AppInvokeSDK.xcframework */,
 				79CE4BB425ED4C43009CD9AB /* Security.framework */,
 				7911141A25E3D179004F7E95 /* SystemConfiguration.framework */,
+				015B26823C0FF9E4204A0E9A /* Pods_Memu.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

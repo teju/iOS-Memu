@@ -8,7 +8,6 @@ target 'Memu' do
   # Pods for Memu
   pod 'SwiftyJSON'
 pod 'SDWebImage', '~> 4.3.3'
-pod 'MapboxNavigation', '~> 0.40.0'
 pod 'Firebase/Messaging'
 pod 'SwiftGifOrigin'
   pod 'RxSwift'
@@ -23,8 +22,6 @@ pod 'MaterialComponents'
     pod 'GooglePlacesSearchController'
   pod 'GooglePlaces'
 pod 'MapboxNavigation', '~> 0.40.0'
-#pod 'MapboxCoreNavigation', :git => 'https://github.com/mapbox/mapbox-navigation-ios.git', :tag => 'v1.0.0-alpha.1'
-#pod 'MapboxNavigation', :git => 'https://github.com/mapbox/mapbox-navigation-ios.git', :tag => 'v1.0.0-alpha.1'
 
  
 end
